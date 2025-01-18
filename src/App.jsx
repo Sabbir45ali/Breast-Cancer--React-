@@ -1,14 +1,15 @@
 import React from "react";
 import LeftModel from "./Components/LogIn page/LeftModel";
-import Input from "./Components/LogIn page/RightModel/Input";
+import MainRightModel from "./Components/LogIn page/RightModel/MainRightModel";
 
 const App = () => {
   return <>
       
       <div>
         <LeftModel/>
+        <MainRightModel/>
       </div>
-      <Input/>
+      
   </>;
 };
 export default App;
