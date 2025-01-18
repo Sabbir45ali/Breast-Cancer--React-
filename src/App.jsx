@@ -1,16 +1,15 @@
 import React from "react";
-import LeftModel from "./Components/LogIn page/LeftModel/LeftModel";
-import MainRightModel from "./Components/LogIn page/RightModel/MainRightModel";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./pages/LoginPage/Login";
+
 const App = () => {
-  return <>
-      
-      <div>
-        <LeftModel/>
-        <MainRightModel/>
-      </div>
-      
-  </>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
 };
+
 export default App;
-
-
