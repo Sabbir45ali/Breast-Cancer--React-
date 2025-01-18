@@ -1,6 +1,6 @@
 import React from "react";
-import LeftModel from "../../Components/LogIn page/LoginPageLeftModel/LeftModel";
-import MainRightModel from "../../Components/LogIn page/LoginPageRightModel/MainRightModel";
+import LeftModel from "../../Components/LogIn page Component/LoginPageLeftModel/LeftModel";
+import MainRightModel from "../../Components/LogIn page Component/LoginPageRightModel/MainRightModel";
 const Login = () => {
   return <>
   <div className="flex flex-row h-screen items-center justify-center bg-pink-100">
