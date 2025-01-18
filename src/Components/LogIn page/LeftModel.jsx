@@ -1,12 +1,13 @@
-import React from "react";
+import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
-const LeftModel = () => {
-  return <>
-      <div>
-        <p className="text-3xl font-bold underline">
-          Left Model testing page
-        </p>
-      </div>
-  </>;
-};
-export default LeftModel;
+export default function LeftModel() {
+  return (
+    <Stack spacing={2} direction="row">
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+    </Stack>
+  );
+}
