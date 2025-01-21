@@ -1,17 +1,18 @@
 import React from "react";
 import Input from "./Input";
 import RightButton from "./RightButton";
-import RightHeader from "./Header";
+import Header from "./Header";
 const MainRightModel = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full w-1/2">
-      <RightHeader />
+      <Header FirstLetter='C' SecondLetter='A' Firstpart='reate ' Secondpart='ccount'/>
       <Input />
       <div className="">
-        <RightButton />
+        <RightButton btn='SIGN-UP'/>
       </div>
     </div>
   );
 };
 
 export default MainRightModel;
+
