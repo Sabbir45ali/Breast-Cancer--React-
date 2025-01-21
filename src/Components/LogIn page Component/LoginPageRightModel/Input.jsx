@@ -3,7 +3,7 @@ import React from "react";
 
 const Input = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center p-14">
       <form className="w-80 space-y-4">
         <input
           type="text"
