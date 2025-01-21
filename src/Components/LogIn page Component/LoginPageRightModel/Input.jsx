@@ -12,7 +12,6 @@ const Input = () => {
   ];
 
   return (
-
     <div className="flex items-center justify-center p-14">
       <form className="w-80 space-y-4">
         {inputFields.map((field, index) => (
@@ -23,9 +22,11 @@ const Input = () => {
           />
         ))}
       </form>
-
-    </div>
+    </div>
   );
 };
 
+
 export default Input;
+
+
