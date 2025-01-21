@@ -1,6 +1,6 @@
 import React from "react";
 import LeftModalHeader from "./LeftModelHeader";
-import LeftModelButton from "./LeftModelButton";
+import UniversalButton from "../LoginPageRightModel/UniversalButton"
 
 const LeftModel = () => {
   return (
@@ -8,7 +8,7 @@ const LeftModel = () => {
       <div className="bg-gradient-to-r from-pink-200 to-pink-500 h-full w-full  rounded-xl shadow-lg text-center flex flex-col items-center justify-center">
         <LeftModalHeader />
         <div className="mt-4">
-          <LeftModelButton />
+          <UniversalButton btn='SIGN-IN' btnColor='#F44A82' />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./Input";
-import RightButton from "./RightButton";
+import UniversalButton from "./UniversalButton";
 import Header from "./Header";
 const MainRightModel = () => {
   return (
@@ -8,7 +8,7 @@ const MainRightModel = () => {
       <Header FirstLetter='C' SecondLetter='A' Firstpart='reate ' Secondpart='ccount'/>
       <Input />
       <div className="">
-        <RightButton btn='SIGN-UP'/>
+        <UniversalButton btn='SIGN-UP' btnColor='#FF8ABA'/>
       </div>
     </div>
   );
