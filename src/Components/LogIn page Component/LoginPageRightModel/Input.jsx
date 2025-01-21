@@ -1,35 +1,27 @@
 import React from "react";
-
+import InputField from "./InputField"; 
 
 const Input = () => {
+  const inputFields = [
+    { type: "text", placeholder: "Name" },
+    { type: "text", placeholder: "Phone No" },
+    { type: "email", placeholder: "Email" },
+    { type: "password", placeholder: "Password" },
+  ];
+
   return (
     <div className="flex items-center justify-center p-14">
       <form className="w-80 space-y-4">
-        <input
-          type="text"
-          placeholder="Name"
-          className="w-full p-3 rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
-        <input
-          type="text"
-          placeholder="Phone No"
-          className="w-full p-3 rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
+        {inputFields.map((field, index) => (
+          <InputField
+            key={index}
+            type={field.type}
+            placeholder={field.placeholder}
+          />
+        ))}
       </form>
-    
     </div>
   );
 };
 
 export default Input;
-
