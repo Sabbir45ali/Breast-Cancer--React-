@@ -2,7 +2,9 @@ import React from "react";
 import InputField from "./InputField"; 
 
 const Input = () => {
+
   const inputFields = [
+
     { type: "text", placeholder: "Name" },
     { type: "text", placeholder: "Phone No" },
     { type: "email", placeholder: "Email" },
@@ -10,6 +12,7 @@ const Input = () => {
   ];
 
   return (
+
     <div className="flex items-center justify-center p-14">
       <form className="w-80 space-y-4">
         {inputFields.map((field, index) => (
@@ -20,6 +23,7 @@ const Input = () => {
           />
         ))}
       </form>
+
     </div>
   );
 };
