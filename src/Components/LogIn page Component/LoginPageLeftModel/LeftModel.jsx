@@ -8,7 +8,7 @@ const LeftModel = (props) => {
       <div className="bg-gradient-to-r from-pink-200 to-pink-500 h-full w-full  rounded-xl shadow-lg text-center flex flex-col items-center justify-center">
         <LeftModalHeader Header={props.Header} Text={props.Text} />
         <div className="mt-4">
-          <UniversalButton btn={props.btn} btnColor={props.btnColor} />
+          <UniversalButton  handleLeftModelClick={props.handleLeftModelClick} handleRightModelClick={props.handleRightModelClick} btn={props.btn} btnColor={props.btnColor} />
         </div>
       </div>
     </div>
