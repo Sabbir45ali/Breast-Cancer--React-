@@ -1,49 +1,35 @@
 import React from 'react';
-import doctorimage from '../../assets/Images/DoctorImage2.png'
+import doctorimage from '../../assets/Images/DoctorImage2.png'; // If needed
+import bgImage from '../../assets/Images/Landingpage.png';
+import { TbArrowBigRightLinesFilled } from "react-icons/tb";
+
 const LandingPage = () => {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>
-        Welcome to <span style={styles.subtitle}>Care Memmo</span>
-      </h1>
-      <div style={styles.imageContainer}>
+    <div 
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+      className="flex flex-col items-center justify-center h-screen text-center "
+    >
+      
+      <div className="text-center">
+        <h1 className="text-5xl font-bold text-black mb-2 mr-52">Welcome to</h1>
+        <h2 className="text-4xl font-bold  mt-2 ml-44"style={{ color: '#890A0C' }}>Care Memmo</h2>
+      </div>
+      <div className="">
         <img
-          src={doctorimage} // Replace with the correct path to the uploaded image
+          src={doctorimage}
           alt="Care Memmo Illustration"
-          style={styles.image}
+          className="w-[460px] relative top-20 rounded-lg "
         />
+      </div>
+      <div className=" absolute bottom-4 right-4 ">
+        <TbArrowBigRightLinesFilled  className="text-3xl text-black"/>
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    background: 'linear-gradient(to right, #912d5e, #e5a5c2)',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '3rem',
-    color: '#000',
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    color: '#b3003b',
-    fontSize: '2.5rem',
-    fontWeight: '500',
-  },
-  imageContainer: {
-    marginTop: '20px',
-  },
-  image: {
-    width: '400px', // Adjust as needed
-    borderRadius: '8px',
-  },
 };
 
 export default LandingPage;
