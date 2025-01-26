@@ -18,11 +18,11 @@ const LandingPage = () => {
         <h1 className="text-5xl font-bold text-black mb-2 mr-52">Welcome to</h1>
         <h2 className="text-4xl font-bold  mt-2 ml-44"style={{ color: '#890A0C' }}>Care Memmo</h2>
       </div>
-      <div className="">
+      <div className="relative mb-7">
         <img
           src={doctorimage}
           alt="Care Memmo Illustration"
-          className="w-[460px] relative top-20 rounded-lg "
+          className="w-[460px] relative top-20 rounded-lg h-[365px] "
         />
       </div>
       <div className=" absolute bottom-4 right-4 ">
