@@ -28,8 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<ResponsivePage />} />
-        {/* <Route path="/LandingPage" element={<LandingPage />} />
-        <Route path="/landing_M" element={<Mobile_landingPage />} /> */}
+        <Route path="/signin_m" element={<SignInPage_Mobile />} />
       </Routes>
     </Router>
   );
