@@ -1,9 +1,10 @@
-import React , {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/LoginPage/Login";
 import LandingPage from "./pages/LandingPage/LandingPage";
 // import Signup from "./pages/signuppage/Signup";
 import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
+import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
 const ResponsivePage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -34,9 +35,3 @@ const App = () => {
   );
 };
 export default App;
-
-
-
-
-
-
