@@ -1,6 +1,6 @@
 import React from "react";
 
-const RightButton = (props) => {
+const UniversalButton = (props) => {
   const handleClick = () => {
     if (props.handleLeftModelClick) props.handleLeftModelClick(); 
     if (props.handleRightModelClick) props.handleRightModelClick();       
@@ -17,4 +17,4 @@ const RightButton = (props) => {
   );
 };
 
-export default RightButton;
+export default UniversalButton;
