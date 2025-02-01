@@ -1,19 +1,17 @@
-import React from "react";
-import InputField from "./InputField"; 
+import React from 'react'
+import InputField from './InputField'
 
 const Input = () => {
-
   const inputFields = [
-
-    { type: "text", placeholder: "Name" },
-    { type: "text", placeholder: "Phone No" },
-    { type: "email", placeholder: "Email" },
-    { type: "password", placeholder: "Password" },
-  ];
+    { type: 'text', placeholder: 'Name' },
+    { type: 'text', placeholder: 'Phone No' },
+    { type: 'email', placeholder: 'Email' },
+    { type: 'password', placeholder: 'Password' }
+  ]
 
   return (
-    <div className="flex items-center justify-center p-14">
-      <form className="w-80 space-y-4">
+    <div className='flex items-center justify-center p-14'>
+      <form className='w-80 space-y-4'>
         {inputFields.map((field, index) => (
           <InputField
             key={index}
@@ -22,11 +20,8 @@ const Input = () => {
           />
         ))}
       </form>
-    </div>
-  );
-};
+    </div>
+  )
+}
 
-
-export default Input;
-
-
+export default Input
