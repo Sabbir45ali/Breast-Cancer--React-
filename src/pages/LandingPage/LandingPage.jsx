@@ -1,6 +1,7 @@
 import React from 'react'
-import doctorimage from '../../assets/Images/DoctorImage2.png' // If needed
-import bgImage from '../../assets/Images/Landingpage.png'
+import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png' // If needed
+import bgImage from '../../assets/Images/desktop_landingPage.png'
+
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 
