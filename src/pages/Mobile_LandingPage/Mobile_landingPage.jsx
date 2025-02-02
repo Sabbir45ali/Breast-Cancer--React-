@@ -1,5 +1,5 @@
 import React from "react";
-import Mobile_landing_page_Female from "../../assets/Images/Mobile_landing_page_Female.png";
+import Mobile_landing_page_Female from "../../assets/Images/MobileLandingPageFemale1.png"
 import { FaArrowRight } from "react-icons/fa6";
 
 const Mobile_landingPage = () => {

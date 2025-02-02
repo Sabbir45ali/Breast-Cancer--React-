@@ -1,6 +1,6 @@
 import React from "react";
-import doctorimage from "../../assets/Images/DoctorImage2.png"; // If needed
-import bgImage from "../../assets/Images/Landingpage.png";
+import doctorimage from "../../assets/Images/MobileLandingPageFemale1.png"; // If needed
+import bgImage from "../../assets/Images/desktop_landingPage.png";
 import { TbArrowBigRightLinesFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,7 @@ const LandingPage = () => {
       </div>
       <div className="relative mb-7">
         <img
-          src={doctorimage}
+          src={doctorimage}k
           alt="Care Memmo Illustration"
           className="w-[460px] relative top-20 rounded-lg h-[365px] "
         />
