@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./pages/LoginPage/Login";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
-import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
-import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Login from './pages/LoginPage/Login'
+import LandingPage from './pages/LandingPage/LandingPage'
+import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
+import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
+import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+      setIsMobile(window.innerWidth < 768)
+    }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
-  return isMobile ? <MobileComponent /> : <DesktopComponent />;
-};
+  return isMobile ? <MobileComponent /> : <DesktopComponent />
+}
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route
-          path="/"
+          path='/'
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
@@ -38,7 +38,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signin"
+          path='/signin'
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -47,7 +47,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signup"
+          path='/signup'
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -57,7 +57,7 @@ const App = () => {
         />
       </Routes>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
