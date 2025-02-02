@@ -1,6 +1,6 @@
 import React from 'react'
-import SignInPageInput from '../../Components/SignInPage_Mobile Components/SignInPageInput'
-import SigninPage_Buttons from '../../Components/SignInPage_Mobile Components/SignInPage_Button'
+import SignInPageInput from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
+import SigninPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
 
 const SignInPage_Mobile = () => {
   const inputFields = [
