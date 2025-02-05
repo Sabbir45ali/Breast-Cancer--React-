@@ -10,7 +10,7 @@ const Header = (props) => {
           <span className='text-pink-500'>{props.SecondLetter}</span>
           {props.Secondpart}
         </h1>
-        <p className='mt-4 text-gray-600 text-sm'>Use email for registration</p>
+        <p className='mt-4 text-gray-600 text-sm'>{props.text}</p>
       </div>
     </div>
   )

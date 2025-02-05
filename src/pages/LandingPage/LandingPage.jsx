@@ -1,5 +1,5 @@
 import React from 'react'
-import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png' // If needed
+import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png' 
 import bgImage from '../../assets/Images/desktop_landingPage.png'
 
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb'
@@ -31,7 +31,7 @@ const LandingPage = () => {
           className='w-[460px] relative top-20 rounded-lg h-[365px] '
         />
       </div>
-      <Link to='/login'>
+      <Link to='/signin'>
         <div className=' absolute bottom-4 right-4 '>
           <TbArrowBigRightLinesFilled className='text-3xl text-black' />
         </div>
