@@ -15,12 +15,13 @@ const SignInPage_Mobile = () => {
 
   return (
     <div className='min-h-screen flex flex-col items-center justify-center bg-pink-50'>
-      <Header 
-         FirstLetter='S'
-         Firstpart="ign "
-         SecondLetter="I"
-         Secondpart="n"
-         text="Use email and password"/>
+      <Header
+        FirstLetter='S'
+        Firstpart='ign '
+        SecondLetter='I'
+        Secondpart='n'
+        text='Use email and password'
+      />
       <SignInPageInput inputs={inputFields} />
       <SigninPage_Buttons
         label='Sign-In'

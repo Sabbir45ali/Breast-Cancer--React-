@@ -21,12 +21,12 @@ const SignUpPageMobile = () => {
   return (
     <div className='min-h-screen flex flex-col items-center justify-center bg-pink-50 px-4 sm:px-6'>
       <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg'>
-        <Header 
-          FirstLetter="C"
-          Firstpart="reate"
-          SecondLetter="U"
-          Secondpart="p"
-          text="Use email for registration"
+        <Header
+          FirstLetter='C'
+          Firstpart='reate'
+          SecondLetter='U'
+          Secondpart='p'
+          text='Use email for registration'
         />
         <SignInPageInputes inputs={inputFields} />
 

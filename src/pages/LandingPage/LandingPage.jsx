@@ -1,5 +1,5 @@
 import React from 'react'
-import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png' 
+import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png'
 import bgImage from '../../assets/Images/desktop_landingPage.png'
 
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb'

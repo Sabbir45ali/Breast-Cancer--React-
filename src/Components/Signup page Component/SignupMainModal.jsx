@@ -11,7 +11,7 @@ const SignupMainModal = (props) => {
         SecondLetter='I'
         Firstpart='ign '
         Secondpart='n'
-        text="Use email and password"
+        text='Use email and password'
       />
       <SignupInput />
       <div className=''>
