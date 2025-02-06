@@ -10,6 +10,7 @@ const MainRightModel = () => {
         SecondLetter='A'
         Firstpart='reate '
         Secondpart='ccount'
+        text='Use email for registartion'
       />
       <Input />
       <div className=''>
