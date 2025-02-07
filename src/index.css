@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../src/fonts/Roboto-Light.ttf') format('truetype'),
+       url('../src/fonts/Roboto-Medium.ttf') format('truetype'),
+       url('../src/fonts/Roboto-Regular.ttf') format('truetype');
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+body {
+  font-family: 'CustomFont', sans-serif;
+}
