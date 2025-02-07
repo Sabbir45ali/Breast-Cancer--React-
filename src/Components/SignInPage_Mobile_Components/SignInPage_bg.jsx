@@ -22,7 +22,7 @@ const SignInPage_bg = () => {
         backgroundPosition: 'center'
       }}
       className='block sm:hidden w-screen min-h-screen flex flex-col items-center justify-start text-center relative'
-     >
+    >
       <div className='w-full flex justify-center mt-8'>
         <img
           src={Mobile_landing_page_Female}
@@ -32,35 +32,35 @@ const SignInPage_bg = () => {
       </div>
       <div className='w-full max-w-[400px] bg-white rounded-t-2xl shadow-2xl  mt-[-15px] flex flex-col justify-between items-center z-10 '>
         <div className='w-full w-full max-w-[400px] bg-white rounded-t-2xl shadow-2xl  mt-[-15px] flex flex-col justify-between items-center z-10 p-8'>
-        <Header
-        FirstLetter='S'
-        Firstpart='ign '
-        SecondLetter='I'
-        Secondpart='n'
-        text='Use email and password'
-      />
-      <div className='w-full mt-4'>
-      <SignInPageInput inputs={inputFields} />
+          <Header
+            FirstLetter='S'
+            Firstpart='ign '
+            SecondLetter='I'
+            Secondpart='n'
+            text='Use email and password'
+          />
+          <div className='w-full mt-4'>
+            <SignInPageInput inputs={inputFields} />
+          </div>
+          <SigninPage_Buttons
+            label='Sign-In'
+            bgColor='#FF6699'
+            textColor='#FFFFFF'
+          />
+          <div className='text-gray-700 text-sm mb-4 mt-5'>
+            Forgot password?{' '}
+            <a href='/forgot-password" className="text-[#FF6699] underline'>
+              Click here!
+            </a>
+          </div>
+        </div>
+        <div className='min-w-full max-w-[400px] mt-auto'>
+          <SignInPage_Footer
+            FooterText1="Don't have an account?"
+            FooterText2='Sign-Up'
+          />
+        </div>
       </div>
-      <SigninPage_Buttons
-        label='Sign-In'
-        bgColor='#FF6699'
-        textColor='#FFFFFF'
-      />
-      <div className='text-gray-700 text-sm mb-4 mt-5'>
-        Forgot password?{' '}
-        <a href='/forgot-password" className="text-[#FF6699] underline'>
-          Click here!
-        </a>
-      </div>
-      </div>
-      <div className='min-w-full max-w-[400px] mt-auto'>
-      <SignInPage_Footer
-        FooterText1="Don't have an account?"
-        FooterText2='Sign-Up'
-      />
-      </div>
-    </div>
     </div>
   )
 }
