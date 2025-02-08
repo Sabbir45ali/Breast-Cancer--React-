@@ -1,7 +1,8 @@
 import React from 'react'
 import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
 import SignupInput from '../../Components/Signup page Component/signupinput'
-import UniversalButton from '../../Components/LogIn page Component/LoginPageRightModel/UniversalButton'
+import SignupButton from './SignupButton'
+
 
 const SignupMainModal = (props) => {
   return (
@@ -15,7 +16,7 @@ const SignupMainModal = (props) => {
       />
       <SignupInput />
       <div className=''>
-        <UniversalButton btn='SIGN-IN' btnColor='#FF8ABA' />
+        <SignupButton/>
       </div>
       <div className='mt-4'>
         <button
