@@ -1,5 +1,5 @@
 import React from 'react'
-import bg_pic_Sign_in_page_Mobile from '../../assets/Images/bg_pic_Sign_in_page_Mobile.png'
+import bg_pic_Sign_in_page_Mobile from '../../assets/Images/BgSignInMobile.png'
 import Mobile_landing_page_Female from '../../assets/Images/MobileLandingPageFemale1.png'
 import SignInPageInput from './SignInPageInput'
 import SigninPage_Buttons from './SignInPage_Button'
