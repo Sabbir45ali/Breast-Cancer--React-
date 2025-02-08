@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom"; // ✅ U
 import Login from "./pages/LoginPage/Login";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
-import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
+// import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
 import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
@@ -40,7 +40,7 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
-              MobileComponent={SignInPage_Mobile}
+              // MobileComponent={SignInPage_Mobile}
             />
           }
         />
