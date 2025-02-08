@@ -1,10 +1,10 @@
-import React from 'react'
-import bg_pic_Sign_in_page_Mobile from '../../assets/Images/bg_pic_Sign_in_page_Mobile.png'
+import * as React from 'react'
+import bgImage from '../../assets/Images/bg_pic_Sign_in_page_Mobile.png'
 import Mobile_landing_page_Female from '../../assets/Images/MobileLandingPageFemale1.png'
-import SignInPageInput from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
-import SigninPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
-import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
-import SignInPage_Footer from '../../Components/SignInPage_Mobile_Components/SignInPage_Footer'
+import SignInPageInput from './SignInPageInput'
+import SigninPage_Buttons from './SignInPage_Button'
+import Header from '../LogIn page Component/LoginPageRightModel/Header'
+import SignInPage_Footer from './SignInPage_Footer'
 const SignInPage_bg = () => {
   const inputFields = [
     { type: 'email', placeholder: 'Enter your email', background: '#F3DCE0' },
@@ -17,7 +17,7 @@ const SignInPage_bg = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${bg_pic_Sign_in_page_Mobile})`,
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
