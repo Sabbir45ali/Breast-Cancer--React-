@@ -3,9 +3,7 @@ import SignInPage_bg from '../../Components/SignInPage_Mobile_Components/SignInP
 
 const SignInPage_Mobile = () => {
   return (
-    <>
-      <SignInPage_bg />
-    </>
+    <SignInPage_bg />
   )
 }
 
