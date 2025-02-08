@@ -1,6 +1,7 @@
 import React from 'react'
 import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
 import SignInPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
+import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
 
 const SignUpPageMobile = () => {
   const inputFields = [
@@ -24,8 +25,8 @@ const SignUpPageMobile = () => {
         <Header
           FirstLetter='C'
           Firstpart='reate'
-          SecondLetter='U'
-          Secondpart='p'
+          SecondLetter='A'
+          Secondpart='ccount'
           text='Use email for registration'
         />
         <SignInPageInputes inputs={inputFields} />
