@@ -1,6 +1,6 @@
 import * as React from 'react'
-import bgImage from '../../assets/Images/bg_pic_Sign_in_page_Mobile.png'
-import Mobile_landing_page_Female from '../../assets/Images/MobileLandingPageFemale1.png'
+import bgImage from '../../../public/Images/bg_pic_landing_page_mobile.png'
+import Mobile_landing_page_Female from '../../../public/Images/MobileLandingPageFemale1.png'
 import SignInPageInput from './SignInPageInput'
 import SigninPage_Buttons from './SignInPage_Button'
 import Header from '../LogIn page Component/LoginPageRightModel/Header'

@@ -1,5 +1,5 @@
 import React from 'react'
-import Mobile_landing_page_Female from '../../assets/Images/MobileLandingPageFemale1.png'
+import Mobile_landing_page_Female from '../../../public/Images/MobileLandingPageFemale1.png'
 
 import { FaArrowRight } from 'react-icons/fa6'
 
