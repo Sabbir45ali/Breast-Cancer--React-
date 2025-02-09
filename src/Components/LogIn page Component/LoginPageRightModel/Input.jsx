@@ -8,7 +8,7 @@ const Input = () => {
     { type: 'email', placeholder: 'Email' },
     { type: 'password', placeholder: 'Password' }
   ]
-//QA
+  // QA
   return (
     <div className='flex items-center justify-center p-14'>
       <form className='w-80 space-y-4'>

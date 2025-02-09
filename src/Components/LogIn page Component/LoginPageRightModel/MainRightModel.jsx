@@ -14,7 +14,7 @@ const MainRightModel = () => {
       />
       <Input />
       <div className=''>
-        <LoginButton/>
+        <LoginButton />
       </div>
     </div>
   )

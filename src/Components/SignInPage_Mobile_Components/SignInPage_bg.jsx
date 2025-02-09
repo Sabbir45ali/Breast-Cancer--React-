@@ -29,7 +29,7 @@ const SignInPageHeader = ({ headerData }) => (
       </a>
     </div>
   </div>
-);
+)
 
 const SignInPage_bg = () => {
   const inputFields = [
@@ -39,7 +39,7 @@ const SignInPage_bg = () => {
       placeholder: 'Enter your password',
       background: '#F3DCE0'
     }
-  ];
+  ]
   const headerData = {
     FirstLetter: 'S',
     Firstpart: 'ign ',
@@ -50,7 +50,7 @@ const SignInPage_bg = () => {
     label: 'Sign-In',
     bgColor: '#FF6699',
     textColor: '#FFFFFF'
-  };
+  }
 
   return (
     <div

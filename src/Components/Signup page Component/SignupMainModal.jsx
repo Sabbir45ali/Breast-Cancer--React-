@@ -3,7 +3,6 @@ import Header from '../../Components/LogIn page Component/LoginPageRightModel/He
 import SignupInput from '../../Components/Signup page Component/signupinput'
 import SignupButton from './SignupButton'
 
-
 const SignupMainModal = (props) => {
   return (
     <div className='flex flex-col items-center justify-center h-full w-1/2'>
@@ -16,7 +15,7 @@ const SignupMainModal = (props) => {
       />
       <SignupInput />
       <div className=''>
-        <SignupButton/>
+        <SignupButton />
       </div>
       <div className='mt-4'>
         <button
