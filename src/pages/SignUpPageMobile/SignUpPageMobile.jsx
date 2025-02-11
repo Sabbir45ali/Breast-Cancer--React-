@@ -31,20 +31,20 @@ const SignUpPageMobile = () => {
       >
         <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg absolute bottom-0 right-4 '>
           <Header
-          FirstLetter='C'
-          Firstpart='reate'
-          SecondLetter='A'
-          Secondpart='ccount'
+            FirstLetter='C'
+            Firstpart='reate'
+            SecondLetter='A'
+            Secondpart='ccount'
           />
           <SignInPageInputes inputs={inputFields} />
 
           <div className='flex items-center justify-center  '>
-          <SignupButton
-            label='Sign-Up'
-            bgColor='#FF6699'
-            textColor='#FFFFFF'
-            className='w-full mt-4 '
-          />
+            <SignupButton
+              label='Sign-Up'
+              bgColor='#FF6699'
+              textColor='#FFFFFF'
+              className='w-full mt-4 '
+            />
           </div>
         </div>
       </div>

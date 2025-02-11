@@ -5,7 +5,7 @@ This project is a web application designed to assist in detecting breast cancer 
 ## Features
 
 - **Responsive Design**: Built with Tailwind CSS for a seamless user experience on all devices.
-- **Machine Learning Integration**: 
+- **Machine Learning Integration**:
   - **Fandom Forest Model**: Processes user input data to predict the likelihood of breast cancer.
   - **CNN Model**: Performs image classification on mammogram reports.
 - **User-Friendly Interface**: Easy navigation and clear form fields for user input.
@@ -14,7 +14,7 @@ This project is a web application designed to assist in detecting breast cancer 
 
 ## Technologies Used
 
-- **Frontend**: 
+- **Frontend**:
   - [React](https://reactjs.org/)
   - [Vite](https://vitejs.dev/)
   - [Tailwind CSS](https://tailwindcss.com/)
@@ -31,6 +31,7 @@ This project is a web application designed to assist in detecting breast cancer 
 ### Prerequisites
 
 Make sure you have the following installed:
+
 - [Node.js](https://nodejs.org/) (v18 or later)
 - [Python](https://www.python.org/) (v3.8 or later)
 - [Django](https://www.djangoproject.com/) (for the backend)
@@ -41,3 +42,4 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/Sabbir45ali/Breast-Cancer--React-.git
    cd Breast-Cancer--React-
+   ```
