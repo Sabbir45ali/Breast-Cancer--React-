@@ -5,6 +5,8 @@ import LandingPage from './pages/LandingPage/LandingPage'
 import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
 import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
 import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
+import FooterPage from './pages/FooterMobile/FooterMobile'
+import FooterMobile from './pages/FooterMobile/FooterMobile'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -46,12 +48,23 @@ const App = () => {
             />
           }
         />
+        
         <Route
           path='/signup'
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
               MobileComponent={SignUpPageMobile}
+            />
+          }
+        />
+
+        <Route
+          path='/footer'
+          element={
+            <ResponsiveComponent
+              DesktopComponent={FooterMobile}
+              MobileComponent={FooterMobile}
             />
           }
         />
