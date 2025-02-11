@@ -2,6 +2,7 @@ import React from 'react'
 import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
 import SignInPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
 import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
+import BGImage from '../../assets/Images/SignInPageMobileBg.png'
 
 const SignUpPageMobile = () => {
   const inputFields = [
@@ -20,7 +21,16 @@ const SignUpPageMobile = () => {
   ]
 
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center bg-pink-50 px-4 sm:px-6'>
+  <div
+  style={{
+          backgroundImage: `url(${BGImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+        className='flex flex-col items-center justify-center h-screen text-center '
+        >
+
+    <div className='min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 absolute top-36 '>
       <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg'>
         <Header
           FirstLetter='C'
@@ -38,7 +48,8 @@ const SignUpPageMobile = () => {
           className='w-full mt-4'
         />
       </div>
-    </div>
+      </div>
+  </div>
     
   )
 }
