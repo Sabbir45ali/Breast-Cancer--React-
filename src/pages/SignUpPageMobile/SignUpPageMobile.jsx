@@ -39,7 +39,7 @@ const SignUpPageMobile = () => {
         />
       </div>
     </div>
-    </div>
+    
   )
 }
 
