@@ -21,36 +21,27 @@ const SignUpPageMobile = () => {
   ]
 
   return (
-  <div
-  style={{
-          backgroundImage: `url(${BGImage})`,
+    <div className=''>
+      <div
+        style={{
+          backgroundImage: `url(${BgImageSignup})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
-        className='flex flex-col items-center justify-center h-screen text-center '
-        >
+        className='min-h-screen flex flex-col items-center justify-center  px-4 sm:px-6'
+      >
+        <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg absolute bottom-4 right-4 '>
+          <SignInPageInputes inputs={inputFields} />
 
-    <div className='min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 absolute top-36 '>
-      <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg'>
-        <Header
-          FirstLetter='C'
-          Firstpart='reate'
-          SecondLetter='A'
-          Secondpart='ccount'
-          text='Use email for registration'
-        />
-        <SignInPageInputes inputs={inputFields} />
-
-        <SignInPage_Buttons
-          label='Sign-Up'
-          bgColor='#FF6699'
-          textColor='#FFFFFF'
-          className='w-full mt-4'
-        />
+          <SigninPage_Buttons
+            label='Sign-Up'
+            bgColor='#FF6699'
+            textColor='#FFFFFF'
+            className='w-full mt-4'
+          />
+        </div>
       </div>
-      </div>
-  </div>
-    
+    </div>
   )
 }
 
