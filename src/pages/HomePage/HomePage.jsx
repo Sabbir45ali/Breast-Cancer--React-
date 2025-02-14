@@ -1,5 +1,5 @@
 // skipcq: JS-W1028
-import React from "react";
+
 import Navbar from "../../Components/Universal Components/Navbar";
 import HomePage_Bg from "../../Components/Home Page Component/HomePage_Bg";
 // skipcq: JS-C1001, JS-0128
