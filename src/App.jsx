@@ -68,11 +68,11 @@ const App = () => {
         <Route
           path="/landing"
           element={
-          <ResponsiveComponent 
-            DesktopComponent={HomePage} 
-            MobileComponent={HomePage_Mobile} 
-            
-          />}
+            <ResponsiveComponent
+              DesktopComponent={HomePage}
+              MobileComponent={HomePage_Mobile}
+            />
+          }
         />
       </Routes>
     </Router>
