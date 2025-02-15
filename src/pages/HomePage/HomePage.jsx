@@ -1,6 +1,6 @@
 // skipcq: JS-W1028
 
-import Navbar from "../../Components/Universal Components/Navbar"
+import Navbar from "../../Components/Universal Components/Navbar";
 // skipcq: JS-C1001, JS-0128
 import profileImg from "../../assets/Images/profileIcon.png";
 import Logo from "../../assets/Images/logo.png";
