@@ -7,7 +7,7 @@ import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
 import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
 import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
 import HomePage from "./pages/HomePage/HomePage";
-import Profile from "./pages/ProfilePage/Profile";
+import HomePage_Mobile from "./pages/HomePage_Mobile/HomePage_Mobile";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -61,13 +61,18 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={Profile}
-              MobileComponent={Profile}
+              // MobileComponent={Profile}
             />
           }
         />
         <Route
           path="/landing"
-          element={<ResponsiveComponent DesktopComponent={HomePage} />}
+          element={
+          <ResponsiveComponent 
+            DesktopComponent={HomePage} 
+            MobileComponent={HomePage_Mobile} 
+            
+          />}
         />
       </Routes>
     </Router>
