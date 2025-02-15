@@ -8,8 +8,8 @@ import Header from "../../Components/Home Page Components/Header";
 const HomePage = () => {
   return (
     <div className="">
-      <Header />
       <Navbar profileImg={profileImg} Logo={Logo} />
+      <Header />
     </div>
   );
 };
