@@ -6,30 +6,30 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
 import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
 import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
-
+import HomePage from './pages/HomePage/HomePage'
 //For mobile and desktop view
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 768px)").matches
-  );
+    window.matchMedia('(max-width: 768px)').matches
+  )
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    const handleResize = () => setIsMobile(mediaQuery.matches);
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
+    const handleResize = () => setIsMobile(mediaQuery.matches)
 
-    mediaQuery.addEventListener("change", handleResize);
-    return () => mediaQuery.removeEventListener("change", handleResize);
-  }, []);
+    mediaQuery.addEventListener('change', handleResize)
+    return () => mediaQuery.removeEventListener('change', handleResize)
+  }, [])
 
-  return isMobile ? <MobileComponent /> : <DesktopComponent />;
-};
-//PR
+  return isMobile ? <MobileComponent /> : <DesktopComponent />
+}
+// PR
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
@@ -38,7 +38,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signin"
+          path='/signin'
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -48,7 +48,7 @@ const App = () => {
         />
 
         <Route
-          path="/signup"
+          path='/signup'
           element={
             <ResponsiveComponent
               DesktopComponent={Signup}
@@ -56,11 +56,15 @@ const App = () => {
             />
           }
         />
+        <Route
+          path='/landing'
+          element={<ResponsiveComponent DesktopComponent={HomePage} />}
+        />
 
         
       </Routes>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
