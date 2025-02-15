@@ -21,14 +21,11 @@ const SignUpPageMobile = () => {
 
   return (
     <div className=''>
-      <div
-        style={{
-          backgroundImage: `url(${BGImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-        className='min-h-screen flex flex-col items-center justify-center  px-4 sm:px-6'
-      >
+      
+      <div class="bg-[url('src/assets/Images/BgSignInMobile.png')] bg-cover bg-center h-screen">
+      <img src="src/assets/Images/DoctorImage.png" alt="Centered Image" class="block mx-auto w-74 h-74"></img>
+
+</div>
         <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg absolute bottom-0 right-4 '>
           <Header
             FirstLetter='C'
@@ -48,7 +45,7 @@ const SignUpPageMobile = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }
 
