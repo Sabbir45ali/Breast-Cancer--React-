@@ -11,7 +11,7 @@ import HomePage_Mobile from "./pages/HomePage_Mobile/HomePage_Mobile";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 768px)").matches
+    window.matchMedia("(max-width: 768px)").matches,
   );
 
   useEffect(() => {
