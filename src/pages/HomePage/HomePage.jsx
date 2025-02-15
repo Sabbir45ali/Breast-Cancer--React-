@@ -1,15 +1,13 @@
 // skipcq: JS-W1028
 
-import Navbar from "../../Components/Universal Components/Navbar";
-import HomePage_Bg from "../../Components/Home Page Component/HomePage_Bg";
+import Navbar from "../../Components/Universal Components/Navbar"
 // skipcq: JS-C1001, JS-0128
 import profileImg from "../../assets/Images/profileIcon.png";
 import Logo from "../../assets/Images/logo.png";
 const HomePage = () => {
   return (
-    <div className="">
+    <div className="bg-[url('/src/assets/Images/bg_pic_landing_page_dekstop.png')] bg-cover bg-center h-screen flex flex-col overflow-auto items-center justify-center">
       <Navbar profileImg={profileImg} Logo={Logo} />
-      <HomePage_Bg />
     </div>
   );
 };
