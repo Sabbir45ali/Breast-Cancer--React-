@@ -20,7 +20,7 @@ const SignUpPageMobile = () => {
   ]
 
   return (
-    <div className=''>
+    <div >
       
       <div class="bg-[url('src/assets/Images/BgSignInMobile.png')] bg-cover bg-center h-screen">
       <img src="src/assets/Images/DoctorImage.png" alt="Centered Image" class="block mx-auto w-74 h-74"></img>
