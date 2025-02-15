@@ -8,14 +8,7 @@ import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
 import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
 import HomePage from './pages/HomePage/HomePage'
 //For mobile and desktop view
-import React, { useState, useEffect } from 'react'
-import { HashRouter as Router, Route, Routes } from 'react-router-dom' // ✅ Use HashRouter
-import Login from './pages/LoginPage/Login'
-import Signup from './pages/signuppage/Signup'
-import LandingPage from './pages/LandingPage/LandingPage'
-import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
-import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
-import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
+
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
