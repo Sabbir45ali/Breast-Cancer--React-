@@ -7,9 +7,11 @@ import Logo from "../../assets/Images/logo.png";
 import Header from "../../Components/Home Page Components/Header";
 const HomePage = () => {
   return (
-    <div className="">
-      <Navbar profileImg={profileImg} Logo={Logo} />
-      <Header />
+    <div className="bg-[url('/src/assets/Images/bg_pic_landing_page_dekstop.png')] bg-cover bg-center h-screen flex flex-col overflow-auto items-center justify-center">
+      <div className="">
+        <Navbar profileImg={profileImg} Logo={Logo} />
+        <Header />
+      </div>
     </div>
   );
 };
