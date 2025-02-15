@@ -6,10 +6,7 @@ const HomePage_Mobile = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <NavbarMobile />
-
-      {/* Main Content (Add your page content here) */}
       <div className="flex-grow" />
-
       <FooterMobile />
     </div>
   );
