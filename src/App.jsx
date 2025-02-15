@@ -7,7 +7,7 @@ import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
 import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
 import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
 
-
+//For mobile and desktop view
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 768px)").matches
