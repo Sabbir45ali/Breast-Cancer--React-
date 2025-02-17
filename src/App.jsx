@@ -40,7 +40,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signin"
+          path="/signup"
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -50,7 +50,7 @@ const App = () => {
         />
 
         <Route
-          path="/signup"
+          path="/signin"
           element={
             <ResponsiveComponent
               DesktopComponent={Signup}
