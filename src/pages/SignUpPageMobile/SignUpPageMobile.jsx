@@ -25,7 +25,7 @@ const SignUpPageMobile = () => {
         <img
           src="src/assets/Images/DoctorImage.png"
           alt="Centered Image"
-          class="block mx-auto w-74 h-74"
+          className="block mx-auto w-74 h-74"
         />
       </div>
       <div className="w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg absolute bottom-0 right-4 ">
