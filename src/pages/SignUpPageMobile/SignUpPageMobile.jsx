@@ -3,6 +3,7 @@ import SignInPageInputes from "../../Components/SignInPage_Mobile_Components/Sig
 import BGImage from "../../assets/Images/SignInPageMobileBg.png";
 import SignupButton from "../../Components/Signup page Component/SignupButton";
 import Header from "../../Components/LogIn page Component/LoginPageRightModel/Header";
+import SignInPage_Footer from "../../Components/SignInPage_Mobile_Components/SignInPage_Footer";
 const SignUpPageMobile = () => {
   const inputFields = [
     { type: "text", placeholder: "Enter your name", background: "#F3DCE0" },
@@ -43,6 +44,12 @@ const SignUpPageMobile = () => {
             bgColor="#FF6699"
             textColor="#FFFFFF"
             className="w-full mt-4 "
+          />
+        </div>
+        <div className='w-full max-w-xs sm:max-w-sm md:max-w-md pt-6 rounded-2xl shadow-lg'>
+          <SignInPage_Footer
+            FooterText1="Don't have an account?"
+            FooterText2='Sign-Up'
           />
         </div>
       </div>
