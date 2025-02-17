@@ -3,6 +3,7 @@ import SignInPageInputes from "../../Components/SignInPage_Mobile_Components/Sig
 import BGImage from "../../assets/Images/SignInPageMobileBg.png";
 import SignupButton from "../../Components/Signup page Component/SignupButton";
 import Header from "../../Components/LogIn page Component/LoginPageRightModel/Header";
+
 const SignUpPageMobile = () => {
   const inputFields = [
     { type: "text", placeholder: "Enter your name", background: "#F3DCE0" },
@@ -20,30 +21,28 @@ const SignUpPageMobile = () => {
   ];
 
   return (
-    <div>
-      <div class="bg-[url('src/assets/Images/BgSignInMobile.png')] bg-cover bg-center h-screen">
-        <img
-          src="src/assets/Images/DoctorImage.png"
-          alt="Centered Image"
-          class="block mx-auto w-74 h-74"
-        />
-      </div>
-      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg absolute bottom-0 right-4 ">
-        <Header
-          FirstLetter="C"
-          Firstpart="reate"
-          SecondLetter="A"
-          Secondpart="ccount"
-        />
-        <SignInPageInputes inputs={inputFields} />
+    <div className="pt-60 relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${BGImage})` }}
+    >
+      {/* Centered Doctor Image */}
+      {/* <img
+        src="src/assets/Images/DoctorImage.png"
+        alt="Centered Image"
+        className="w-40 h-40 md:w-60 md:h-60 object-cover"
+      /> */}
 
-        <div className="flex items-center justify-center  ">
-          <SignupButton
-            label="Sign-Up"
-            bgColor="#FF6699"
-            textColor="#FFFFFF"
-            className="w-full mt-4 "
-          />
+      {/* Sign-up form container */}
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+        <Header FirstLetter="C" Firstpart="reate" SecondLetter="A" Secondpart="ccount" />
+
+        {/* Centered Input Fields */}
+        <div className="w-full flex flex-col items-center justify-center gap-3 mt-4">
+          <SignInPageInputes inputs={inputFields} />
+        </div>
+
+        {/* Signup Button */}
+        <div className="w-full flex items-center justify-center mt-4">
+          <SignupButton label="Sign-Up" bgColor="#FF6699" textColor="#FFFFFF" />
         </div>
       </div>
     </div>

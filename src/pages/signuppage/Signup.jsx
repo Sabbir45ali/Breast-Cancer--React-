@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SignupMainModal from "../../Components/Signup page Component/SignupMainModal";
 import SignUpPageLeftModal from "../../Components/Signup page Component/SignUpPageLeftModal";
 
