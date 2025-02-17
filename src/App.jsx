@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom"; // ✅ Use HashRouter
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // ✅ Use BrowserRouter
 import Login from "./pages/LoginPage/Login";
 import Signup from "./pages/signuppage/Signup";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -31,7 +31,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route
-          path="/"
+          path="/Breast-Cancer--React-"
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
