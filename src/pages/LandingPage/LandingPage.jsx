@@ -1,7 +1,6 @@
 import React from 'react'
 import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png'
 
-
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 
@@ -26,17 +25,15 @@ const LandingPage = () => {
  
         />
       </div>
-      
-      
-     
-      <Link to='/signin'>
-        <div className=' absolute bottom-4 right-4 '>
-          <TbArrowBigRightLinesFilled className='text-3xl text-black' />
-        </div>
-      </Link>
+    
+
+        <Link to='/signin'>
+          <div className=' absolute bottom-4 right-4 '>
+            <TbArrowBigRightLinesFilled className='text-3xl text-black' />
+          </div>
+        </Link>
       </div>
     </div>
-
   )
 }
 
