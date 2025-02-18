@@ -5,10 +5,9 @@ import SignInPageInput from './SignInPageInput'
 import SigninPage_Buttons from './SignInPage_Button'
 import Header from '../LogIn page Component/LoginPageRightModel/Header'
 import SignInPage_Footer from './SignInPage_Footer'
-import { RxCrossCircled } from "react-icons/rx";
+import { RxCrossCircled } from 'react-icons/rx'
 const SignInPageHeader = ({ headerData }) => (
   <div className='w-full max-w-[400px] bg-white rounded-t-2xl shadow-2xl  mt-[-15px] flex flex-col  z-10 px-8'>
-    
     <Header
       FirstLetter={headerData.FirstLetter}
       Firstpart={headerData.Firstpart}
@@ -31,7 +30,7 @@ const SignInPageHeader = ({ headerData }) => (
       </a>
     </div>
   </div>
-);
+)
 
 const SignInPage_bg = () => {
   const inputFields = [
@@ -41,7 +40,7 @@ const SignInPage_bg = () => {
       placeholder: 'Enter your password',
       background: '#F3DCE0'
     }
-  ];
+  ]
   const headerData = {
     FirstLetter: 'S',
     Firstpart: 'ign ',
@@ -52,7 +51,7 @@ const SignInPage_bg = () => {
     label: 'Sign-In',
     bgColor: '#FF6699',
     textColor: '#FFFFFF'
-  };
+  }
 
   return (
     <div
@@ -71,7 +70,7 @@ const SignInPage_bg = () => {
         />
       </div>
       <div className='relative w-full max-w-[400px] bg-white rounded-t-2xl shadow-2xl  mt-[-15px] flex flex-col justify-between items-center z-10 '>
-      <RxCrossCircled className='absolute top-0 right-4 text-3xl text-black cursor-pointer z-40'  />
+        <RxCrossCircled className='absolute top-0 right-4 text-3xl text-black cursor-pointer z-40' />
         <SignInPageHeader headerData={headerData} />
         <div className='min-w-full max-w-[400px] mt-auto'>
           <SignInPage_Footer
