@@ -12,8 +12,8 @@ const LandingPage = () => {
       <div className='text-center relative top-20'>
         <h1 className='text-5xl font-bold text-black mb-2 mr-52 '>Welcome to</h1>
         <h2
-          className='text-4xl font-bold  mt-2 ml-44'
-          style={{ color: '#890A0C' }}
+          className='text-4xl font-bold  mt-2 ml-44 text-[#890A0C]'
+          
         >
           Care Memmo
         </h2>
