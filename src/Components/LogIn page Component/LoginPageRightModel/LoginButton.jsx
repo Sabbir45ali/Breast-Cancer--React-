@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const LoginButton = () => {
   return (
@@ -6,6 +6,6 @@ const LoginButton = () => {
       SIGN-UP
     </button>
   )
-};
+}
 
-export default LoginButton;
+export default LoginButton
