@@ -6,20 +6,23 @@ import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
   return (
-    <div className="bg-[url('src/assets/Images/desktop_landingPage.png')] bg-cover bg-center h-screen overflow-hidden">
-      <div className='text-center relative top-20'>
-        <h1 className='text-5xl font-bold text-black mb-2 mr-52 '>Welcome to</h1>
-        <h2 className='text-4xl font-bold mt-2 ml-44 text-[#890A0C]'>
-          Care Memmo
-        </h2>
-      </div>
-      <div className='w-74 h-74'>
-        <img
-          src={doctorimage}
-          alt='Centered Image'
-          className="block mx-auto w-74 h-74 relative top-28"
-        />
-      </div>
+    <div>
+      <div class="bg-[url('src/assets/Images/desktop_landingPage.png')] bg-cover bg-center h-screen">
+        <div className='text-center relative top-20'>
+          <h1 className='text-5xl font-bold text-black mb-2 mr-52 '>
+            Welcome to
+          </h1>
+          <h2 className='text-4xl font-bold  mt-2 ml-44 text-[#890A0C]'>
+            Care Memmo
+          </h2>
+        </div>
+        <div>
+          <img
+            src={doctorimage}
+            alt='Centered Image'
+            className='block mx-auto w-74 h-74 relative top-28'
+          />
+        </div>
 
       <Link to='/signin'>
         <div className='absolute bottom-4 right-4'>
