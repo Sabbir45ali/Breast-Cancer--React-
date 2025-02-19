@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
   return (
-    <div>
+    
       <div class="bg-[url('src/assets/Images/desktop_landingPage.png')] bg-cover bg-center h-screen">
         <div className='text-center relative top-20'>
           <h1 className='text-5xl font-bold text-black mb-2 mr-52 '>
