@@ -1,8 +1,9 @@
 import React from 'react'
 import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
-import BGImage from '../../assets/Images/SignInPageMobileBg.png'
-import SignupButton from '../../Components/Signup page Component/SignupButton'
+// import SignInPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
 import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
+import SignupButton from '../../Components/Signup page Component/SignupButton'
+import { RxCrossCircled } from 'react-icons/rx'
 
 const SignUpPageMobile = () => {
   const inputFields = [
@@ -21,34 +22,24 @@ const SignUpPageMobile = () => {
   ]
 
   return (
-    <div
-      className='pt-60 relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center'
-      style={{ backgroundImage: `url(${BGImage})` }}
-    >
-      {/* Centered Doctor Image */}
-      {/* <img
-        src="src/assets/Images/DoctorImage.png"
-        alt="Centered Image"
-        className="w-40 h-40 md:w-60 md:h-60 object-cover"
-      /> */}
-
-      {/* Sign-up form container */}
-      <div className='w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center'>
+    <div className='min-h-screen flex flex-col items-center justify-center bg-pink-50 px-4 sm:px-6'>
+      <div className='relative w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg'>
+        <RxCrossCircled className='absolute top-2 right-4 text-3xl text-black cursor-pointer z-40' />
         <Header
           FirstLetter='C'
           Firstpart='reate'
           SecondLetter='A'
           Secondpart='ccount'
         />
+        <SignInPageInputes inputs={inputFields} />
 
-        {/* Centered Input Fields */}
-        <div className='w-full flex flex-col items-center justify-center gap-3 mt-4'>
-          <SignInPageInputes inputs={inputFields} />
-        </div>
-
-        {/* Signup Button */}
-        <div className='w-full flex items-center justify-center mt-4'>
-          <SignupButton label='Sign-Up' bgColor='#FF6699' textColor='#FFFFFF' />
+        <div className='flex items-center justify-center  '>
+          <SignupButton
+            label='Sign-Up'
+            bgColor='#FF6699'
+            textColor='#FFFFFF'
+            className='w-full mt-4 '
+          />
         </div>
       </div>
     </div>
