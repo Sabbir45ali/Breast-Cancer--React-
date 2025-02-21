@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom"; // ✅ Switched to BrowserRouter
-import Login from "./pages/LoginPage/Login";
-import Signup from "./pages/signuppage/Signup";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
-import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
-import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
-import HomePage from "./pages/HomePage/HomePage";
-import HomePage_Mobile from "./pages/HomePage_Mobile/HomePage_Mobile";
-import Profile from "./pages/ProfilePage/Profile";
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom' // ✅ Switched to BrowserRouter
+import Login from './pages/LoginPage/Login'
+import Signup from './pages/signuppage/Signup'
+import LandingPage from './pages/LandingPage/LandingPage'
+import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
+import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
+import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
+import HomePage from './pages/HomePage/HomePage'
+import HomePage_Mobile from './pages/HomePage_Mobile/HomePage_Mobile'
+import Profile from './pages/ProfilePage/Profile'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 768px)").matches
-  );
+    window.matchMedia('(max-width: 768px)').matches
+  )
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    const handleResize = () => setIsMobile(mediaQuery.matches);
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
+    const handleResize = () => setIsMobile(mediaQuery.matches)
 
-    mediaQuery.addEventListener("change", handleResize);
-    return () => mediaQuery.removeEventListener("change", handleResize);
-  }, []);
+    mediaQuery.addEventListener('change', handleResize)
+    return () => mediaQuery.removeEventListener('change', handleResize)
+  }, [])
 
-  return isMobile ? <MobileComponent /> : <DesktopComponent />;
-};
+  return isMobile ? <MobileComponent /> : <DesktopComponent />
+}
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route
-          path="/Breast-Cancer--React-/"
+          path='/Breast-Cancer--React-/'
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
@@ -40,7 +40,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signin"
+          path='/signin'
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -49,7 +49,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signup"
+          path='/signup'
           element={
             <ResponsiveComponent
               DesktopComponent={Signup}
@@ -58,7 +58,7 @@ const App = () => {
           }
         />
         <Route
-          path="/profile"
+          path='/profile'
           element={
             <ResponsiveComponent
               DesktopComponent={Profile}
@@ -67,7 +67,7 @@ const App = () => {
           }
         />
         <Route
-          path="/landing"
+          path='/landing'
           element={
             <ResponsiveComponent
               DesktopComponent={HomePage}
@@ -77,7 +77,7 @@ const App = () => {
         />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default App;
+export default App
