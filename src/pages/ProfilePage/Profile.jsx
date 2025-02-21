@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import profileBg from "../../assets/Images/ProfilePage.png";
 
 const Profile = () => {
   return (
-    <div className="bg-[url('src/assets/Images/ProfilePage.png')] bg-cover bg-center h-screen " />
-  )
-}
+    <div
+      style={{ backgroundImage: `url(${profileBg})` }}
+      className="bg-cover bg-center h-screen"
+    ></div>
+  );
+};
 
-export default Profile
+export default Profile;
