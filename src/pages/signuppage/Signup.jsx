@@ -10,7 +10,7 @@ const SignUp = () => {
         <div className="flex w-3/5 h-4/5 bg-white rounded-2xl shadow-lg overflow-hidden">
           <div
             // skipcq: JS-R1004
-            className={` flex w-full transform transition-transform duration-300 ease-in-out`}
+            className=' flex w-full transform transition-transform duration-300 ease-in-out'
           >
             <LeftModel
               Header="Welcome user!"
@@ -24,7 +24,7 @@ const SignUp = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 export default SignUp;

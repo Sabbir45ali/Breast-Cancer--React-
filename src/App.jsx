@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { HashRouter as Router, Route, Routes } from 'react-router-dom' // ✅ Use HashRouter
-// import SignUp from './pages/SignUpPage/SignUp'
+import { BrowserRouter, Route, Routes } from 'react-router-dom' // ✅ Switched to BrowserRouter
+import Login from './pages/LoginPage/Login'
+import Signup from './pages/signuppage/Signup'
 import LandingPage from './pages/LandingPage/LandingPage'
 import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
 import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
@@ -26,10 +27,12 @@ const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
 
   return isMobile ? <MobileComponent /> : <DesktopComponent />
 }
-// PR
+
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter basename='/Breast-Cancer--React-'>
+      {' '}
+      {/* ✅ Added basename */}
       <Routes>
         <Route
           path='/'
@@ -49,7 +52,6 @@ const App = () => {
             />
           }
         />
-
         <Route
           path='/signup'
           element={
@@ -61,12 +63,7 @@ const App = () => {
         />
         <Route
           path='/profile'
-          element={
-            <ResponsiveComponent
-              DesktopComponent={Profile}
-              // MobileComponent={Profile}
-            />
-          }
+          element={<ResponsiveComponent DesktopComponent={Profile} />}
         />
         <Route
           path='/home'
@@ -78,7 +75,7 @@ const App = () => {
           }
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 

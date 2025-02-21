@@ -10,9 +10,9 @@ const FooterLinks = (props) => {
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FooterLinks;
+export default FooterLinks
 
 // I've already done this story , I just raised this PR
