@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom"; // ✅ Switched to BrowserRouter
-import Login from "./pages/LoginPage/Login";
-import Signup from "./pages/signuppage/Signup";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
-import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
-import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
-import HomePage from "./pages/HomePage/HomePage";
-import HomePage_Mobile from "./pages/HomePage_Mobile/HomePage_Mobile";
-import Profile from "./pages/ProfilePage/Profile";
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom' // ✅ Switched to BrowserRouter
+import Login from './pages/LoginPage/Login'
+import Signup from './pages/signuppage/Signup'
+import LandingPage from './pages/LandingPage/LandingPage'
+import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
+import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
+import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
+import HomePage from './pages/HomePage/HomePage'
+import HomePage_Mobile from './pages/HomePage_Mobile/HomePage_Mobile'
+import Profile from './pages/ProfilePage/Profile'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -28,7 +28,9 @@ const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
 
 const App = () => {
   return (
-    <BrowserRouter basename="/Breast-Cancer--React-"> {/* ✅ Added basename */}
+    <BrowserRouter basename='/Breast-Cancer--React-'>
+      {' '}
+      {/* ✅ Added basename */}
       <Routes>
         <Route
           path="/"
@@ -59,11 +61,7 @@ const App = () => {
         />
         <Route
           path='/profile'
-          element={
-            <ResponsiveComponent
-              DesktopComponent={Profile}
-            />
-          }
+          element={<ResponsiveComponent DesktopComponent={Profile} />}
         />
         <Route
           path='/landing'
