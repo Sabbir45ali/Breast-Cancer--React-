@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom"; // ✅ Switched to BrowserRouter
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/LoginPage/Login";
 import Signup from "./pages/signuppage/Signup";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -28,10 +28,10 @@ const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Breast-Cancer--React-"> {/* ✅ Added basename */}
       <Routes>
         <Route
-          path="/Breast-Cancer--React-/"
+          path="/"
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
@@ -40,7 +40,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signin"
+          path="/signup"
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -49,7 +49,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signup"
+          path="/signin"
           element={
             <ResponsiveComponent
               DesktopComponent={Signup}
@@ -62,7 +62,6 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={Profile}
-              // MobileComponent={Profile}
             />
           }
         />
