@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SignUpPageLeftModal = (props) => {
+const SignInPageLeftModal = (props) => {
   return (
     <div className='flex items-center justify-center h-full w-full'>
       <div className='bg-gradient-to-r from-pink-200 to-pink-500 h-full w-full  rounded-xl shadow-lg text-center flex flex-col items-center justify-center'>
@@ -24,4 +24,4 @@ const SignUpPageLeftModal = (props) => {
   )
 }
 
-export default SignUpPageLeftModal
+export default SignInPageLeftModal;
