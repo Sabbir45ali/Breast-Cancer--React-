@@ -1,10 +1,9 @@
 import React from 'react'
-import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
-import SignupInput from '../../Components/Signup page Component/signupinput'
-import SignupButton from './SignupButton'
+import Header from '../Sign Up page Component/SignUpPageRightModel/Header'
+import SignInButton from '../SignIn page Component/SignInButton'
+import SignInInput from './signInInput'
 
-
-const SignupMainModal = (props) => {
+const SignInMainModal = (props) => {
   return (
     <div className='flex flex-col items-center justify-center h-full w-1/2'>
       <Header
@@ -14,9 +13,9 @@ const SignupMainModal = (props) => {
         Secondpart='n'
         text='Use email and password'
       />
-      <SignupInput />
+      <SignInInput />
       <div className=''>
-        <SignupButton/>
+        <SignInButton />
       </div>
       <div className='mt-4'>
         <button
@@ -30,4 +29,4 @@ const SignupMainModal = (props) => {
   )
 }
 
-export default SignupMainModal
+export default SignInMainModal

@@ -9,6 +9,8 @@ import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
 import HomePage from './pages/HomePage/HomePage'
 import HomePage_Mobile from './pages/HomePage_Mobile/HomePage_Mobile'
 import Profile from './pages/ProfilePage/Profile'
+import SignIn from './pages/SignInpage/SignIn'
+import SignUp from './pages/signuppage/Signup'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -42,19 +44,19 @@ const App = () => {
           }
         />
         <Route
-          path='/signup'
+          path='/signin'
           element={
             <ResponsiveComponent
-              DesktopComponent={Login}
+              DesktopComponent={SignIn}
               MobileComponent={SignInPage_Mobile}
             />
           }
         />
         <Route
-          path='/signin'
+          path='/signup'
           element={
             <ResponsiveComponent
-              DesktopComponent={Signup}
+              DesktopComponent={SignUp}
               MobileComponent={SignUpPageMobile}
             />
           }
@@ -64,7 +66,7 @@ const App = () => {
           element={<ResponsiveComponent DesktopComponent={Profile} />}
         />
         <Route
-          path='/landing'
+          path='/home'
           element={
             <ResponsiveComponent
               DesktopComponent={HomePage}

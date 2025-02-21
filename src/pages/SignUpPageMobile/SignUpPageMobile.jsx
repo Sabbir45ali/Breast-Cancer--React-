@@ -1,9 +1,8 @@
 import React from 'react'
 import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
-// import SignInPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
-import Header from '../../Components/LogIn page Component/LoginPageRightModel/Header'
-import SignupButton from '../../Components/Signup page Component/SignupButton'
+import Header from '../../Components/Sign Up page Component/SignUpPageRightModel/Header'
 import { RxCrossCircled } from 'react-icons/rx'
+import SignInButton from '../../Components/SignIn page Component/SignInButton'
 
 const SignUpPageMobile = () => {
   const inputFields = [
@@ -34,7 +33,7 @@ const SignUpPageMobile = () => {
         <SignInPageInputes inputs={inputFields} />
 
         <div className='flex items-center justify-center  '>
-          <SignupButton
+          <SignInButton
             label='Sign-Up'
             bgColor='#FF6699'
             textColor='#FFFFFF'
