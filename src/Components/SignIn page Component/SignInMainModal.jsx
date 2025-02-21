@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../Sign Up page Component/SignUpPageRightModel/Header'
 import SignInButton from './SignInButton'
-import SignInInput from './signInInput'
+import SignInInput from './SignInInput'
 
 const SignInMainModal = (props) => {
   return (
