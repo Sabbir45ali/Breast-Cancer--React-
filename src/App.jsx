@@ -33,7 +33,7 @@ const App = () => {
       {/* ✅ Added basename */}
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
@@ -42,7 +42,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signup"
+          path='/signup'
           element={
             <ResponsiveComponent
               DesktopComponent={Login}
@@ -51,7 +51,7 @@ const App = () => {
           }
         />
         <Route
-          path="/signin"
+          path='/signin'
           element={
             <ResponsiveComponent
               DesktopComponent={Signup}
