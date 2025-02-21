@@ -23,12 +23,12 @@ import { RxCrossCircled } from 'react-icons/rx'
 //       bgColor={headerData.bgColor}
 //       textColor={headerData.textColor}
 //     />
-    <div className='text-gray-700 text-sm mb-4 mt-5'>
-      Forgot password?{' '}
-      <a href='/forgot-password' className='text-[#FF6699] underline'>
-        Click here!
-      </a>
-    </div>
+  <div className='text-gray-700 text-sm mb-4 mt-5'>
+    Forgot password?{' '}
+    <a href='/forgot-password' className='text-[#FF6699] underline'>
+    Click here!
+  </a>
+  </div>
 //   </div>
 // )
 
@@ -54,9 +54,7 @@ const SignInPage_bg = () => {
   // }
 
   return (
-    <div
-      className='bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative'
-    >
+    <div className='bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative'>
       <div className='relative top-20 w-full flex justify-center mt-8'>
         <img
           src={MobileLandingPageFemale1}
@@ -65,27 +63,27 @@ const SignInPage_bg = () => {
         />
       </div>
       <div className='relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl  mt-[-15px]'>
-      <div className='relative w-full max-w-[400px] bg-white rounded-2xl shadow-2xl  mt-[-15px] flex flex-col justify-between items-center z-10 py-5 '>
-      <Header
-      FirstLetter='S'
-      Firstpart='ign'
-      SecondLetter='I'
-      Secondpart='n'
-    />
+        <div className='relative w-full max-w-[400px] bg-white rounded-2xl shadow-2xl  mt-[-15px] flex flex-col justify-between items-center z-10 py-5 '>
+          <Header
+            FirstLetter='S'
+            Firstpart='ign'
+            SecondLetter='I'
+            Secondpart='n'
+          />
 
-        <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40' />
-        <div className=' items-center justify-center px-5'>
-        <SignInPageInput inputs={inputFields}/>
-        </div>
-        <div className='flex justify-center items-center'>
-        <SignInButton className='bg-[#c45e80]'/>
-        </div>
-        <div className='text-gray-700 text-sm mb-4 mt-5'>
-      Forgot password?{' '}
-      <a href='/forgot-password' className='text-[#FF6699] underline'>
-        Click here!
-      </a>
-    </div>
+          <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40' />
+          <div className=' items-center justify-center px-5'>
+            <SignInPageInput inputs={inputFields} />
+          </div>
+          <div className='flex justify-center items-center'>
+            <SignInButton className='bg-[#c45e80]' />
+          </div>
+          <div className='text-gray-700 text-sm mb-4 mt-5'>
+            Forgot password?{' '}
+            <a href='/forgot-password' className='text-[#FF6699] underline'>
+              Click here!
+            </a>
+          </div>
         </div>
         <div className='min-w-full max-w-[400px] mt-auto'>
           <SignInPage_Footer

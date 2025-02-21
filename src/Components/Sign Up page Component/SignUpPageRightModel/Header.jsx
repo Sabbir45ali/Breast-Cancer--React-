@@ -6,8 +6,8 @@ const Header = (props) => {
       <div className='text-center'>
         <h1 className='text-4xl font-semibold'>
           <span className='text-pink-500'>{props.FirstLetter}</span>
-          {props.Firstpart+" "}
-          
+          {props.Firstpart + ' '}
+
           <span className='text-pink-500'>{props.SecondLetter}</span>
           {props.Secondpart}
         </h1>

@@ -24,4 +24,4 @@ const SignInPageLeftModal = (props) => {
   )
 }
 
-export default SignInPageLeftModal;
+export default SignInPageLeftModal

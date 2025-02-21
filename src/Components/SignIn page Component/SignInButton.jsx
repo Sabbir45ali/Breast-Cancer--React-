@@ -14,4 +14,4 @@ const SignInButton = (props) => {
   )
 }
 
-export default SignInButton ;
+export default SignInButton

@@ -22,4 +22,4 @@ const SignInInput = () => {
   )
 }
 
-export default SignInInput;
+export default SignInInput

@@ -34,10 +34,10 @@ const SignUpPageMobile = () => {
 
         <div className='flex items-center justify-center  '>
           <SignInButton
-              label='Sign-Up'
-              bgColor='#FF6699'
-              textColor='#FFFFFF'
-              className='w-full mt-4 '
+            label='Sign-Up'
+            bgColor='#FF6699'
+            textColor='#FFFFFF'
+            className='w-full mt-4 '
           />
         </div>
       </div>
