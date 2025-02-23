@@ -1,38 +1,33 @@
 import React from 'react'
-import doctorimage from '../../assets/Images/MobileLandingPageFemale1.png'
-import bgImage from '../../assets/Images/desktop_landingPage.png'
-
+import doctorimage from '../../assets/Images/DoctorImage.png'
+import bgLanding from '../../assets/Images/desktop_landingPage.png'
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
   return (
     <div
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-      className='flex flex-col items-center justify-center h-screen text-center '
+      style={{ backgroundImage: `url(${bgLanding})` }}
+      className='bg-cover bg-center h-screen'
     >
-      <div className='text-center'>
-        <h1 className='text-5xl font-bold text-black mb-2 mr-52'>Welcome to</h1>
-        <h2
-          className='text-4xl font-bold  mt-2 ml-44'
-          style={{ color: '#890A0C' }}
-        >
+      <div className='text-center relative top-20'>
+        <h1 className='text-5xl font-bold text-black mb-2 mr-52 '>
+          Welcome to
+        </h1>
+        <h2 className='text-4xl font-bold  mt-2 ml-44 text-[#890A0C]'>
           Care Memmo
         </h2>
       </div>
-      <div className='relative mb-7'>
+      <div>
         <img
           src={doctorimage}
-          alt='Care Memmo Illustration'
-          className='w-[460px] relative top-20 rounded-lg h-[365px] '
+          alt='Doctor in a lab coat'
+          className='block mx-auto w-74 h-74 relative top-28'
         />
       </div>
+
       <Link to='/signin'>
-        <div className=' absolute bottom-4 right-4 '>
+        <div className='absolute bottom-4 right-4'>
           <TbArrowBigRightLinesFilled className='text-3xl text-black' />
         </div>
       </Link>
