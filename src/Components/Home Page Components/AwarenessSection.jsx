@@ -1,0 +1,46 @@
+import React from "react";
+import femaleImg from "../../assets/Images/female_pic_landing_page.png";
+import HomeTxt from "../../assets/Images/HomePageText.png";
+
+const AwarenessSection = () => {
+  return (
+    <div className="flex flex-col md:flex-row justify-center items-center gap-12 p-8 bg-gradient-to-b from-[#FD8AAB] to-[#F44A82] min-h-screen">
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden">
+        <img
+          src={femaleImg}
+          alt="Awareness"
+          className="w-full h-full object-contain rounded-lg"
+        />
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center">
+        <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
+        <button className="mt-6 bg-pink-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
+          Test Yourself
+        </button>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col">
+        <h3 className="text-3xl font-bold text-gray-900 text-center">
+          Awareness
+        </h3>
+        <ul className="mt-4 text-gray-800 space-y-4 text-lg flex-grow leading-relaxed">
+          <li>
+            • Breast cancer is the most common cancer among women worldwide.
+          </li>
+          <li>
+            • Early detection improves survival rates through screenings and
+            self-exams.
+          </li>
+          <li>• Risk factors include age, family history, and lifestyle.</li>
+          <li>
+            • Early diagnosis and prompt treatment lead to better outcomes.
+          </li>
+          <li>• Stay informed—early detection saves lives.</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default AwarenessSection;
