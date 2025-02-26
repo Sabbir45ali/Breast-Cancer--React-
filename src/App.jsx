@@ -77,12 +77,7 @@ const App = () => {
         />
         <Route
           path='/form'
-          element={
-            <ResponsiveComponent
-              DesktopComponent={FormPage}
-             
-            />
-          }
+          element={<ResponsiveComponent DesktopComponent={FormPage} />}
         />
       </Routes>
     </BrowserRouter>

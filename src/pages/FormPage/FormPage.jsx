@@ -6,7 +6,7 @@ import profileImg from '../../assets/Images/profileIcon.png'
 const FormPage = () => {
   return (
     <div>
-      <Navbar Logo={Logo} profileImg={profileImg}/>
+      <Navbar Logo={Logo} profileImg={profileImg} />
     </div>
   )
 }
