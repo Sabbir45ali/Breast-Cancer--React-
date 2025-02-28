@@ -15,15 +15,12 @@ const NavbarMobile = () => {
           </button>
 
           {/* Profile Image (Right Side) */}
-          
+
           <div className='pr-2'>
-          <Link to='/profile'>
-          <ProfileIcon profileImg={profileimg} />
-          </Link>
-           
-          
+            <Link to='/profile'>
+              <ProfileIcon profileImg={profileimg} />
+            </Link>
           </div>
-          
         </div>
       </div>
     </navbar>
