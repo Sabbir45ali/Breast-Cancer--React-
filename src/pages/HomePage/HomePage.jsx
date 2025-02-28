@@ -1,9 +1,9 @@
-import React from "react";
-import Navbar from "../../Components/Universal Components/Navbar";
-import profileImg from "../../assets/Images/profileIcon.png";
-import Logo from "../../assets/Images/Logo.png";
-import Header from "../../Components/Home Page Components/Header";
-import AwarenessSection from "../../Components/Home Page Components/AwarenessSection";
+import React from 'react'
+import Navbar from '../../Components/Universal Components/Navbar'
+import profileImg from '../../assets/Images/profileIcon.png'
+import Logo from '../../assets/Images/Logo.png'
+import Header from '../../Components/Home Page Components/Header'
+import AwarenessSection from '../../Components/Home Page Components/AwarenessSection'
 
 const HomePage = () => {
   return (
@@ -14,7 +14,7 @@ const HomePage = () => {
       </div>
       <AwarenessSection />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
