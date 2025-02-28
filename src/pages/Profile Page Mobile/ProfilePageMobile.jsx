@@ -4,7 +4,7 @@ import ProfilePageMobileMainModal from '../../Components/ProfilePage Mobile Comp
 const ProfilePageMobile = () => {
   return (
     <div>
-        <ProfilePageMobileMainModal/>
+      <ProfilePageMobileMainModal />
     </div>
   )
 }

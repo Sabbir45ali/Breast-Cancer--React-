@@ -65,10 +65,12 @@ const App = () => {
         />
         <Route
           path='/profile'
-          element={<ResponsiveComponent 
-            DesktopComponent={Profile}
-             MobileComponent={ProfilePageMobile}      
-             />}
+          element={
+            <ResponsiveComponent
+              DesktopComponent={Profile}
+              MobileComponent={ProfilePageMobile}
+            />
+          }
         />
         <Route
           path='/home'
