@@ -3,6 +3,7 @@ import { IoMenuOutline } from 'react-icons/io5'
 // skipcq: JS-C1001
 import ProfileIcon from '../../Components/Universal Components/ProfileIcon'
 import profileimg from '../../assets/Images/profileIcon.png'
+import { Link } from 'react-router-dom'
 const NavbarMobile = () => {
   return (
     <navbar className='fixed top-0 left-0 w-full z-50 bg-transparent md:bg-white shadow md:shadow-md transition-all'>
@@ -14,8 +15,11 @@ const NavbarMobile = () => {
           </button>
 
           {/* Profile Image (Right Side) */}
+
           <div className='pr-2'>
-            <ProfileIcon profileImg={profileimg} />
+            <Link to='/profile'>
+              <ProfileIcon profileImg={profileimg} />
+            </Link>
           </div>
         </div>
       </div>

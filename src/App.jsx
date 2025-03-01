@@ -7,6 +7,7 @@ import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
 import HomePage from './pages/HomePage/HomePage'
 import HomePage_Mobile from './pages/HomePage_Mobile/HomePage_Mobile'
 import Profile from './pages/ProfilePage/Profile'
+import ProfilePageMobile from './pages/Profile Page Mobile/ProfilePageMobile'
 import SignIn from './pages/SignInpage/SignIn'
 import SignUp from './pages/signuppage/Signup'
 import FormPage from './pages/FormPage/FormPage'
@@ -64,7 +65,12 @@ const App = () => {
         />
         <Route
           path='/profile'
-          element={<ResponsiveComponent DesktopComponent={Profile} />}
+          element={
+            <ResponsiveComponent
+              DesktopComponent={Profile}
+              MobileComponent={ProfilePageMobile}
+            />
+          }
         />
         <Route
           path='/home'
