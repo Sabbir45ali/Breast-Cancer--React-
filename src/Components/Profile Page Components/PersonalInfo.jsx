@@ -21,17 +21,22 @@ const PersonalInfo = () => {
               prathamac62@gmail.com
             </p>
           </div>
+        </div>
+        <div className='flex justify-center items-center text-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold'>
+          <div className='flex flex-row gap-2'>
+            <FaPhone className='text-xl' />
+            <span>9823678980</span>
+          </div>
+          <div className='flex flex-row gap-2'>
+            <span className='font-bold'>Age-21</span>
+          </div>
+          <div className='flex flex-row gap-2'>
+            <MdBloodtype className='text-2xl' />
+            <span> Group- B+</span>
+          </div>
+        </div>
       </div>
-    <div className="flex justify-center items-center text-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold"> 
-      <div className='flex flex-row gap-2'><FaPhone className='text-xl' />
-      <span>9823678980</span></div>
-      <div className='flex flex-row gap-2'>
-      <span className='font-bold'>Age-21</span></div>
-      <div className='flex flex-row gap-2'><MdBloodtype className='text-2xl' />
-      <span> Group- B+</span></div>
-    </div>
-  </div>
-  </>
+    </>
   )
 }
 
