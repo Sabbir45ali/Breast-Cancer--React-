@@ -14,11 +14,11 @@ import FormPage from './pages/FormPage/FormPage'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia('(max-width: 768px)').matches
+    window.matchMedia('(max-width: 640px)').matches
   )
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)')
+    const mediaQuery = window.matchMedia('(max-width: 640px)')
     const handleResize = () => setIsMobile(mediaQuery.matches)
 
     mediaQuery.addEventListener('change', handleResize)
