@@ -1,8 +1,6 @@
 import React from 'react'
-import { MdEmail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa6";
-import { MdBloodtype } from "react-icons/md";
-
+import { MdEmail, MdBloodtype } from 'react-icons/md'
+import { FaPhone } from 'react-icons/fa6'
 
 const PersonalInfo = () => {
   return (
