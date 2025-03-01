@@ -22,7 +22,7 @@ const PersonalInfo = () => {
       <div className='flex flex-row gap-2'><FaPhone className='text-xl' />
       <span>9823678980</span></div>
       <div className='flex flex-row gap-2'>
-      <span clasName='font-bold'>Age-21</span></div>
+      <span className='font-bold'>Age-21</span></div>
       <div className='flex flex-row gap-2'><MdBloodtype className='text-2xl' />
       <span> Group- B+</span></div>
     </div>
