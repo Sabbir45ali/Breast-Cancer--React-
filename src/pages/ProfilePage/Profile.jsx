@@ -8,7 +8,7 @@ const Profile = () => {
       style={{ backgroundImage: `url(${profileBg})` }}
       className='bg-cover bg-center h-screen flex justify-center items-center'
     >
-      <MainModalProfile/>
+      <MainModalProfile />
     </div>
   )
 }
