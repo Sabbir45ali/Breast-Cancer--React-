@@ -10,7 +10,7 @@ const Profile = () => {
       style={{ backgroundImage: `url(${profileBg})` }}
       className='bg-cover bg-center h-screen flex justify-center items-center'
     >
-      <ProfileNav Logo={Logo}/>
+      <ProfileNav Logo={Logo} />
       <MainModalProfile />
     </div>
   )
