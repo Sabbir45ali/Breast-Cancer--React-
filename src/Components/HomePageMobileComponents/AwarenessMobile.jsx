@@ -10,15 +10,13 @@ const awarenessMessages = [
   'Breast cancer is the most common cancer among women worldwide.',
   'Early detection improves survival rates through screenings and self-exams.',
   'Risk factors include age, family history, and lifestyle.',
-  'Early diagnosis and prompt treatment lead to better outcomes.',
+  'Early diagnosis and prompt treatment lead to better outcomes.'
 ]
 
 const AwarenessSection = () => {
   return (
     <div className='bg-gradient-to-t from-[#D28CA7] to-[#360016] min-h-screen flex flex-col items-center p-8'>
-    
-      <div className="flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full">
-        
+      <div className='flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full'>
         <div className='bg-white rounded-2xl  border-4 border-[#8C495F] rounded-[25px] p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden snap-center'>
           <img
             src={femaleImg}
@@ -40,7 +38,9 @@ const AwarenessSection = () => {
           </h3>
           <ul className='mt-4 text-start font-semibold text-gray-800 space-x-4 text-lg flex-grow leading-relaxed overflow-x-auto max-h-[300px] px-2'>
             {awarenessMessages.map((message, index) => (
-              <li key={index} className="pr-2">•  {message}</li>
+              <li key={index} className='pr-2'>
+                • {message}
+              </li>
             ))}
           </ul>
         </div>
