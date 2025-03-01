@@ -8,7 +8,7 @@ const PersonalInfo = () => {
   return (
     <>
     <div className='bg-black w-32 h-32 absolute -top-24 rounded-full z-10 overflow-hidden'>
-      <img src='/src/assets/Images/profileIcon.png' className='w-32 h-32 object-cover'></img>
+      <img src='/src/assets/Images/profileIcon.png'alt='profilePicture' className='w-32 h-32 object-cover'></img>
     </div>
     <div className=" py-12 px-40 text-center flex flex-col items-center gap-0 absolute -top-4">
       <div className="flex flex-col justify-center items-center relative">
@@ -20,10 +20,11 @@ const PersonalInfo = () => {
             
           </div>
       </div>
-    <div className="flex justify-center items-center text-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold">
+    <div className="flex justify-center items-center text-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold"> 
       <div className='flex flex-row gap-2'><FaPhone className='text-xl' />
       <span>9823678980</span></div>
-      <span clasName='font-bold'>Age-21</span>
+      <div className='flex flex-row gap-2'>
+      <span clasName='font-bold'>Age-21</span></div>
       <div className='flex flex-row gap-2'><MdBloodtype className='text-2xl' />
       <span> Group- B+</span></div>
     </div>
