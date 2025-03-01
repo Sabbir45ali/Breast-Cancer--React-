@@ -17,21 +17,24 @@ const PersonalInfo = (props) => {
           <h1 className='text-2xl font-bold gap-2'>{props.name}</h1>
           <div className='flex flex-row gap-1'>
             <MdEmail className='absolute top-10 left-0 text-gray-900 text-xl' />
-            <p className='text-gray-900 text-lg font-semibold'>
-              {props.email}
-            </p>
+            <p className='text-gray-900 text-lg font-semibold'>{props.email}</p>
           </div>
+        </div>
+        <div className='flex justify-center items-center text-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold'>
+          <div className='flex flex-row gap-2'>
+            <FaPhone className='text-xl' />
+            <span>{props.phnNo}</span>
+          </div>
+          <div className='flex flex-row gap-2'>
+            <span className='font-bold'>Age-{props.age}</span>
+          </div>
+          <div className='flex flex-row gap-2'>
+            <MdBloodtype className='text-2xl' />
+            <span> Group-{props.bloodGroup}</span>
+          </div>
+        </div>
       </div>
-    <div className="flex justify-center items-center text-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold"> 
-      <div className='flex flex-row gap-2'><FaPhone className='text-xl' />
-      <span>{props.phnNo}</span></div>
-      <div className='flex flex-row gap-2'>
-      <span className='font-bold'>Age-{props.age}</span></div>
-      <div className='flex flex-row gap-2'><MdBloodtype className='text-2xl' />
-      <span> Group-{props.bloodGroup}</span></div>
-    </div>
-  </div>
-  </>
+    </>
   )
 }
 
