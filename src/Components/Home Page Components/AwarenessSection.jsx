@@ -7,7 +7,7 @@ const awarenessMessages = [
   'Early detection improves survival rates through screenings and self-exams.',
   'Risk factors include age, family history, and lifestyle.',
   'Early diagnosis and prompt treatment lead to better outcomes.',
- 
+  'Stay informed—early detection saves lives.'
 ]
 
 const AwarenessSection = () => {
