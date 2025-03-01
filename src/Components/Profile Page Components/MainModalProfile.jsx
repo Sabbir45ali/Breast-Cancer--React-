@@ -12,7 +12,12 @@ const MainModalProfile = () => {
             Edit Profile
           </span>
         </div>
-        <PersonalInfo />
+        <PersonalInfo 
+         name='Priyanshu Bhattacharya'
+         email='prathamachak@gmail.com'
+         age='21'
+         phnNo='9876543456'
+         bloodGroup='B+' />
       </div>
     </div>
   )
