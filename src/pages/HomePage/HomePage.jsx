@@ -14,7 +14,7 @@ const HomePage = () => {
         <Header />
       </div>
       <AwarenessSection />
-      <HomePageFooter/>
+      <HomePageFooter />
     </div>
   )
 }
