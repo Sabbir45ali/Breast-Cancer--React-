@@ -4,6 +4,7 @@ import profileImg from '../../assets/Images/profileIcon.png'
 import Logo from '../../assets/Images/Logo.png'
 import Header from '../../Components/Home Page Components/Header'
 import AwarenessSection from '../../Components/Home Page Components/AwarenessSection'
+import HomePageFooter from '../../Components/Home Page Components/HomePageFooter'
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         <Header />
       </div>
       <AwarenessSection />
+      <HomePageFooter />
     </div>
   )
 }
