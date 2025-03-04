@@ -28,7 +28,7 @@ const AwarenessSection = () => {
         </button>
       </div>
 
-      <div className='bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col'>
+      <div className='bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden'>
         <h3 className='text-3xl font-bold text-gray-900 text-center'>
           Awareness
         </h3>
