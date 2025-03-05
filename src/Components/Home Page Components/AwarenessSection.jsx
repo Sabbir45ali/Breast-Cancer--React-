@@ -28,10 +28,8 @@ const AwarenessSection = () => {
         </button>
       </div>
 
-
-      <div className='bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden'>
-        <h3 className='text-3xl font-bold text-gray-900 text-center'>
-
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden">
+        <h3 className="text-3xl font-bold text-gray-900 text-center">
           Awareness
         </h3>
         <ul className="mt-4 font-bold text-gray-800 space-y-4 text-lg flex-grow leading-relaxed">
