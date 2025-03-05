@@ -1,6 +1,7 @@
 import React from "react";
 import femaleImg from "../../assets/Images/female_pic_landing_page.png";
 import HomeTxt from "../../assets/Images/HomePageText.png";
+import { Link } from "react-router-dom";
 
 const awarenessMessages = [
   "Breast cancer is the most common cancer among women worldwide.",
@@ -23,9 +24,12 @@ const AwarenessSection = () => {
 
       <div className="bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center">
         <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
-        <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
-          Test Yourself
-        </button>
+
+        <Link to="/form">
+          <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
+            Test Yourself
+          </button>
+        </Link>
       </div>
 
       <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden">
