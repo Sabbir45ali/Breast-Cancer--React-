@@ -25,18 +25,20 @@ const AwarenessSection = () => {
       <div className="bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center">
         <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
 
+
         <Link to="/form">
           <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
             Test Yourself
           </button>
         </Link>
-      </div>
+      </div>       
 
-      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col">
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden">
         <h3 className="text-3xl font-bold text-gray-900 text-center">
           Awareness
         </h3>
-        <ul className="mt-4 text-gray-800 space-y-4 text-lg flex-grow leading-relaxed">
+        <ul className="mt-4 font-bold text-gray-800 space-y-4 text-lg flex-grow leading-relaxed">
+
           {awarenessMessages.map((message) => (
             <li key={message.id}>• {message}</li>
           ))}
