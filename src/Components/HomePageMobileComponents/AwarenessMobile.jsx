@@ -36,7 +36,7 @@ const AwarenessSection = () => {
           <h3 className='text-3xl font-bold text-gray-900 text-center'>
             Awareness
           </h3>
-          <ul className='mt-4 text-start font-semibold text-gray-800 space-x-4 text-lg flex-grow leading-relaxed overflow-x-auto max-h-[300px] px-2'>
+          <ul className='mt-4 text-start font-semibold text-gray-800 space-x-4 text-lg flex-grow leading-relaxed overflow-y-auto max-h-[300px] px-2'>
             {awarenessMessages.map((message, index) => (
               <li key={index} className='pr-2'>
                 • {message}
