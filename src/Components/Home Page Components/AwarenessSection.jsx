@@ -13,7 +13,7 @@ const awarenessMessages = [
 const AwarenessSection = () => {
   return (
     <div className='flex flex-col md:flex-row justify-center items-center gap-12 p-8 bg-gradient-to-b from-[#FD8AAB] to-[#F44A82] min-h-screen'>
-      <div className='bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden'>
+      <div className='bg-white rounded-[35px] p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden'>
         <img
           src={femaleImg}
           alt='Awareness'
@@ -21,14 +21,14 @@ const AwarenessSection = () => {
         />
       </div>
 
-      <div className='bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center'>
+      <div className='bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center rounded-[35px]'>
         <img src={HomeTxt} alt='I am and I will' className='w-3/4' />
         <button className='mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300'>
           Test Yourself
         </button>
       </div>
 
-      <div className='bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col'>
+      <div className='bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col rounded-[35px]'>
         <h3 className='text-3xl font-bold text-gray-900 text-center'>
           Awareness
         </h3>
