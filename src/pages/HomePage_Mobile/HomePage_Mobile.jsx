@@ -12,7 +12,7 @@ const HomePage_Mobile = () => {
         <HomePageHeader />
       </div>
 
-      <div>
+      <div className='relative bottom-4'>
         <Awareness />
       </div>
     </div>
