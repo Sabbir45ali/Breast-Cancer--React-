@@ -20,7 +20,7 @@ const HomePageFooter = () => {
         {/* Contact Details */}
         <div className='flex flex-col items-start gap-2 text-pink-100 text-xl font-semibold '>
           <p className='flex items-center gap-2'>
-            <FaMapMarkerAlt /> Kolkata-700123, North 24 PGS, West Bengal
+            <FaMapMarkerAlt /> Kolkata-7000123, North 24 PGS, West Bengal
           </p>
           <p className='flex items-center gap-2'>
             <FaPhone /> 8240734489 / 9038645578
