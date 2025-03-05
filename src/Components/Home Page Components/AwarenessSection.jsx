@@ -32,7 +32,7 @@ const AwarenessSection = () => {
         <h3 className='text-3xl font-bold text-gray-900 text-center'>
           Awareness
         </h3>
-        <ul className='mt-4 text-gray-800 space-y-4 text-lg flex-grow leading-relaxed'>
+        <ul className='mt-4 font-bold text-gray-800 space-y-4 text-lg flex-grow leading-relaxed'>
           {awarenessMessages.map((message) => (
             <li key={message.id}>• {message}</li>
           ))}
