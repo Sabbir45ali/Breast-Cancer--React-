@@ -18,6 +18,7 @@ const AwarenessSection = () => {
     <div className="bg-gradient-to-t from-[#D28CA7] to-[#360016] min-h-screen flex flex-col items-center p-8">
       <div className="flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full">
         <div className="bg-white rounded-2xl  border-4 border-[#8C495F]  p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden snap-center">
+
           <img
             src={femaleImg}
             alt="Awareness"
@@ -36,7 +37,7 @@ const AwarenessSection = () => {
           <h3 className="text-3xl font-bold text-gray-900 text-center">
             Awareness
           </h3>
-          <ul className="mt-4 text-start font-semibold text-gray-800 space-x-4 text-lg flex-grow leading-relaxed overflow-x-auto max-h-[300px] px-2">
+          <ul className="mt-4 text-start font-semibold text-gray-800 space-x-4 text-lg flex-grow leading-relaxed overflow-y-auto max-h-[300px] px-2">
             {awarenessMessages.map((message, index) => (
               <li key={index} className="pr-2">
                 • {message}
