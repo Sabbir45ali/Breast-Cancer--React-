@@ -14,15 +14,14 @@ const awarenessMessages = [
 const AwarenessSection = () => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-12 p-8 bg-gradient-to-b from-[#FD8AAB] to-[#F44A82] min-h-screen">
-      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden">
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden border border-pink-700">
         <img
           src={femaleImg}
           alt="Awareness"
           className="w-full h-full object-contain rounded-lg"
         />
       </div>
-
-      <div className="bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center">
+      <div className="bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center border border-pink-700">
         <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
 
         <Link to="/form">
@@ -32,7 +31,7 @@ const AwarenessSection = () => {
         </Link>
       </div>
 
-      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden">
+      <div className="bg-white rounded-2xl p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col overflow-hidden border border-pink-700">
         <h3 className="text-3xl font-bold text-gray-900 text-center">
           Awareness
         </h3>
