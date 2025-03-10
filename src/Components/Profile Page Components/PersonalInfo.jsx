@@ -1,13 +1,14 @@
 import React from 'react'
 import { MdEmail, MdBloodtype } from 'react-icons/md'
 import { FaPhone } from 'react-icons/fa6'
+import profileImg from '../../assets/Images/profileIcon.png'
 
 const PersonalInfo = (props) => {
   return (
     <div className='relative flex flex-col items-center w-full'>
       <div className='bg-black w-32 h-32 absolute -top-16 rounded-full z-10 overflow-hidden'>
         <img
-          src='/src/assets/Images/profileIcon.png'
+          src={profileImg}
           alt='profilePicture'
           className='w-32 h-32 object-cover'
         />
