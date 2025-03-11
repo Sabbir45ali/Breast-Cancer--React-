@@ -11,8 +11,8 @@ const HomePage_Mobile = () => {
         className='flex flex-col min-h-screen bg-cover bg-center overflow-auto'
         style={{
           backgroundImage: "url('/assets/Images/bg_pic_Home_page_mobile.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       >
         <NavbarMobile />
