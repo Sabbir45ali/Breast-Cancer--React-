@@ -11,7 +11,7 @@ const HomePage_Mobile = () => {
       <div
         className="flex flex-col min-h-screen bg-cover bg-center overflow-auto"
         style={{
-          backgroundImage: `url(${bgPicHomePageMobile})`,
+          backgroundImage: "url('/assets/Images/bg_pic_Home_page_mobile.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
