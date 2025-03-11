@@ -7,7 +7,14 @@ import Awareness from '../../Components/HomePageMobileComponents/AwarenessMobile
 const HomePage_Mobile = () => {
   return (
     <div className='flex flex-col gap-0'>
-      <div className="bg-[url('/src/assets/Images/bg_pic_Home_page_mobile.png')] flex flex-col min-h-screen bg-cover bg-center overflow-auto">
+      <div
+        className='flex flex-col min-h-screen bg-cover bg-center overflow-auto'
+        style={{
+          backgroundImage: "url('/assets/Images/bg_pic_Home_page_mobile.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
         <NavbarMobile />
         <HomePageHeader />
       </div>
