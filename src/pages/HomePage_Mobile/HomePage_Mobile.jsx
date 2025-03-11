@@ -1,7 +1,6 @@
 import React from 'react'
 import NavbarMobile from '../../Components/HomePageMobileComponents/NavbarMobile'
 import FooterMobile from '../../Components/HomePageMobileComponents/FooterMobile'
-import bgPicHomePageMobile from '../../assets/Images/bg_pic_Home_page_mobile.png'
 import HomePageHeader from '../../Components/HomePageMobileComponents/HomaPageHeader'
 import Awareness from '../../Components/HomePageMobileComponents/AwarenessMobile'
 
