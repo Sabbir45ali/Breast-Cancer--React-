@@ -4,6 +4,7 @@ import FooterMobile from "../../Components/HomePageMobileComponents/FooterMobile
 // import bg_pic_Home_page_mobile from '../../assets/Images/bg_pic_Home_page_mobile.png'
 import HomePageHeader from "../../Components/HomePageMobileComponents/HomaPageHeader";
 import Awareness from "../../Components/HomePageMobileComponents/AwarenessMobile";
+
 const HomePage_Mobile = () => {
   return (
     <div className="flex flex-col gap-0">
@@ -14,6 +15,7 @@ const HomePage_Mobile = () => {
 
       <div>
         <Awareness />
+        <FooterMobile/>
       </div>
     </div>
   );
