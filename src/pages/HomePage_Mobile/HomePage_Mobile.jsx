@@ -15,7 +15,7 @@ const HomePage_Mobile = () => {
 
       <div>
         <Awareness />
-        <FooterMobile/>
+        <FooterMobile />
       </div>
     </div>
   );
