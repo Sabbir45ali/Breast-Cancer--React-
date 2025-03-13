@@ -83,14 +83,14 @@ const App = () => {
         />
         <Route
           path='/form'
-          element={<ResponsiveComponent
-             DesktopComponent={FormPage}
-             MobileComponent={FormPage_Mobile}
-             />
-            }
+          element={
+            <ResponsiveComponent
+              DesktopComponent={FormPage}
+              MobileComponent={FormPage_Mobile}
+            />
+          }
         />
       </Routes>
-      
     </BrowserRouter>
   )
 }
