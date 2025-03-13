@@ -1,0 +1,5 @@
+.HomeBg {
+  background-image: url(./assets/Images/bg_pic_home_page_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
