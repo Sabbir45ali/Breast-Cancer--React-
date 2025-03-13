@@ -4,7 +4,7 @@ import { BiLogOut } from 'react-icons/bi'
 const ProfileNav = ({ Logo }) => {
   return (
     <nav className='fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-md px-6 py-3 flex items-center justify-between'>
-      <Link to='/landing'>
+      <Link to='/home'>
         <div className='flex items-center space-x-3'>
           <img
             src={Logo}
