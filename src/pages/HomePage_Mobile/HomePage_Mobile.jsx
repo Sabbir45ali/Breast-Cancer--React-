@@ -22,6 +22,7 @@ const HomePage_Mobile = () => {
 
       <div className='relative bottom-4'>
         <Awareness />
+        <FooterMobile />
       </div>
     </div>
   )
