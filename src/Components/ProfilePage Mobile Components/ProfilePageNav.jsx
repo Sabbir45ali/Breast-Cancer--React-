@@ -17,7 +17,7 @@ const ProfilePageNav = () => {
   return (
     <div ref={dropdownRef}>
       <button onClick={() => setIsOpen(!isOpen)}>
-        <PiDotsThreeOutlineFill className=' text-[35px] text-white' />
+        <PiDotsThreeOutlineFill className=' text-[27px] text-white' />
       </button>
       {isOpen && (
         <div className='absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg'>
