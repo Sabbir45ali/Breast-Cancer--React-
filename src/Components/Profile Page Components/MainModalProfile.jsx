@@ -3,7 +3,6 @@ import { RiEdit2Fill } from 'react-icons/ri'
 import PersonalInfo from './PersonalInfo'
 import ProfileButton from './ProfileButton'
 
-
 const MainModalProfile = () => {
   return (
     <div className='h-full w-full flex flex-col items-center justify-center'>
@@ -22,7 +21,7 @@ const MainModalProfile = () => {
           bloodGroup='B+'
         />
         <div className='absolute top-64'>
-          <ProfileButton/>
+          <ProfileButton />
         </div>
       </div>
     </div>
