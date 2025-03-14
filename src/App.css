@@ -3,3 +3,8 @@
   background-size: cover;
   background-position: center;
 }
+.ProfileBg{
+  background-image: url(./assets/Images/Main_modal_profile_page_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
