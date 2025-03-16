@@ -13,7 +13,7 @@ const FormLeftModal = () => {
           className='w-full h-full object-cover'
         />
       </div>
-      <FormButtons/>
+      <FormButtons />
     </div>
   )
 }
