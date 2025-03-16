@@ -1,5 +1,7 @@
 import React from 'react'
 import FormImg from '../../assets/Images/doctor_pic_form_page.png'
+import Buttons from '../../Components/Form Page Components/FormButtons'
+import FormButtons from '../../Components/Form Page Components/FormButtons'
 
 const FormLeftModal = () => {
   return (
@@ -11,6 +13,7 @@ const FormLeftModal = () => {
           className='w-full h-full object-cover'
         />
       </div>
+      <FormButtons/>
     </div>
   )
 }
