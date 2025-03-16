@@ -1,4 +1,5 @@
 import React from 'react'
+
 import profileImg from '../../assets/Images/profileIcon.png'
 import ProfilePageNav from './ProfilePageNav'
 import '../../App.css'
