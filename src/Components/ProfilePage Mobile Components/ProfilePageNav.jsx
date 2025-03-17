@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { PiDotsThreeOutlineFill } from 'react-icons/pi';
-import RichDataMobile from './RichDataMobile';
+import React, { useState, useRef, useEffect } from "react";
+import { PiDotsThreeOutlineFill } from "react-icons/pi";
+import RichDataMobile from "./RichDataMobile";
 
 const ProfilePageNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +13,8 @@ const ProfilePageNav = () => {
         setIsOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -26,7 +26,10 @@ const ProfilePageNav = () => {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg">
           <div
-            onClick={() => { setOpen(true); setIsOpen(false); }} // Open modal & close dropdown
+            onClick={() => {
+              setOpen(true);
+              setIsOpen(false);
+            }} // Open modal & close dropdown
             className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer"
           >
             Edit Profile

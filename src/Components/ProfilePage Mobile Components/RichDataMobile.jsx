@@ -1,5 +1,5 @@
-import React from 'react';
-import { ImCross } from 'react-icons/im';
+import React from "react";
+import { ImCross } from "react-icons/im";
 
 const RichDataMobile = ({ open, onclose }) => {
   if (!open) return null;
@@ -15,43 +15,71 @@ const RichDataMobile = ({ open, onclose }) => {
       >
         {/* Header */}
         <div className="flex flex-row relative -top-6   ">
-          <img src="src/assets/Images/inside_pic_rich_data.png" alt="Medical Icon" className="w-52  mb-2" />
+          <img
+            src="src/assets/Images/inside_pic_rich_data.png"
+            alt="Medical Icon"
+            className="w-52  mb-2"
+          />
           <span className="relative top-10 ">
-          <h3 className="text-xl font-bold ">Fill your details below</h3>
+            <h3 className="text-xl font-bold ">Fill your details below</h3>
           </span>
         </div>
 
         {/* Form */}
         <form className="space-y-0 relative -top-8 ">
           <div>
-            <label className="block text-left font-bold text-black ">Age:</label>
-            <input type="number" className=" w-full  border-b-2 border-black bg-transparent text-black outline-none" />
+            <label className="block text-left font-bold text-black ">
+              Age:
+            </label>
+            <input
+              type="number"
+              className=" w-full  border-b-2 border-black bg-transparent text-black outline-none"
+            />
           </div>
 
           <div>
-            <label className="block text-left text-black font-bold ">Blood group:</label>
-            <input type="text" className="w-full  border-b-2 border-black bg-transparent text-black outline-none" />
+            <label className="block text-left text-black font-bold ">
+              Blood group:
+            </label>
+            <input
+              type="text"
+              className="w-full  border-b-2 border-black bg-transparent text-black outline-none"
+            />
           </div>
 
           <div className="flex gap-2">
             <div className="flex-1">
-              <label className="block text-left  text-black font-bold ">Height:</label>
-              <input type="number" className="w-full  border-b-2 border-black bg-transparent text-black outline-none" />
+              <label className="block text-left  text-black font-bold ">
+                Height:
+              </label>
+              <input
+                type="number"
+                className="w-full  border-b-2 border-black bg-transparent text-black outline-none"
+              />
             </div>
             <div className="flex-1">
-              <label className="block text-left text-black font-bold ">Weight:</label>
-              <input type="number" className="w-full  border-b-2 border-black bg-transparent text-black outline-none" />
+              <label className="block text-left text-black font-bold ">
+                Weight:
+              </label>
+              <input
+                type="number"
+                className="w-full  border-b-2 border-black bg-transparent text-black outline-none"
+              />
             </div>
           </div>
 
           <div>
-            <label className="block text-left text-black font-bold ">Any past medical history:</label>
-            <textarea className="w-full  border-b-2 border-black bg-transparent text-black outline-none p-2 "></textarea>
+            <label className="block text-left text-black font-bold ">
+              Any past medical history:
+            </label>
+            <textarea className="w-full  border-b-2 border-black bg-transparent text-black outline-none p-2 " />
           </div>
 
           <div>
-            <label className="block text-left text-black font-bold ">Current symptoms:</label>
-            <textarea className="w-full  border-b-2 border-black bg-transparent text-black outline-none p-2"></textarea>
+            <label className="block text-left text-black font-bold ">
+              Current symptoms:
+            </label>
+            <textarea className="w-full  border-b-2 border-black bg-transparent text-black outline-none p-2" />
           </div>
 
           <button
