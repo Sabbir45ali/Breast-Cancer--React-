@@ -4,7 +4,7 @@ import profileImg from '../../assets/Images/profileIcon.png'
 import ProfilePageNav from './ProfilePageNav'
 import '../../App.css'
 import PersonalInfoMobile from './PersonalInfoMobile'
-
+import RichDataMobile from './RichDataMobile'
 const ProfilePageMobileMainModal = () => {
   return (
     <div className='w-full h-[750px] rounded-b-2xl   relative items-center justify-center ProfileBg z-10'>
@@ -20,6 +20,7 @@ const ProfilePageMobileMainModal = () => {
         />
       </div>
       <PersonalInfoMobile />
+      <RichDataMobile/>
     </div>
   )
 }
