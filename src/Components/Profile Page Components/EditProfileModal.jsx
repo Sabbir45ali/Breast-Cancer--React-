@@ -107,7 +107,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
                 name="symptoms"
                 id="symptoms"
                 placeholder="Your any symptoms?"
-                className="w-full h-20 border bg-[#d7819146] border-black placeholder-gray-500  font-semibold text-[#000000] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+                className="w-full h-20 border justify-center bg-[#d7819146] border-black placeholder-gray-500  font-semibold text-[#000000] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                 required
               />
             </div>
