@@ -121,7 +121,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
             >
               <TiTickOutline className="text-lg cursor-pointer h-8 w-8 absolute -right-2 top-2 border-2 border-black rounded-full hover:bg-white " />
 
-              <span className='absolute bottom-0 right-0 mb-[-2rem]  text-pink-300 text-xs font-semibold px-3 py-1 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap'>
+              <span className='absolute bottom-0 right-0 mb-[-2rem]  text-black text-xs font-semibold px-3 py-1 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap'>
             Save changes
           </span>
             </button>
