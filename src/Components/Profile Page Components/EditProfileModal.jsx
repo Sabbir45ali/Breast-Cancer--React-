@@ -1,5 +1,5 @@
-import React from 'react';
-import { ImCross,} from "react-icons/im";
+import React from "react";
+import { ImCross } from "react-icons/im";
 import { TiTickOutline } from "react-icons/ti";
 const EditProfileModal = ({ open, onclose, children }) => {
   if (!open) return null; // Hide modal if not open
@@ -35,7 +35,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
           <form className="space-y-4">
             {/* age */}
             <div className="flex items-center gap-2">
-              <label  className="w-1/3 text-sm font-medium text-gray-900">
+              <label className="w-1/3 text-sm font-medium text-gray-900">
                 Your Age?
               </label>
               <input
@@ -50,7 +50,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
 
             {/* Bloodgroup */}
             <div className="flex items-center gap-2">
-              <label  className="w-1/3 text-sm font-medium text-gray-900">
+              <label className="w-1/3 text-sm font-medium text-gray-900">
                 Your Bloodgroup?
               </label>
               <input
@@ -64,7 +64,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
             </div>
 
             <div className="flex items-center gap-2">
-              <label  className="w-1/3 text-sm font-medium text-gray-900">
+              <label className="w-1/3 text-sm font-medium text-gray-900">
                 Your Height?
               </label>
               <input
@@ -78,7 +78,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
             </div>
 
             <div className="flex items-center gap-2">
-              <label  className="w-1/3 text-sm font-medium text-[#000000]">
+              <label className="w-1/3 text-sm font-medium text-[#000000]">
                 Your Weight?
               </label>
               <input
@@ -91,7 +91,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
               />
             </div>
             <div>
-            <input
+              <input
                 type="Text"
                 name="History"
                 id="History"
@@ -102,7 +102,7 @@ const EditProfileModal = ({ open, onclose, children }) => {
             </div>
 
             <div>
-            <input
+              <input
                 type="Text"
                 name="symptoms"
                 id="symptoms"
@@ -112,18 +112,15 @@ const EditProfileModal = ({ open, onclose, children }) => {
               />
             </div>
 
-
-
-           
             <button
               type="submit"
               className=" group w-full relative top-16 flex justify-end items-end font-medium rounded-full text-sm px-5 py-2.5 text-center "
             >
               <TiTickOutline className="text-lg cursor-pointer h-8 w-8 absolute -right-2 top-2 border-2 border-black rounded-full hover:bg-white " />
 
-              <span className='absolute bottom-0 right-0 mb-[-2rem]  text-black text-xs font-semibold px-3 py-1 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap'>
-            Save changes
-          </span>
+              <span className="absolute bottom-0 right-0 mb-[-2rem]  text-black text-xs font-semibold px-3 py-1 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap">
+                Save changes
+              </span>
             </button>
           </form>
         </div>
