@@ -1,5 +1,5 @@
-import React from 'react' 
-import {Link} from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import MobileLandingPageFemale1 from '../../assets/Images/MobileLandingPageFemale1.png'
 import SignInPageInput from './SignInPageInput'
 import SignInButton from '../SignIn page Component/SignInButton'
@@ -71,8 +71,8 @@ const SignInPage_bg = () => {
             SecondLetter='I'
             Secondpart='n'
           />
-        <Link to='/'>
-          <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40 ' />
+          <Link to='/'>
+            <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40 ' />
           </Link>
           <div className=' items-center justify-center px-5'>
             <SignInPageInput inputs={inputFields} />
