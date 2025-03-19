@@ -1,4 +1,5 @@
 import React from "react";
+
 import ProfilePageNav from "./ProfilePageNav";
 import mainModelProfile from "../../assets/Images/Main_modal_profile_page_mobile.png";
 const ProfilePageMobileMainModal = () => {
@@ -14,6 +15,7 @@ const ProfilePageMobileMainModal = () => {
           className="w-full h-full object-cover rounded-b-[50px]"
         />
       </div>
+
     </div>
   );
 };

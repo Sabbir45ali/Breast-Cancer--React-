@@ -1,36 +1,51 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { PiDotsThreeOutlineFill } from 'react-icons/pi'
+import React, { useState, useRef, useEffect } from "react";
+import { PiDotsThreeOutlineFill } from "react-icons/pi";
+import RichDataMobile from "./RichDataMobile";
 
 const ProfilePageNav = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const dropdownRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false); // Modal state
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false)
+        setIsOpen(false);
       }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div ref={dropdownRef}>
+    <div ref={dropdownRef} className="relative">
       <button onClick={() => setIsOpen(!isOpen)}>
+
         <PiDotsThreeOutlineFill className=' text-[35px] text-white' />
+
       </button>
+
       {isOpen && (
-        <div className='absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg'>
-          <div className='absolute right-0 top-2 items-center w-32 h-7 bg-white hover:bg-pink-400 rounded-lg shadow-lg cursor-pointer '>
-            Edit profile
+        <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg">
+          <div
+            onClick={() => {
+              setOpen(true);
+              setIsOpen(false);
+            }} // Open modal & close dropdown
+            className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer"
+          >
+            Edit Profile
           </div>
-          <div className='absolute right-0 top-10 items-center w-32 h-7 bg-white hover:bg-pink-400 rounded-lg shadow-lg cursor-pointer '>
-            Log out
+          <div className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer">
+            Log Out
           </div>
         </div>
       )}
-    </div>
-  )
-}
 
-export default ProfilePageNav
+      {/* Render the modal */}
+      <RichDataMobile open={open} onclose={() => setOpen(false)} />
+    </div>
+  );
+};
+
+export default ProfilePageNav;
