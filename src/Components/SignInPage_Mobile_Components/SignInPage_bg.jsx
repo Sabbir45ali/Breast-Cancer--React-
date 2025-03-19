@@ -13,7 +13,6 @@ import { RxCrossCircled } from 'react-icons/rx'
   </a>
   </div>
 
-
 const SignInPage_bg = () => {
   const inputFields = [
     { type: 'email', placeholder: 'Enter your email', background: '#F3DCE0' },
@@ -23,7 +22,6 @@ const SignInPage_bg = () => {
       background: '#F3DCE0'
     }
   ]
- 
 
   return (
     <div className='bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
 import Header from '../../Components/Sign Up page Component/SignUpPageRightModel/Header'
 import { RxCrossCircled } from 'react-icons/rx'
@@ -40,24 +40,22 @@ const SignUpPageMobile = () => {
             SecondLetter='A'
             Secondpart='ccount'
           />
-        <Link to='/'>
-          <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40' /></Link>
+          <Link to='/'>
+            <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40' />
+          </Link>
           <div className=' items-center justify-center px-5'>
             <SignInPageInputes inputs={inputFields} />
           </div>
           <div className='flex justify-center items-center'>
             <Link to='/home'>
-            <SigninPage_Buttons
-              label='SIGN-UP'
-            
-            />
+              <SigninPage_Buttons label='SIGN-UP' />
             </Link>
           </div>
         </div>
-      
+
         <div className='min-w-full max-w-[400px] mt-auto'>
           <SignInPage_Footer
-            FooterText1="Already have an account?"
+            FooterText1='Already have an account?'
             FooterText2='Sign-In'
             link='/signin'
           />
