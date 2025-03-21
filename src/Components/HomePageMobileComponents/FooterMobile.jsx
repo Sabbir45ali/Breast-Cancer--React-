@@ -1,20 +1,26 @@
 import React from 'react'
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLink } from 'react-icons/fa'
-import footer_mobile from '../../assets/Images/footer_homePage_mobile.png'
+import footerImg1 from '../../assets/Images/Footer_home_page_mobile.png'
+import footerImg2 from '../../assets/Images/Footer_home_page_mobile2.png'
 const FooterMobile = () => {
   return (
-    <div className='relative  text-white   text-center h-72 w-full'>
+    <footer className='relative bg-gradient-to-b from-[#6D093B] to-[#AA2B6F] text-white py-8 px-6 text-center'>
       {/* Background Waves */}
-      <div className='absolute inset-0 h-72 w-full top-0 bg-[#D28CA7]'>
+      <div className='absolute inset-0'>
         <img
-          src={footer_mobile}
+          src={footerImg1}
           alt='Wave 1'
-          className='h-72 w-full object-cover  '
+          className='absolute top-0 left-0 w-full opacity-30'
+        />
+        <img
+          src={footerImg2}
+          alt='Wave 2'
+          className='absolute bottom-0 left-0 w-full opacity-30'
         />
       </div>
 
       {/* Content */}
-      <div className='absolute z-10 space-y-2 w-full top-24 -left-1'>
+      <div className='relative z-10 space-y-2'>
         <p className='flex items-center justify-center gap-2 text-lg'>
           <FaMapMarkerAlt /> Kolkata-700116, North 24 PGS, West Bengal
         </p>
@@ -40,7 +46,7 @@ const FooterMobile = () => {
         {/* FooterMobile Signature */}
         <p className='text-gray-300 text-right mt-4'>~CODEDUCKS/2024</p>
       </div>
-    </div>
+    </footer>
   )
 }
 

@@ -11,7 +11,6 @@ import ProfilePageMobile from './pages/Profile Page Mobile/ProfilePageMobile'
 import SignIn from './pages/SignInpage/SignIn'
 import SignUp from './pages/signuppage/Signup'
 import FormPage from './pages/FormPage/FormPage'
-import FormPageMobile from './pages/FormPage_Mobile/FormPage_Mobile'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -83,12 +82,7 @@ const App = () => {
         />
         <Route
           path='/form'
-          element={
-            <ResponsiveComponent
-              DesktopComponent={FormPage}
-              MobileComponent={FormPageMobile}
-            />
-          }
+          element={<ResponsiveComponent DesktopComponent={FormPage} />}
         />
       </Routes>
     </BrowserRouter>
