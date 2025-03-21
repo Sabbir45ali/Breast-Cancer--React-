@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 import ProfilePageNav from './ProfilePageNav'
 import mainModelProfile from '../../assets/Images/Main_modal_profile_page_mobile.png'
@@ -16,8 +16,8 @@ const ProfilePageMobileMainModal = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProfilePageMobileMainModal;
+export default ProfilePageMobileMainModal
 // prod

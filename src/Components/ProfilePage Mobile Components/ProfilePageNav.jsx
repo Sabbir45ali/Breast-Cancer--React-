@@ -10,7 +10,7 @@ const ProfilePageNav = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+        setIsOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -43,7 +43,7 @@ const ProfilePageNav = () => {
       {/* Render the modal */}
       <RichDataMobile open={open} onclose={() => setOpen(false)} />
     </div>
-  );
-};
+  )
+}
 
-export default ProfilePageNav;
+export default ProfilePageNav

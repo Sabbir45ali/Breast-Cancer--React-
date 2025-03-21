@@ -8,7 +8,7 @@ const FormPage = () => {
     <div>
       <Navbar Logo={Logo} profileImg={profileImg} />
     </div>
-  );
-};
+  )
+}
 
-export default FormPage;
+export default FormPage
