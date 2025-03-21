@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { RiEdit2Fill } from "react-icons/ri";
 import PersonalInfo from "./PersonalInfo";
 import ProfileButton from "./ProfileButton";
