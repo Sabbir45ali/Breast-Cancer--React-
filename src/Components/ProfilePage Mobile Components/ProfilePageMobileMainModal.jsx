@@ -1,20 +1,25 @@
 import React from "react";
 
-import ProfilePageNav from './ProfilePageNav'
-import mainModelProfile from '../../assets/Images/Main_modal_profile_page_mobile.png'
+import profileImg from "../../assets/Images/profileIcon.png";
+import ProfilePageNav from "./ProfilePageNav";
+import "../../App.css";
+import PersonalInfoMobile from "./PersonalInfoMobile";
+
 const ProfilePageMobileMainModal = () => {
   return (
-    <div className='bg-gradient-to-r from-[#e9e4e6] bg-[#db5984] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative'>
-      <div className='absolute top-5 right-6 z-20 sticky-right'>
+    <div className="w-full h-[750px] rounded-b-2xl   relative items-center justify-center ProfileBg z-10">
+      <div className=" absolute right-5 top-4 flex items-end">
         <ProfilePageNav />
       </div>
-      <div className='absolute top-0 left-0 w-full sm:h-[700px] lg:h-[900px] rounded-b-[50px] '>
+
+      <div className="w-32 h-32 mx-auto  p-1 rounded-full  -mb-10 relative top-[240px]">
         <img
-          src={mainModelProfile}
-          alt='profile-modal'
-          className='w-full h-full object-cover rounded-b-[50px]'
+          src={profileImg}
+          alt="Profile"
+          className="w-full h-full rounded-full object-cover"
         />
       </div>
+      <PersonalInfoMobile />
     </div>
   );
 };
