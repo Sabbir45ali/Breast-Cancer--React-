@@ -1,7 +1,7 @@
-import React from "react";
-import { RiEdit2Fill } from "react-icons/ri";
-import PersonalInfo from "./PersonalInfo";
-import ProfileButton from "./ProfileButton";
+import React from 'react'
+import { RiEdit2Fill } from 'react-icons/ri'
+import PersonalInfo from './PersonalInfo'
+import ProfileButton from './ProfileButton'
 import Modal from './EditProfileModal'
 const MainModalProfile = () => {
   const [open, setOpen] = useState(false)
@@ -19,18 +19,18 @@ const MainModalProfile = () => {
         </div>
         <Modal open={open} onclose={() => setOpen(false)} />
         <PersonalInfo
-          name="Priyanshu Bhattacharya"
-          email="prathamachak@gmail.com"
-          age="21"
-          phnNo="9876543456"
-          bloodGroup="B+"
+          name='Priyanshu Bhattacharya'
+          email='prathamachak@gmail.com'
+          age='21'
+          phnNo='9876543456'
+          bloodGroup='B+'
         />
-        <div className="absolute top-64">
+        <div className='absolute top-64'>
           <ProfileButton />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainModalProfile;
+export default MainModalProfile
