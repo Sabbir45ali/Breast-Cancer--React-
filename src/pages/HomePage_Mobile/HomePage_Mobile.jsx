@@ -1,9 +1,9 @@
-import React from "react";
-import NavbarMobile from "../../Components/HomePageMobileComponents/NavbarMobile";
-// import FooterMobile from '../../Components/HomePageMobileComponents/FooterMobile'
-import HomePageHeader from "../../Components/HomePageMobileComponents/HomaPageHeader";
-import Awareness from "../../Components/HomePageMobileComponents/AwarenessMobile";
-import "../../App.css";
+import React from 'react'
+import NavbarMobile from '../../Components/HomePageMobileComponents/NavbarMobile'
+import FooterMobile from '../../Components/HomePageMobileComponents/FooterMobile'
+import HomePageHeader from '../../Components/HomePageMobileComponents/HomaPageHeader'
+import Awareness from '../../Components/HomePageMobileComponents/AwarenessMobile'
+import '../../App.css'
 
 const HomePage_Mobile = () => {
   return (
@@ -22,7 +22,6 @@ const HomePage_Mobile = () => {
 
       <div className="relative bottom-4">
         <Awareness />
-        <FooterMobile />
       </div>
     </div>
   );

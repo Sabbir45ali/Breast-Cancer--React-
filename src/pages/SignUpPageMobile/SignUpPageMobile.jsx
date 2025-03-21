@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
 import Header from '../../Components/Sign Up page Component/SignUpPageRightModel/Header'
 import { RxCrossCircled } from 'react-icons/rx'
-import SignInButton from '../../Components/SignIn page Component/SignInButton'
+import SignInPage_Footer from '../../Components/SignInPage_Mobile_Components/SignInPage_Footer'
+import MobileLandingPageFemale1 from '../../assets/Images/MobileLandingPageFemale1.png'
+import SigninPage_Buttons from '../../Components/SignInPage_Mobile_Components/SignInPage_Button'
 
 const SignUpPageMobile = () => {
   const inputFields = [
@@ -21,23 +24,40 @@ const SignUpPageMobile = () => {
   ]
 
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center bg-pink-50 px-4 sm:px-6'>
-      <div className='relative w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg'>
-        <RxCrossCircled className='absolute top-2 right-4 text-3xl text-black cursor-pointer z-40' />
-        <Header
-          FirstLetter='C'
-          Firstpart='reate'
-          SecondLetter='A'
-          Secondpart='ccount'
+    <div className='bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative'>
+      <div className='relative top-20 w-full flex justify-center mt-8'>
+        <img
+          src={MobileLandingPageFemale1}
+          alt='Person on mobile landing page'
+          className='w-[200px] h-[200px]  object-cover'
         />
-        <SignInPageInputes inputs={inputFields} />
+      </div>
+      <div className='relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl  mt-[-15px]'>
+        <div className='relative w-full max-w-[400px] bg-white rounded-2xl shadow-2xl  mt-[-15px] flex flex-col justify-between items-center z-10 py-5 '>
+          <Header
+            FirstLetter='C'
+            Firstpart='reate'
+            SecondLetter='A'
+            Secondpart='ccount'
+          />
+          <Link to='/'>
+            <RxCrossCircled className='absolute top-4 right-4 text-3xl text-black cursor-pointer z-40' />
+          </Link>
+          <div className=' items-center justify-center px-5'>
+            <SignInPageInputes inputs={inputFields} />
+          </div>
+          <div className='flex justify-center items-center'>
+            <Link to='/home'>
+              <SigninPage_Buttons label='SIGN-UP' />
+            </Link>
+          </div>
+        </div>
 
-        <div className='flex items-center justify-center  '>
-          <SignInButton
-            label='Sign-Up'
-            bgColor='#FF6699'
-            textColor='#FFFFFF'
-            className='w-full mt-4 '
+        <div className='min-w-full max-w-[400px] mt-auto'>
+          <SignInPage_Footer
+            FooterText1='Already have an account?'
+            FooterText2='Sign-In'
+            link='/signin'
           />
         </div>
       </div>
