@@ -6,7 +6,7 @@ import '../../App.css'
 
 const FormPage = () => {
   return (
-    <div className='formPageDekstop min-h-screen w-full' >
+    <div className='formPageDekstop min-h-screen w-full'>
       <Navbar Logo={Logo} profileImg={profileImg} />
     </div>
   )
