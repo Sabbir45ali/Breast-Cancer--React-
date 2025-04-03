@@ -25,7 +25,6 @@ const PersonalInfoMobile = () => {
     </div>
   );
 };
-  );
-};
+  
 
 export default PersonalInfoMobile;
