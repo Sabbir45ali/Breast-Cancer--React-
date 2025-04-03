@@ -20,7 +20,7 @@ const ProfilePageNav = () => {
   return (
     <div ref={dropdownRef} className='relative'>
       <button onClick={() => setIsOpen(!isOpen)}>
-        <PiDotsThreeOutlineFill className=' text-[35px] text-white' />
+      <PiDotsThreeOutlineFill className=' text-[27px] text-white' />
       </button>
 
       {isOpen && (
