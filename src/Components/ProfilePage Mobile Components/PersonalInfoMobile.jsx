@@ -4,7 +4,9 @@ import { FaEnvelope, FaPhoneAlt, FaTint, FaUser } from "react-icons/fa";
 const PersonalInfoMobile = () => {
   return (
     <div className="pt-12 pb-6 px-6 text-center absolute top-[330px] left-1/2 transform -translate-x-1/2 w-auto max-w-sm flex flex-col items-center justify-center ">
-      <h2 className="text-lg font-semibold text-gray-800 text-[23px]">Sabbir Ali</h2>
+      <h2 className="text-lg font-semibold text-gray-800 text-[23px]">
+        Sabbir Ali
+      </h2>
       <p className="text-gray-700 flex items-center justify-center gap-2 text-[20px]">
         <FaEnvelope className="text-gray-700" /> prathamac62@gmail.com
       </p>
@@ -25,6 +27,5 @@ const PersonalInfoMobile = () => {
     </div>
   );
 };
-  
 
 export default PersonalInfoMobile;
