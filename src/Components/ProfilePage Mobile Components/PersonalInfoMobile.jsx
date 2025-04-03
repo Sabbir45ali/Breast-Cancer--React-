@@ -1,5 +1,5 @@
-import React from "react";
-import { FaEnvelope, FaPhoneAlt, FaTint, FaUser } from "react-icons/fa";
+import React from 'react'
+import { FaEnvelope, FaPhoneAlt, FaTint, FaUser } from 'react-icons/fa'
 
 const PersonalInfoMobile = () => {
   return (
@@ -26,4 +26,4 @@ const PersonalInfoMobile = () => {
   );
 };
 
-export default PersonalInfoMobile;
+export default PersonalInfoMobile

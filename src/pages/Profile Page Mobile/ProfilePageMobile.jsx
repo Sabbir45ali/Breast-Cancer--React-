@@ -4,9 +4,9 @@ import ProfileButton_M from '../../Components/ProfilePage Mobile Components/Prof
 
 const ProfilePageMobile = () => {
   return (
-    <div className="bg-gradient-to-r from-[#e9e4e6] bg-[#db5984] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative gap-10">
+    <div className='bg-gradient-to-r from-[#e9e4e6] bg-[#db5984] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative gap-10'>
       <ProfilePageMobileMainModal />
-      <ProfileButton_M/>
+      <ProfileButton_M />
     </div>
   )
 }
