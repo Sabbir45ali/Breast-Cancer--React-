@@ -1,48 +1,48 @@
-import React from 'react'
-import SignInPageInputes from '../../Components/SignInPage_Mobile_Components/SignInPageInput'
-import Header from '../../Components/Sign Up page Component/SignUpPageRightModel/Header'
-import { RxCrossCircled } from 'react-icons/rx'
-import SignInButton from '../../Components/SignIn page Component/SignInButton'
+import React from "react";
+import SignInPageInputes from "../../Components/SignInPage_Mobile_Components/SignInPageInput";
+import Header from "../../Components/Sign Up page Component/SignUpPageRightModel/Header";
+import { RxCrossCircled } from "react-icons/rx";
+import SignInButton from "../../Components/SignIn page Component/SignInButton";
 
 const SignUpPageMobile = () => {
   const inputFields = [
-    { type: 'text', placeholder: 'Enter your name', background: '#F3DCE0' },
+    { type: "text", placeholder: "Enter your name", background: "#F3DCE0" },
     {
-      type: 'number',
-      placeholder: 'Enter your phone number',
-      background: '#F3DCE0'
+      type: "number",
+      placeholder: "Enter your phone number",
+      background: "#F3DCE0",
     },
-    { type: 'email', placeholder: 'Enter your email', background: '#F3DCE0' },
+    { type: "email", placeholder: "Enter your email", background: "#F3DCE0" },
     {
-      type: 'password',
-      placeholder: 'Enter your password',
-      background: '#F3DCE0'
-    }
-  ]
+      type: "password",
+      placeholder: "Enter your password",
+      background: "#F3DCE0",
+    },
+  ];
 
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center bg-pink-50 px-4 sm:px-6'>
-      <div className='relative w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg'>
-        <RxCrossCircled className='absolute top-2 right-4 text-3xl text-black cursor-pointer z-40' />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-pink-50 px-4 sm:px-6">
+      <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md bg-white p-6 rounded-2xl shadow-lg">
+        <RxCrossCircled className="absolute top-2 right-4 text-3xl text-black cursor-pointer z-40" />
         <Header
-          FirstLetter='C'
-          Firstpart='reate'
-          SecondLetter='A'
-          Secondpart='ccount'
+          FirstLetter="C"
+          Firstpart="reate"
+          SecondLetter="A"
+          Secondpart="ccount"
         />
         <SignInPageInputes inputs={inputFields} />
 
-        <div className='flex items-center justify-center  '>
+        <div className="flex items-center justify-center  ">
           <SignInButton
-            label='Sign-Up'
-            bgColor='#FF6699'
-            textColor='#FFFFFF'
-            className='w-full mt-4 '
+            label="Sign-Up"
+            bgColor="#FF6699"
+            textColor="#FFFFFF"
+            className="w-full mt-4 "
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUpPageMobile
+export default SignUpPageMobile;
