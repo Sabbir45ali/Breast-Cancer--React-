@@ -11,7 +11,7 @@ import ProfilePageMobile from "./pages/Profile Page Mobile/ProfilePageMobile";
 import SignIn from "./pages/SignInpage/SignIn";
 import SignUp from "./pages/signuppage/Signup";
 import FormPage from "./pages/FormPage/FormPage";
-import FormPageMobile from "./pages/FormPage_Mobile/FormPage_Mobile";
+import FormPage_Mobile from "./pages/FormPage_Mobile/FormPage_Mobile";
 import YesPage from "./pages/YesPage/YesPage";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
@@ -87,7 +87,7 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={FormPage}
-              MobileComponent={FormPageMobile}
+              MobileComponent={FormPage_Mobile}
             />
           }
         />
