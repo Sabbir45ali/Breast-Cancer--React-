@@ -3,6 +3,11 @@
   background-size: cover;
   background-position: center;
 }
+.ProfileBg {
+  background-image: url(./assets/Images/Main_modal_profile_page_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
 .Richdatabg {
   background-image: url(./assets/Images/RichDatabg.png);
   background-size: cover;
@@ -10,6 +15,11 @@
 }
 .MobileRichBg {
   background-image: url(./assets/Images/bg_pic_Rich_data_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
+.formPageDekstop {
+  background-image: url(./assets/Images/bg_pic_Form_page_dekstop.png);
   background-size: cover;
   background-position: center;
 }
