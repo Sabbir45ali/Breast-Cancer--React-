@@ -91,8 +91,8 @@ const App = () => {
             />
           }
         />
-      
-      <Route
+
+        <Route
           path="/yes"
           element={
             <ResponsiveComponent
