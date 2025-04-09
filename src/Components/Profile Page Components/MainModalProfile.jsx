@@ -1,7 +1,7 @@
 import React from 'react'
 import { RiEdit2Fill } from 'react-icons/ri'
 import PersonalInfo from './PersonalInfo'
-import ProfileButton from './ProfileButton
+import ProfileButton from './ProfileButton'
 import Modal from './EditProfileModal'
 const MainModalProfile = () => {
   const [open, setOpen] = useState(false)
