@@ -15,7 +15,7 @@ const awarenessMessages = [
 
 const AwarenessSection = () => {
   return (
-    <div className='bg-gradient-to-t from-[#D28CA7] to-[#360016] min-h-screen flex flex-col items-center p-8'>
+    <div className='bg-gradient-to-t from-[#D28CA7] to-[#360016] h-5/6 flex flex-col items-center p-8'>
       <div className='flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full'>
         <div className='bg-white rounded-2xl  border-4 border-[#8C495F]  p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden snap-center'>
           <img

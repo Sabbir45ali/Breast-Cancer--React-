@@ -7,7 +7,7 @@ import '../../App.css'
 
 const HomePage_Mobile = () => {
   return (
-    <div className='flex flex-col gap-0'>
+    <div className="bg-[#D28CA7]">
       <div
         className='HomeBg flex flex-col min-h-screen bg-cover bg-center overflow-auto'
         // style={{
@@ -22,8 +22,11 @@ const HomePage_Mobile = () => {
 
       <div className='relative bottom-4'>
         <Awareness />
+        </div>
+        <div className="relative top-1">
+        <FooterMobile/>
+        </div>
       </div>
-    </div>
   )
 }
 
