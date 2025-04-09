@@ -1,15 +1,15 @@
-import React from 'react'
-import NavbarMobile from '../../Components/HomePageMobileComponents/NavbarMobile'
-import FooterMobile from '../../Components/HomePageMobileComponents/FooterMobile'
-import HomePageHeader from '../../Components/HomePageMobileComponents/HomaPageHeader'
-import Awareness from '../../Components/HomePageMobileComponents/AwarenessMobile'
-import '../../App.css'
+import React from "react";
+import NavbarMobile from "../../Components/HomePageMobileComponents/NavbarMobile";
+import FooterMobile from "../../Components/HomePageMobileComponents/FooterMobile";
+import HomePageHeader from "../../Components/HomePageMobileComponents/HomaPageHeader";
+import Awareness from "../../Components/HomePageMobileComponents/AwarenessMobile";
+import "../../App.css";
 
 const HomePage_Mobile = () => {
   return (
     <div className="bg-[#D28CA7]">
       <div
-        className='HomeBg flex flex-col min-h-screen bg-cover bg-center overflow-auto'
+        className="HomeBg flex flex-col min-h-screen bg-cover bg-center overflow-auto"
         // style={{
         //   backgroundImage: "url('/assets/Images/bg_pic_Home_page_mobile.png')",
         //   backgroundSize: 'cover',
@@ -20,14 +20,14 @@ const HomePage_Mobile = () => {
         <HomePageHeader />
       </div>
 
-      <div className='relative bottom-4'>
+      <div className="relative bottom-4">
         <Awareness />
-        </div>
-        <div className="relative top-1">
-        <FooterMobile/>
-        </div>
       </div>
-  )
-}
+      <div className="relative top-1">
+        <FooterMobile />
+      </div>
+    </div>
+  );
+};
 
-export default HomePage_Mobile
+export default HomePage_Mobile;
