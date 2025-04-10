@@ -23,7 +23,11 @@
   background-size: cover;
   background-position: center;
 }
-.bg_Yespage{
-  background: rgb(255,92,92);
-background: linear-gradient(90deg, rgba(255,92,92,1) 0%, rgba(208,48,97,1) 100%);
+.bg_Yespage {
+  background: rgb(255, 92, 92);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 92, 92, 1) 0%,
+    rgba(208, 48, 97, 1) 100%
+  );
 }
