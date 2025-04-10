@@ -5,7 +5,7 @@ import Logo from "../../assets/Images/Logo.png";
 const YesPage = () => {
   return (
     <div>
-      <div className=" bg-cover bg-center min-h-screen flex flex-col overflow-auto">
+      <div className=" bg-cover bg-center min-h-screen flex flex-col overflow-auto bg_Yespage">
         <Navbar profileImg={profileImg} Logo={Logo} />
       </div>
     </div>
