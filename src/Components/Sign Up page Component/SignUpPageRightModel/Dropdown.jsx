@@ -1,13 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { TiArrowSortedDown } from 'react-icons/ti';
+import React, { useState, useRef, useEffect } from "react";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 function DropdownMenu(props) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
   const dropdownRef = useRef(null);
 
-  const options = ['Organisation', 'User', 'Admin'];
-
+  const options = ["Organisation", "User", "Admin"];
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -16,9 +15,9 @@ function DropdownMenu(props) {
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -30,7 +29,7 @@ function DropdownMenu(props) {
       >
         <span>{selected || props.heading}</span>
         <TiArrowSortedDown
-          className={`ml-2 w-4 h-4 transform transition-transform duration-200 ${open ? 'rotate-180' : 'rotate-0'}`}
+          className={`ml-2 w-4 h-4 transform transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}
         />
       </button>
 

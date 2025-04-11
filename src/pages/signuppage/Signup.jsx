@@ -1,6 +1,6 @@
-import React from 'react'
-import LeftModel from '../../Components/Sign Up page Component/SignUpPageLeftModel/LeftModel'
-import MainRightModel from '../../Components/Sign Up page Component/SignUpPageRightModel/MainRightModel'
+import React from "react";
+import LeftModel from "../../Components/Sign Up page Component/SignUpPageLeftModel/LeftModel";
+import MainRightModel from "../../Components/Sign Up page Component/SignUpPageRightModel/MainRightModel";
 
 const SignUp = () => {
   return (
@@ -19,7 +19,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;
