@@ -9,10 +9,11 @@ import HomePage_Mobile from "./pages/HomePage_Mobile/HomePage_Mobile";
 import Profile from "./pages/ProfilePage/Profile";
 import ProfilePageMobile from "./pages/Profile Page Mobile/ProfilePageMobile";
 import SignIn from "./pages/SignInpage/SignIn";
-import SignUp from "./pages/signuppage/Signup";
+
 import FormPage from "./pages/FormPage/FormPage";
 import FormPage_Mobile from "./pages/FormPage_Mobile/FormPage_Mobile";
 import YesPage from "./pages/YesPage/YesPage";
+import SignUp from "./pages/SignUpPage/Signup";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
