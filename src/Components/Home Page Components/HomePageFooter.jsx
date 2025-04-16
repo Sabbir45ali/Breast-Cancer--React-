@@ -23,7 +23,7 @@ const HomePageFooter = () => {
             <FaMapMarkerAlt /> Kolkata-700123, North 24 PGS, West Bengal
           </p>
           <p className="flex items-center gap-2">
-          <FaPhoneAlt /> 8240734489 / 9038645578
+            <FaPhoneAlt /> 8240734489 / 9038645578
           </p>
           <p className="flex items-center gap-2">
             <FaEnvelope /> breastcancer_detection@gmail.com
