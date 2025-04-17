@@ -1,6 +1,6 @@
 import React from "react";
 import FooterHomePage_desktop from "../../assets/Images/FooterHomePage_desktop.png";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLink } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaLink } from "react-icons/fa";
 import Logo from "../../assets/Images/Logo.png";
 
 const HomePageFooter = () => {
@@ -23,7 +23,7 @@ const HomePageFooter = () => {
             <FaMapMarkerAlt /> Kolkata-700123, North 24 PGS, West Bengal
           </p>
           <p className="flex items-center gap-2">
-            <FaPhone /> 8240734489 / 9038645578
+            <FaPhoneAlt /> 8240734489 / 9038645578
           </p>
           <p className="flex items-center gap-2">
             <FaEnvelope /> breastcancer_detection@gmail.com
