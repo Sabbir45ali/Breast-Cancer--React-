@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import RichDataMobile from "./RichDataMobile";
-import { Link } from "react-router-dom";
 
 const ProfilePageNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +22,7 @@ const ProfilePageNav = () => {
       <button onClick={() => setIsOpen(!isOpen)}>
         <PiDotsThreeOutlineFill className=" text-[27px] text-white" />
       </button>
+
       {isOpen && (
         <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg">
           <div
@@ -34,13 +34,14 @@ const ProfilePageNav = () => {
           >
             Edit Profile
           </div>
-          <Link to="/signin">
-            <div className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer">
-              Log Out
-            </div>
-          </Link>
+          <div className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer">
+            Log Out
+          </div>
         </div>
       )}
+
+      {/* Render the modal */}
+      <RichDataMobile open={open} onclose={() => setOpen(false)} />
     </div>
   );
 };
