@@ -36,9 +36,9 @@ const ProfilePageNav = () => {
             Edit Profile
           </div>
           <Link to="/signin">
-          <div className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer">
-            Log Out
-          </div>
+            <div className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer">
+              Log Out
+            </div>
           </Link>
         </div>
       )}
