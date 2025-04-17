@@ -1,6 +1,6 @@
 import React from 'react'
 import { ImCross } from 'react-icons/im'
-
+//deploy
 const RichDataMobile = ({ open, onclose }) => {
   if (!open) return null
 
