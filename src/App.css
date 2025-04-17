@@ -14,7 +14,7 @@
   background-position: center;
 }
 .MobileRichBg {
-  background-image: url(./assets/Images/bg_pic_Rich_data_mobile.png);
+  background-image: url(/src/assets/Images/bg_pic_Rich_data_mobile.png);
   background-size: cover;
   background-position: center;
 }
