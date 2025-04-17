@@ -1,6 +1,7 @@
 import React from 'react'
 import { ImCross } from 'react-icons/im'
 import { TiTickOutline } from 'react-icons/ti'
+import "../../App.css"
 const EditProfileModal = ({ open, onclose, children }) => {
   if (!open) return null // Hide modal if not open
 
@@ -130,4 +131,4 @@ const EditProfileModal = ({ open, onclose, children }) => {
   )
 }
 
-export default EditProfileModal
+export default EditProfileModal;
