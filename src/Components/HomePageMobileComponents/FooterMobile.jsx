@@ -1,5 +1,6 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLink } from "react-icons/fa";
+
 import FooterHomePage_desktop from "../../assets/Images/FooterHomePage_desktop.png";
 
 const FooterMobile = () => {
@@ -33,20 +34,25 @@ const FooterMobile = () => {
 
         {/* Wikipedia Link */}
         <div className="mt-4">
+
           <a
             href="https://en.wikipedia.org/wiki/Breast_cancer"
             target="_blank"
             rel="noopener noreferrer"
+
             className="flex items-center gap-1 text-pink-300 hover:text-pink-500 text-sm sm:text-base transition duration-300 break-all"
+
           >
             <FaLink /> https://en.wikipedia.org/wiki/Breast_cancer
           </a>
         </div>
 
+
         {/* Footer Signature */}
         <p className="text-right text-xs sm:text-sm text-gray-300 font-bold mt-2">
           ~CODEDUCKS/-
         </p>
+
       </div>
     </div>
   );

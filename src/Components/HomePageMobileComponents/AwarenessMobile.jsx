@@ -1,4 +1,6 @@
 import React from "react";
+
+
 import femaleImg from "../../assets/Images/female_pic_landing_page.png";
 import HomeTxt from "../../assets/Images/HomePageText.png";
 
@@ -15,7 +17,9 @@ const awarenessMessages = [
 
 const AwarenessSection = () => {
   return (
+
     <div className="bg-gradient-to-t from-[#D28CA7] to-[#360016] h-5/6 flex flex-col items-center p-8">
+
       <div className="flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full">
         <div className="bg-white rounded-2xl  border-4 border-[#8C495F]  p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden snap-center">
           <img
@@ -27,9 +31,11 @@ const AwarenessSection = () => {
 
         <div className="bg-white  border-4 border-[#8C495F] rounded-[25px] p-10 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center snap-center">
           <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
+
           <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
             Test Yourself
           </button>
+
         </div>
 
         <div className="bg-white  border-4 border-[#8C495F] rounded-[25px] p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col snap-center">
