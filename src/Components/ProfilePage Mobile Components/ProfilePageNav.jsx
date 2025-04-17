@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
+import RichDataMobile from "./RichDataMobile";
+import { Link } from "react-router-dom";
 
 const ProfilePageNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false); // Modal state
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -14,19 +17,28 @@ const ProfilePageNav = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
   return (
-    <div ref={dropdownRef}>
+    <div ref={dropdownRef} className="relative">
       <button onClick={() => setIsOpen(!isOpen)}>
         <PiDotsThreeOutlineFill className=" text-[27px] text-white" />
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg">
-          <div className="absolute right-0 top-2 items-center w-32 h-7 bg-white hover:bg-pink-400 rounded-lg shadow-lg cursor-pointer ">
-            Edit profile
+          <div
+            onClick={() => {
+              setOpen(true);
+              setIsOpen(false);
+            }} // Open modal & close dropdown
+            className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer"
+          >
+            Edit Profile
           </div>
-          <div className="absolute right-0 top-10 items-center w-32 h-7 bg-white hover:bg-pink-400 rounded-lg shadow-lg cursor-pointer ">
-            Log out
-          </div>
+          <Link to="/signin">
+            <div className="px-4 py-2 hover:bg-pink-400 rounded-lg cursor-pointer">
+              Log Out
+            </div>
+          </Link>
         </div>
       )}
     </div>

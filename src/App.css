@@ -8,3 +8,26 @@
   background-size: cover;
   background-position: center;
 }
+.Richdatabg {
+  background-image: url(./assets/Images/RichDatabg.png);
+  background-size: cover;
+  background-position: center;
+}
+.MobileRichBg {
+  background-image: url(./assets/Images/bg_pic_Rich_data_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
+.formPageDekstop {
+  background-image: url(./assets/Images/bg_pic_Form_page_dekstop.png);
+  background-size: cover;
+  background-position: center;
+}
+.bg_Yespage {
+  background: rgb(255, 92, 92);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 92, 92, 1) 0%,
+    rgba(208, 48, 97, 1) 100%
+  );
+}

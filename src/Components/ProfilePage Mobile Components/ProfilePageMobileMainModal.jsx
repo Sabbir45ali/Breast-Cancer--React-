@@ -1,9 +1,7 @@
-import React from "react";
-
 import profileImg from "../../assets/Images/profileIcon.png";
+import PersonalInfoMobile from "./PersonalInfoMobile";
 import ProfilePageNav from "./ProfilePageNav";
 import "../../App.css";
-import PersonalInfoMobile from "./PersonalInfoMobile";
 
 const ProfilePageMobileMainModal = () => {
   return (
@@ -11,7 +9,6 @@ const ProfilePageMobileMainModal = () => {
       <div className=" absolute right-5 top-4 flex items-end">
         <ProfilePageNav />
       </div>
-
       <div className="w-32 h-32 mx-auto  p-1 rounded-full  -mb-10 relative top-[240px]">
         <img
           src={profileImg}
