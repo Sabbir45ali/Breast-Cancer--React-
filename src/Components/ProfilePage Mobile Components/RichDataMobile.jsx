@@ -1,7 +1,5 @@
 import React from "react";
 import { ImCross } from "react-icons/im";
-import React from "react";
-import { ImCross } from "react-icons/im";
 import "../../App.css";
 import iconEdit from "../../assets/Images/inside_pic_rich_data.png";
 
