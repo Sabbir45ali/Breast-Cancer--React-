@@ -1,9 +1,9 @@
 import React from "react";
 import { ImCross } from "react-icons/im";
-import React from 'react'
-import { ImCross } from 'react-icons/im'
-import "../../App.css"
-import iconEdit from "../../assets/Images/inside_pic_rich_data.png"
+import React from "react";
+import { ImCross } from "react-icons/im";
+import "../../App.css";
+import iconEdit from "../../assets/Images/inside_pic_rich_data.png";
 const RichDataMobile = ({ open, onclose }) => {
   if (!open) return null;
 
@@ -18,11 +18,7 @@ const RichDataMobile = ({ open, onclose }) => {
       >
         {/* Header */}
         <div className="flex flex-row relative -top-6   ">
-          <img
-            src={iconEdit}
-            alt='Medical Icon'
-            className='w-52  mb-2'
-          />
+          <img src={iconEdit} alt="Medical Icon" className="w-52  mb-2" />
           <span className="relative top-10 ">
             <h3 className="text-xl font-bold ">Fill your details below</h3>
           </span>
