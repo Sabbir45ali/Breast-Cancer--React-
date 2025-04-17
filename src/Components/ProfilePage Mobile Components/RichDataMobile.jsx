@@ -2,6 +2,8 @@ import React from "react";
 import { ImCross } from "react-icons/im";
 import "../../App.css";
 //deploy
+// import iconEdit from "../../assets/Images/inside_pic_rich_data.png";
+// deploy
 const RichDataMobile = ({ open, onclose }) => {
   if (!open) return null;
 
