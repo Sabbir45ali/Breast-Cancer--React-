@@ -1,7 +1,7 @@
 import React from "react";
 import LeftModel from "../../Components/Sign Up page Component/SignUpPageLeftModel/LeftModel";
 import MainRightModel from "../../Components/Sign Up page Component/SignUpPageRightModel/MainRightModel";
-//deploy
+// deploy
 const SignUp = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-pink-100">
