@@ -31,3 +31,9 @@
     rgba(208, 48, 97, 1) 100%
   );
 }
+
+.form_bg {
+  background-image: url(./assets/Images/bg_pic_Form_Page_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
