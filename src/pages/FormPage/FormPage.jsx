@@ -6,15 +6,12 @@ import '../../App.css'
 
 import FormRightModel from '../../Components/Form Page Components/FormRightModel'
 
-
 const FormPage = () => {
   return (
     <div className='formPageDekstop min-h-screen w-full'>
       <Navbar Logo={Logo} profileImg={profileImg} />
 
-
       <FormRightModel />
-
     </div>
   )
 }
