@@ -9,7 +9,7 @@ function FormPage_Mobile () {
       <div>
         <NavbarMobile />
       </div>
-      <FormCard/>
+      <FormCard />
     </div>
   )
 }
