@@ -7,11 +7,11 @@ import "../../App.css";
 
 const FormPageBtoC = () => {
   return (
-    <div className=" min-h-screen w-full">
-      <div className="formtwo">
+    <div className=" min-h-screen w-full formtwo">
+      <div>
         <Navbar Logo={Logo} profileImg={profileImg} />
       </div>
-      <div className="formtwo">
+      <div>
         <FormHeader />
       </div>
     </div>
