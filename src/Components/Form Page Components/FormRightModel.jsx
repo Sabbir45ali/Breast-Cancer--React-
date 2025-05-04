@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function BreastCancerForm () {
   return (
-    <div className='min-h-screen flex items-center relative top-8 justify-end p-4'>
-      <div className='bg-[#70113277] rounded-3xl shadow-xl p-8 w-5/12 min-h-[600px]'>
-        <form className='space-y-4'>
+    <div className='min-h-screen flex items-center justify-center px-4 py-3'>
+      <div className='mt-16 bg-[#70113277] rounded-3xl shadow-xl px-10 py-8 w-[360px] sm:w-[420px] md:w-[480px]'>
+        <form className='w-full'>
           {[
             'Radius Mean',
             'Texture Mean',
@@ -13,22 +13,28 @@ export default function BreastCancerForm () {
             'Compactness Mean',
             'Concavity Mean'
           ].map((label) => (
-            <div key={label} className='flex items-center gap-6 p-4'>
-              <label className='font-semibold  text-white text-base w-40'>
+            <div
+              key={label}
+              className='flex justify-between items-center my-5'
+            >
+              <label className='text-white font-semibold text-base w-44'>
                 {label} :
               </label>
               <input
                 type='number'
-                className='flex-1 rounded-md p-2 bg-rose-200 focus:outline-none focus:ring-2 focus:ring-[#5F1A31]'
+                className='flex-1 rounded-md p-2 bg-[#ffd5e5] ml-6 focus:outline-none focus:ring-2 focus:ring-[#5F1A31]'
               />
             </div>
           ))}
-          <button
-            type='submit'
-            className='w-10/12 bg-[#B82360] text-white font-semibold text-2xl py-2 rounded-xl mt-4 hover:bg-[#5F1A31] transition duration-200 shadow-md relative top-12 left-16 h-12'
-          >
-            Check
-          </button>
+
+          <div className='flex justify-center mt-10'>
+            <button
+              type='submit'
+              className='w-[250px] h-[40px] bg-[#B82360] text-white text-lg font-semibold rounded-lg shadow-md hover:bg-[#5F1A31] transition duration-200 border border-black'
+            >
+              Check
+            </button>
+          </div>
         </form>
       </div>
     </div>
