@@ -11,7 +11,7 @@ const FormPage = () => {
   return (
     <div className='formPageDekstop min-h-screen w-full'>
       <Navbar Logo={Logo} profileImg={profileImg} />
-      <div className="flex justify-center items-start gap-8 ">
+      <div className='flex justify-center items-start gap-8 '>
         <FormLeftModal />
         <FormRightModel />
       </div>

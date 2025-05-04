@@ -13,10 +13,7 @@ export default function BreastCancerForm () {
             'Compactness Mean',
             'Concavity Mean'
           ].map((label) => (
-            <div
-              key={label}
-              className='flex justify-between items-center my-5'
-            >
+            <div key={label} className='flex justify-between items-center my-5'>
               <label className='text-white font-semibold text-base w-44'>
                 {label} :
               </label>
