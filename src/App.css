@@ -37,3 +37,12 @@
   background-size: cover;
   background-position: center;
 }
+.formtwo {
+  /* background-color: #e59087; */
+  background-image: url(./assets/Images/FormPage_BtoC.png);
+  background-size: cover;
+  background-position: center;
+}
+.formHeaderText {
+  color: #514141;
+}
