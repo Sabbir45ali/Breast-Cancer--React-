@@ -15,6 +15,7 @@ import FormPage_Mobile from "./pages/FormPage_Mobile/FormPage_Mobile";
 import YesPage from "./pages/YesPage/YesPage";
 import SignUp from "./pages/signuppage/Signup";
 import FormPageBtoC from "./pages/FormPageBtoC/FormPageBtoC";
+import FormPageBtoC_Mobile from "./pages/FormPageBtoC_Mobile/FormPageBtoC_Mobile";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -108,7 +109,7 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={FormPageBtoC}
-              MobileComponent={FormPageBtoC}
+              MobileComponent={FormPageBtoC_Mobile}
             />
           }
         />
