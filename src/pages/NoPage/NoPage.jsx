@@ -6,8 +6,8 @@ import Logo from "../../assets/Images/Logo.png";
 const NoPage = () => {
   return (
     <div>
-      <div className='NoPageBG bg-cover bg-center min-h-screen flex flex-col overflow-auto'>
-      <Navbar profileImg={profileImg} Logo={Logo} />
+      <div className="NoPageBG bg-cover bg-center min-h-screen flex flex-col overflow-auto">
+        <Navbar profileImg={profileImg} Logo={Logo} />
       </div>
     </div>
   );
