@@ -46,3 +46,11 @@
 .formHeaderText {
   color: #514141;
 }
+.NoPageBG {
+  background: rgb(249, 249, 249);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 160, 199) 0%,
+    rgba(244, 74, 130) 100%
+  );
+}
