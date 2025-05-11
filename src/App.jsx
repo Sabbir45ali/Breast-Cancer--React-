@@ -18,7 +18,6 @@ import FormPageBtoC from "./pages/FormPageBtoC/FormPageBtoC";
 import FormPageBtoC_Mobile from "./pages/FormPageBtoC_Mobile/FormPageBtoC_Mobile";
 import NoPage from "./pages/NoPage/NoPage";
 
-
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 640px)").matches,
