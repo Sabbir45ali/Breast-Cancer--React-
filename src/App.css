@@ -54,3 +54,9 @@
     rgba(244, 74, 130) 100%
   );
 }
+
+.formBtoC_mob {
+  background-image: url(./assets/Images/Formpage_single_customer_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
