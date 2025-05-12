@@ -22,22 +22,24 @@ export default function DotBulletList() {
           <div className="space-y-10 text-shadow-lg">
             <span>
               Your recent report confirm that no cancser has been detected,{" "}
-              <br /> and the findings are benign.This is reassuring,{" "}
-              <br /> but it still important to take care of your health:
+              <br /> and the findings are benign.This is reassuring, <br /> but
+              it still important to take care of your health:
             </span>
 
             <ul className="list-disc list-inside text-white space-y-4">
               <li>
-                Schedule regular follow-ups with your doctor 
-
+                Schedule regular follow-ups with your doctor
                 <br />
                 to monitor your condition.
               </li>
-              <li>Stay informed about any changes or recommendations for future screenings.
-                </li>
               <li>
-                Continue leading a healthy lifestyle with 
-                <br />good nutrition and regular exercise.
+                Stay informed about any changes or recommendations for future
+                screenings.
+              </li>
+              <li>
+                Continue leading a healthy lifestyle with
+                <br />
+                good nutrition and regular exercise.
               </li>
             </ul>
           </div>
