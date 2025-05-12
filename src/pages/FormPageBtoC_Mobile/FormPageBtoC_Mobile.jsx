@@ -4,7 +4,7 @@ import NavbarMobile from "../../Components/Form Page Components/FormPageNavbar";
 
 const FormPageBtoC_Mobile = () => {
   return (
-    <div className="formBtoC_mob">
+    <div className=" min-h-screen formBtoC_mob">
       <NavbarMobile />
     </div>
   );
