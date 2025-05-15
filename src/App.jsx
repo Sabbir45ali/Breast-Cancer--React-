@@ -91,7 +91,7 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={FormPage}
-              MobileComponent={FormPageBtoC_Mobile}
+              MobileComponent={FormPage_Mobile}
             />
           }
         />
