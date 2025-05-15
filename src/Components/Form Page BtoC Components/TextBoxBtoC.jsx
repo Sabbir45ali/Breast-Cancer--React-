@@ -10,7 +10,7 @@ export default function MammogramUploadPage () {
       />
 
       <div className='text-center px-6 '>
-        <h1 className='text-4xl md:text-5xl font-bold text-black leading-relaxed mb-10 gap-y-10'>
+        <h1 className='text-4xl md:text-5xl font-semibold text-black/80 leading-relaxed mb-10 gap-y-10'>
           Early <br /> Detection <br /> Saves <br /> Lives
         </h1>
 
