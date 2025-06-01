@@ -35,7 +35,8 @@ const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
 }
 
 const App = () => {
-  const basename =''
+  const basename =
+    import.meta.env.MODE === 'development' ? '' : '/Breast-Cancer--React-'
   return (
     <BrowserRouter basename={basename}>
       {' '}
