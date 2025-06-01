@@ -35,7 +35,7 @@ const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
 }
 
 const App = () => {
-  const basename = ""
+  const basename = ''
   return (
     <BrowserRouter basename={basename}>
       {' '}
