@@ -5,7 +5,7 @@ import SignUpButton from "./SignUpButton";
 import DropdownMenu from "./Dropdown";
 
 const MainRightModel = () => {
-  const options = ["Organisation", "User"]; 
+  const options = ["Organisation", "User"];
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full space-y-4 px-4">
