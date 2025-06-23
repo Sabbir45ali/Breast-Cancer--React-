@@ -1,6 +1,6 @@
-import React from 'react';
-import Header_Yes_No_Mobile from './Header_Yes_No_Mobile';
-import ConsultButton from './ConsultButton';
+import React from "react";
+import Header_Yes_No_Mobile from "./Header_Yes_No_Mobile";
+import ConsultButton from "./ConsultButton";
 
 const CancerAlert = () => {
   const steps = [

@@ -7,7 +7,7 @@ const YesPage_Mobile = () => {
     <div className="YesPageBg min-h-screen flex flex-col overflow-auto">
       <div>
         <NavbarMobile />
-        <CancerAlert/>
+        <CancerAlert />
       </div>
     </div>
   );

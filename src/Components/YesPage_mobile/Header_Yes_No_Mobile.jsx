@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Header_Yes_No_Mobile = ({ title, subtitle }) => {
   return (
