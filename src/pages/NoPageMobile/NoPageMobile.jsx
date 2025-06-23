@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import NavbarMobile from "../../Components/Form Page Components/FormPageNavbar";
 
 const NoPageMobile = () => {
@@ -8,7 +8,7 @@ const NoPageMobile = () => {
         <NavbarMobile />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NoPageMobile
+export default NoPageMobile;
