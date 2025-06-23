@@ -17,6 +17,7 @@ import SignUp from './pages/signuppage/Signup'
 import FormPageBtoC from './pages/FormPageBtoC/FormPageBtoC'
 import FormPageBtoC_Mobile from './pages/FormPageBtoC_Mobile/FormPageBtoC_Mobile'
 import NoPage from './pages/NoPage/NoPage'
+import NoPageMobile from './pages/NoPageMobile/NoPageMobile'
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -119,10 +120,11 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={NoPage}
-              MobileComponent={NoPage}
+              MobileComponent={NoPageMobile}
             />
           }
         />
+        
       </Routes>
     </BrowserRouter>
   )
