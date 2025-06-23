@@ -5,14 +5,17 @@ import ConsultButton from './ConsultButton';
 const CancerAlert = () => {
   const steps = [
     {
+      id: 'follow-ups',
       strong: 'Schedule regular follow-ups',
       rest: 'with your doctor to monitor your condition.',
     },
     {
+      id: 'stay-informed',
       strong: 'Stay informed',
       rest: 'about any changes or recommendations for future screenings.',
     },
     {
+      id: 'healthy-lifestyle',
       strong: 'Continue leading a healthy lifestyle',
       rest: 'with good nutrition and regular exercise.',
     },
@@ -28,8 +31,8 @@ const CancerAlert = () => {
         />
 
         <ul className="list-disc list-inside text-base sm:text-lg space-y-4 mt-4 text-justify leading-relaxed">
-          {steps.map((step, index) => (
-            <li key={index}>
+          {steps.map((step) => (
+            <li key={step.id}>
               <strong>{step.strong}</strong> {step.rest}
             </li>
           ))}
