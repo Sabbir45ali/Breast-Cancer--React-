@@ -1,20 +1,20 @@
-import React from 'react';
-import Header_Yes_No_Mobile from './Header_Yes_No_Mobile';
-import ConsultButton from './ConsultButton';
+import React from "react";
+import Header_Yes_No_Mobile from "./Header_Yes_No_Mobile";
+import ConsultButton from "./ConsultButton";
 
 const CancerAlert = () => {
   const steps = [
     {
-      strong: 'Schedule regular follow-ups',
-      rest: 'with your doctor to monitor your condition.',
+      strong: "Schedule regular follow-ups",
+      rest: "with your doctor to monitor your condition.",
     },
     {
-      strong: 'Stay informed',
-      rest: 'about any changes or recommendations for future screenings.',
+      strong: "Stay informed",
+      rest: "about any changes or recommendations for future screenings.",
     },
     {
-      strong: 'Continue leading a healthy lifestyle',
-      rest: 'with good nutrition and regular exercise.',
+      strong: "Continue leading a healthy lifestyle",
+      rest: "with good nutrition and regular exercise.",
     },
   ];
 
