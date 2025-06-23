@@ -35,24 +35,51 @@ const MainModalProfile = () => {
 
         {/* Table Section */}
         <div className="w-[107%] mt-6 bg-pink-100 border border-gray-500 rounded-md shadow-md shadow-gray-400">
-  <table className="w-full  text-center text-sm text-black table-fixed">
-    <thead className="bg-pink-50">
-      <tr>
-        <th className="py-4 px-2 text-xs font-semibold uppercase tracking-wide w-[12.5%]">
-          DATE-DD/MM/YYYY
-        </th>
-        <th className="py-3 px-2 w-[12.5%]">Radius<br />mean</th>
-        <th className="py-3 px-2 w-[12.5%]">Texture<br />mean</th>
-        <th className="py-3 px-2 w-[12.5%]">Area<br />mean</th>
-        <th className="py-3 px-2 w-[12.5%]">Perimeter<br />mean</th>
-        <th className="py-3 px-2 w-[12.5%]">Smoothness<br />mean</th>
-        <th className="py-3 px-2 w-[12.5%]">Compactness<br />mean</th>
-        <th className="py-3 px-2 w-[12.5%]">Concavity<br />mean</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-
+          <table className="w-full  text-center text-sm text-black table-fixed">
+            <thead className="bg-pink-50">
+              <tr>
+                <th className="py-4 px-2 text-xs font-semibold uppercase tracking-wide w-[12.5%]">
+                  DATE-DD/MM/YYYY
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Radius
+                  <br />
+                  mean
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Texture
+                  <br />
+                  mean
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Area
+                  <br />
+                  mean
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Perimeter
+                  <br />
+                  mean
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Smoothness
+                  <br />
+                  mean
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Compactness
+                  <br />
+                  mean
+                </th>
+                <th className="py-3 px-2 w-[12.5%]">
+                  Concavity
+                  <br />
+                  mean
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
 
         {/* Button */}
         <div className="mt-6 w-full flex justify-center">
