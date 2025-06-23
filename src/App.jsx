@@ -1,48 +1,49 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom' // ✅ Switched to BrowserRouter
-import LandingPage from './pages/LandingPage/LandingPage'
-import Mobile_landingPage from './pages/Mobile_LandingPage/Mobile_landingPage'
-import SignInPage_Mobile from './pages/SignInPage_Mobile/SignINPage_Mobile'
-import SignUpPageMobile from './pages/SignUpPageMobile/SignUpPageMobile'
-import HomePage from './pages/HomePage/HomePage'
-import HomePage_Mobile from './pages/HomePage_Mobile/HomePage_Mobile'
-import Profile from './pages/ProfilePage/Profile'
-import ProfilePageMobile from './pages/Profile Page Mobile/ProfilePageMobile'
-import SignIn from './pages/SignInpage/SignIn'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom"; // ✅ Switched to BrowserRouter
+import LandingPage from "./pages/LandingPage/LandingPage";
+import Mobile_landingPage from "./pages/Mobile_LandingPage/Mobile_landingPage";
+import SignInPage_Mobile from "./pages/SignInPage_Mobile/SignINPage_Mobile";
+import SignUpPageMobile from "./pages/SignUpPageMobile/SignUpPageMobile";
+import HomePage from "./pages/HomePage/HomePage";
+import HomePage_Mobile from "./pages/HomePage_Mobile/HomePage_Mobile";
+import Profile from "./pages/ProfilePage/Profile";
+import ProfilePageMobile from "./pages/Profile Page Mobile/ProfilePageMobile";
+import SignIn from "./pages/SignInpage/SignIn";
 
-import FormPage from './pages/FormPage/FormPage'
-import FormPage_Mobile from './pages/FormPage_Mobile/FormPage_Mobile'
-import YesPage from './pages/YesPage/YesPage'
-import SignUp from './pages/signuppage/Signup'
-import FormPageBtoC from './pages/FormPageBtoC/FormPageBtoC'
-import FormPageBtoC_Mobile from './pages/FormPageBtoC_Mobile/FormPageBtoC_Mobile'
-import NoPage from './pages/NoPage/NoPage'
+import FormPage from "./pages/FormPage/FormPage";
+import FormPage_Mobile from "./pages/FormPage_Mobile/FormPage_Mobile";
+import YesPage from "./pages/YesPage/YesPage";
+import SignUp from "./pages/signuppage/Signup";
+import FormPageBtoC from "./pages/FormPageBtoC/FormPageBtoC";
+import FormPageBtoC_Mobile from "./pages/FormPageBtoC_Mobile/FormPageBtoC_Mobile";
+import NoPage from "./pages/NoPage/NoPage";
+import YesPage_Mobile from "./pages/YeaPage_Mobile/YesPage_Mobile";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia('(max-width: 640px)').matches
-  )
+    window.matchMedia("(max-width: 640px)").matches,
+  );
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 640px)')
-    const handleResize = () => setIsMobile(mediaQuery.matches)
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const handleResize = () => setIsMobile(mediaQuery.matches);
 
-    mediaQuery.addEventListener('change', handleResize)
-    return () => mediaQuery.removeEventListener('change', handleResize)
-  }, [])
+    mediaQuery.addEventListener("change", handleResize);
+    return () => mediaQuery.removeEventListener("change", handleResize);
+  }, []);
 
-  return isMobile ? <MobileComponent /> : <DesktopComponent />
-}
+  return isMobile ? <MobileComponent /> : <DesktopComponent />;
+};
 
 const App = () => {
   const basename =
-    import.meta.env.MODE === 'development' ? '' : '/Breast-Cancer--React-'
+    import.meta.env.MODE === "development" ? "" : "/Breast-Cancer--React-";
   return (
     <BrowserRouter basename={basename}>
-      {' '}
+      {" "}
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <ResponsiveComponent
               DesktopComponent={LandingPage}
@@ -51,7 +52,7 @@ const App = () => {
           }
         />
         <Route
-          path='/signin'
+          path="/signin"
           element={
             <ResponsiveComponent
               DesktopComponent={SignIn}
@@ -60,7 +61,7 @@ const App = () => {
           }
         />
         <Route
-          path='/signup'
+          path="/signup"
           element={
             <ResponsiveComponent
               DesktopComponent={SignUp}
@@ -69,7 +70,7 @@ const App = () => {
           }
         />
         <Route
-          path='/profile'
+          path="/profile"
           element={
             <ResponsiveComponent
               DesktopComponent={Profile}
@@ -78,7 +79,7 @@ const App = () => {
           }
         />
         <Route
-          path='/home'
+          path="/home"
           element={
             <ResponsiveComponent
               DesktopComponent={HomePage}
@@ -87,7 +88,7 @@ const App = () => {
           }
         />
         <Route
-          path='/form'
+          path="/form"
           element={
             <ResponsiveComponent
               DesktopComponent={FormPage}
@@ -97,16 +98,16 @@ const App = () => {
         />
 
         <Route
-          path='/yes'
+          path="/yes"
           element={
             <ResponsiveComponent
               DesktopComponent={YesPage}
-              MobileComponent={YesPage}
+              MobileComponent={YesPage_Mobile}
             />
           }
         />
         <Route
-          path='/formtwo'
+          path="/formtwo"
           element={
             <ResponsiveComponent
               DesktopComponent={FormPageBtoC}
@@ -115,7 +116,7 @@ const App = () => {
           }
         />
         <Route
-          path='/no'
+          path="/no"
           element={
             <ResponsiveComponent
               DesktopComponent={NoPage}
@@ -125,8 +126,8 @@ const App = () => {
         />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 // Deployment
