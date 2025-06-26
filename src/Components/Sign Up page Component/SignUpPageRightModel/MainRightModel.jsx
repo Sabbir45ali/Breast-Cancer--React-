@@ -5,7 +5,7 @@ import SignUpButton from "./SignUpButton";
 import DropdownMenu from "./Dropdown";
 
 const MainRightModel = () => {
-  const [selectedRole, setSelectedRole] = useState(null); 
+  const [selectedRole, setSelectedRole] = useState(null);
   const options = ["Organisation", "User"];
 
   return (
@@ -20,10 +20,10 @@ const MainRightModel = () => {
       <DropdownMenu
         heading="Create Account as"
         options={options}
-        onSelect={setSelectedRole} 
+        onSelect={setSelectedRole}
       />
       <Input />
-      <SignUpButton role={selectedRole} /> 
+      <SignUpButton role={selectedRole} />
     </div>
   );
 };
