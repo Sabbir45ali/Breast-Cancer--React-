@@ -23,7 +23,7 @@ const AwarenessSection = () => {
       </div>
       <div className="bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center rounded-[35px] border border-pink-700">
         <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
-        <Link to="/form">
+        <Link to="/formtwo">
           <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
             Test Yourself
           </button>

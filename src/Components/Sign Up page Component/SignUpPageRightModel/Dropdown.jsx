@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 
-function DropdownMenu({ heading, options = [] }) {
+function DropdownMenu({ heading, options = [], onSelect }) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef(null); // ✅ define it here
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -19,17 +19,21 @@ function DropdownMenu({ heading, options = [] }) {
     };
   }, []);
 
+  const handleSelect = (option) => {
+    setSelected(option);
+    setOpen(false);
+    onSelect?.(option); // call onSelect if it's provided
+  };
+
   return (
     <div ref={dropdownRef} className="relative inline-block text-left w-80">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full h-12 p-3 rounded-lg bg-gray-200 flex justify-between items-center px-4 py-2 text-gray-600 font-semibold transition"
+        className="w-full h-12 rounded-lg bg-gray-200 flex justify-between items-center px-4 text-gray-600 font-semibold"
       >
         <span>{selected || heading}</span>
         <TiArrowSortedDown
-          className={`ml-2 w-4 h-4 transform transition-transform duration-200 ${
-            open ? "rotate-180" : "rotate-0"
-          }`}
+          className={`w-4 h-4 transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -39,11 +43,8 @@ function DropdownMenu({ heading, options = [] }) {
             {options.map((option) => (
               <button
                 key={option}
-                onClick={() => {
-                  setSelected(option);
-                  setOpen(false);
-                }}
-                className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-pink-400 transition"
+                onClick={() => handleSelect(option)}
+                className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-pink-400"
               >
                 {option}
               </button>
