@@ -60,8 +60,20 @@
   background-size: cover;
   background-position: center;
 }
+
 .NoPageMobile {
   background-image: url(./assets/Images/bg_pic_No_page_mobile.png);
   background-size: cover;
   background-position: center;
+}
+
+.YesPageBg {
+  background-image: url(./assets/Images/bg_pic_Yes_page_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
+.header {
+  color: white;
+  -webkit-text-stroke: 1px rgba(255, 0, 0, 0.815);
+  text-stroke: 1px rgba(255, 0, 0, 0.815); /* For non-WebKit browsers (optional) */
 }
