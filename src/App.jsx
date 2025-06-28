@@ -20,7 +20,6 @@ import NoPage from "./pages/NoPage/NoPage";
 import NoPageMobile from "./pages/NoPageMobile/NoPageMobile";
 import YesPage_Mobile from "./pages/YeaPage_Mobile/YesPage_Mobile";
 
-
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 640px)").matches,
