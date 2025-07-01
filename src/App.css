@@ -60,6 +60,13 @@
   background-size: cover;
   background-position: center;
 }
+
+.NoPageMobile {
+  background-image: url(./assets/Images/bg_pic_No_page_mobile.png);
+  background-size: cover;
+  background-position: center;
+}
+
 .YesPageBg {
   background-image: url(./assets/Images/bg_pic_Yes_page_mobile.png);
   background-size: cover;
