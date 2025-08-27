@@ -9,7 +9,7 @@ const MainRightModel = () => {
   const options = ["Organisation", "User"];
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full space-y-4 px-4">
+    <div className="flex flex-col items-center justify-center h-full w-full space-y-3 px-4">
       <Header
         FirstLetter="C"
         SecondLetter="A"
@@ -21,8 +21,10 @@ const MainRightModel = () => {
         heading="Create Account as"
         options={options}
         onSelect={setSelectedRole}
+        buttonClassName='bg-gray-200 text-gray-600 font-semibold'
+        divClassName=" bg-gray-200 "
       />
-      <Input />
+      {selectedRole && <Input role={selectedRole} />}
       <SignUpButton role={selectedRole} />
     </div>
   );

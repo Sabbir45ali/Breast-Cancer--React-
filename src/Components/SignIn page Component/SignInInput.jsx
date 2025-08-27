@@ -16,6 +16,8 @@ const SignInInput = ({ onRoleSelect }) => {
         heading="Sign In as"
         options={options}
         onSelect={onRoleSelect}
+        buttonClassName='bg-gray-200 text-gray-600 font-semibold'
+        divClassName=" bg-gray-200 "
       />
       <form className="w-80 space-y-4">
         {inputFields.map((field, index) => (

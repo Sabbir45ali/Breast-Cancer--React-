@@ -2,19 +2,31 @@ import React, { useState } from "react";
 import InputField from "./InputField";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const Input = () => {
+const Input = ({role}) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const inputFields = [
+  const orgFields = [
+    {type: "text", placeholder: "Organisation Name"},
+    { type: "text", placeholder: "Phone No" },
+    { type: "email", placeholder: "Email" },
+    { type: "text", placeholder: "Type of Org" },
+    { type: "text", placeholder: "Licence / Reg Number" },
+    { type: "password", placeholder: "Password" },
+  ];
+  
+  const userFields = [
     { type: "text", placeholder: "Name" },
     { type: "text", placeholder: "Phone No" },
     { type: "email", placeholder: "Email" },
     { type: "password", placeholder: "Password" },
   ];
 
+  const fieldsToRender = 
+        role=="Organisation"? orgFields : role=="User"? userFields : [];
+
   return (
-    <form className="w-80 space-y-3">
-      {inputFields.map((field, index) => (
+    <form className="w-80  space-y-3">
+      {fieldsToRender.map((field, index) => (
         <div key={index} className="relative">
           <InputField
             type={

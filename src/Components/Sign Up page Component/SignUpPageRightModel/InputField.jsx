@@ -5,7 +5,7 @@ const InputField = ({ type, placeholder }) => {
     <input
       type={type}
       placeholder={placeholder}
-      className='w-full p-3 rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400'
+      className='w-full p-3 h-9 rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400'
     />
   )
 }
