@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLink } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaLink } from "react-icons/fa";
 import footer_mobile from "../../assets/Images/footer_homePage_mobile.png";
 const FooterMobile = () => {
   return (
@@ -19,7 +19,7 @@ const FooterMobile = () => {
           <FaMapMarkerAlt /> Kolkata-700116, North 24 PGS, West Bengal
         </p>
         <p className="flex items-center justify-center gap-2 text-lg">
-          <FaPhone /> 8240734489 / 9038645578
+          <FaPhoneAlt /> 8240734489 / 9038645578
         </p>
         <p className="flex items-center justify-center gap-2 text-lg">
           <FaEnvelope /> breastcancer_detection@gmail.com

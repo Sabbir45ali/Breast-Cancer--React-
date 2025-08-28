@@ -19,6 +19,8 @@ import FormPageBtoC_Mobile from "./pages/FormPageBtoC_Mobile/FormPageBtoC_Mobile
 import NoPage from "./pages/NoPage/NoPage";
 import NoPageMobile from "./pages/NoPageMobile/NoPageMobile";
 import YesPage_Mobile from "./pages/YeaPage_Mobile/YesPage_Mobile";
+import Org_HomePage from "./pages/Org-Home page/Org_HomePage"
+import Org_HomePageMobile from "./pages/Org-HomePage_mobile/Org_HomePageMobile"
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -85,6 +87,15 @@ const App = () => {
             <ResponsiveComponent
               DesktopComponent={HomePage}
               MobileComponent={HomePage_Mobile}
+            />
+          }
+        />
+        <Route
+          path="/org-home"
+          element={
+            <ResponsiveComponent
+              DesktopComponent={Org_HomePage}
+              MobileComponent={Org_HomePageMobile}
             />
           }
         />

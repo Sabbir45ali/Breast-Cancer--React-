@@ -5,7 +5,7 @@ import HomePageHeader from "../../Components/HomePageMobileComponents/HomaPageHe
 import Awareness from "../../Components/HomePageMobileComponents/AwarenessMobile";
 import "../../App.css";
 
-const HomePage_Mobile = () => {
+const Org_HomePageMobile = () => {
   return (
     <div className="flex flex-col gap-0">
       <div
@@ -16,11 +16,11 @@ const HomePage_Mobile = () => {
       </div>
 
       <div className="relative bottom-4">
-        <Awareness testBtn='Test Yourself'/>
+        <Awareness testBtn='Test'/>
         <FooterMobile />
       </div>
     </div>
   );
 };
 
-export default HomePage_Mobile;
+export default Org_HomePageMobile;

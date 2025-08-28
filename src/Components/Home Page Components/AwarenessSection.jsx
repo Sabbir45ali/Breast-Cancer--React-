@@ -11,7 +11,7 @@ const awarenessMessages = [
   "Stay informed—early detection saves lives.",
 ];
 
-const AwarenessSection = () => {
+const AwarenessSection = ({btnText}) => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-12 p-8 bg-gradient-to-b from-[#FD8AAB] to-[#F44A82] min-h-screen">
       <div className="bg-white rounded-[35px] p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden border border-pink-700">
@@ -24,8 +24,8 @@ const AwarenessSection = () => {
       <div className="bg-white rounded-2xl p-10 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center rounded-[35px] border border-pink-700">
         <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
         <Link to="/formtwo">
-          <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
-            Test Yourself
+          <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 w-64 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
+            {btnText}
           </button>
         </Link>
       </div>
