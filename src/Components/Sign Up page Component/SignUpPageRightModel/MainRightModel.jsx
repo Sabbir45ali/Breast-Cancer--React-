@@ -6,7 +6,7 @@ import DropdownMenu from "./Dropdown";
 
 const endpoints = {
   Organisation: "http://127.0.0.1:8000/auth/signup-org/",
-  User: "http://127.0.0.1:8000/auth/signup/"
+  User: "http://127.0.0.1:8000/auth/signup/",
 };
 
 const MainRightModel = () => {
@@ -18,7 +18,7 @@ const MainRightModel = () => {
   const options = ["Organisation", "User"];
 
   const handleChange = (name, value) => {
-    setFormValues(prev => ({ ...prev, [name]: value }));
+    setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -26,12 +26,12 @@ const MainRightModel = () => {
     if (!selectedRole) return;
     setLoading(true);
     setError(null);
-    
+
     try {
       const res = await fetch(endpoints[selectedRole], {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formValues)
+        body: JSON.stringify(formValues),
       });
       if (res.status === 201) {
         window.location.href = "/signin"; // singin page
@@ -72,7 +72,9 @@ const MainRightModel = () => {
             role={selectedRole}
             onChange={{ values: formValues, handleChange }}
           />
-          <SignUpButton loading={loading} role={selectedRole}  />
+          <div className="flex justify-center">
+            <SignUpButton loading={loading} role={selectedRole} />
+          </div>
           {error && <span className="text-red-500">{error}</span>}
         </form>
       )}

@@ -40,16 +40,6 @@ const Input = ({ role, onChange }) => {
             value={onChange.values[field.name] || ""}
             onChange={(e) => onChange.handleChange(field.name, e.target.value)}
           />
-          {field.type === "password" && (
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-600"
-              aria-label={showPassword ? "Hide password" : "Show password"}
-            >
-              {showPassword ? <FaEye /> : <FaEyeSlash />}
-            </button>
-          )}
         </div>
       ))}
     </div>
