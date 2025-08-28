@@ -67,7 +67,8 @@ function ForgotPasswordModal({ isOpen, onClose }) {
             <FaKey size={28} className="text-pink-300" />
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-            <span className='text-pink-500'>F</span>orgot <span className='text-pink-500'>P</span>assword?
+            <span className="text-pink-500">F</span>orgot{" "}
+            <span className="text-pink-500">P</span>assword?
           </h2>
           <p className="text-gray-500 text-sm sm:text-base">
             Don’t Worry, We’ll send you reset instructions
