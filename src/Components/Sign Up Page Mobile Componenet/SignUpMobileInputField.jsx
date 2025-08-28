@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 const InputField = ({ field, formData, handleInputChange, showPassword, setShowPassword }) => (
   <div className="relative mb-3">
     <input
@@ -19,7 +19,7 @@ const InputField = ({ field, formData, handleInputChange, showPassword, setShowP
         onClick={() => setShowPassword(!showPassword)}
         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-lg"
       >
-        {showPassword ? "🙈" : "👁️"}
+        {showPassword ? <FaEye /> : <FaEyeSlash />}
       </button>
     )}
   </div>
