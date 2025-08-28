@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FaKey, FaTimes } from "react-icons/fa";
 
 function ForgotPasswordModal({ isOpen, onClose }) {
-  const [email, setEmail] = useState("john.doe@gmail.com");
+  const [email, setEmail] = useState("");
   const [countdown, setCountdown] = useState(0);
   const [canResend, setCanResend] = useState(true);
 
