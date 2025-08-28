@@ -5,10 +5,12 @@ import SignInPageInput from "./SignInPageInput";
 import SignInButton from "../SignIn page Component/SignInButton";
 import Header from "../Sign Up page Component/SignUpPageRightModel/Header";
 import SignInPage_Footer from "./SignInPage_Footer";
+import ForgotPasswordModal from "../Universal Components/ForgotPasswordModal"; // Import Modal
 import { RxCrossCircled } from "react-icons/rx";
 
 const SignInPage_bg = () => {
   const [selectedRole, setSelectedRole] = useState(null);
+  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
 
   const inputFields = [
     {
@@ -18,11 +20,7 @@ const SignInPage_bg = () => {
       background: "#F3DCE0",
     },
     { type: "email", placeholder: "Email", background: "#F3DCE0" },
-    {
-      type: "password",
-      placeholder: "Password",
-      background: "#F3DCE0",
-    },
+    { type: "password", placeholder: "Password", background: "#F3DCE0" },
   ];
 
   return (
@@ -37,7 +35,11 @@ const SignInPage_bg = () => {
       </div>
 
       {/* Sign In Card */}
-      <div className="relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl mt-[-15px]">
+      <div
+        className={`relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl mt-[-15px] ${
+          isForgotPasswordOpen ? "blur-sm" : ""
+        }`}
+      >
         <div className="relative w-full max-w-[400px] bg-white rounded-2xl shadow-2xl mt-[-15px] flex flex-col justify-between items-center z-10 py-5 space-y-3">
           {/* Header */}
           <Header
@@ -64,21 +66,24 @@ const SignInPage_bg = () => {
 
           {/* Button */}
           <div className="flex justify-center items-center">
-            <SignInButton  role={selectedRole} />
+            <SignInButton role={selectedRole} />
           </div>
 
           {/* Forgot Password */}
           <div className="text-gray-700 text-sm mb-4 mt-5">
             Forgot password?{" "}
-            <a href="/forgot-password" className="text-[#FF6699] underline">
+            <button
+              onClick={() => setIsForgotPasswordOpen(true)}
+              className="text-[#FF6699] underline focus:outline-none"
+            >
               Click here!
-            </a>
+            </button>
           </div>
         </div>
 
         {/* Footer */}
         <div className="min-w-full max-w-[400px] mt-auto">
-          <Link to='/Signup' >
+          <Link to="/Signup">
             <SignInPage_Footer
               FooterText1="Don't have an account?"
               FooterText2="Sign-Up"
@@ -86,6 +91,12 @@ const SignInPage_bg = () => {
           </Link>
         </div>
       </div>
+
+      {/* Forgot Password Modal */}
+      <ForgotPasswordModal
+        isOpen={isForgotPasswordOpen}
+        onClose={() => setIsForgotPasswordOpen(false)}
+      />
     </div>
   );
 };
