@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MobileLandingPageFemale1 from "../../assets/Images/MobileLandingPageFemale1.png";
-
+import { Link } from "react-router-dom";
 // Import all the separated Components
 import Header from "../../Components/Sign Up Page Mobile Componenet/SignUpMobileHeader";
 import CustomDropdown from "../../Components/Sign Up Page Mobile Componenet/CustomDropdown";
@@ -9,7 +9,7 @@ import SignUpButton from "../../Components/Sign Up Page Mobile Componenet/SignUp
 import BottomNavigation from "../../Components/Sign Up Page Mobile Componenet/BottomNavigation";
 import BackgroundImage from "../../Components/Sign Up Page Mobile Componenet/BackgroundImage";
 import { getCurrentFields } from "../../config/SignUpMobileFormField";
-
+import { RxCrossCircled } from "react-icons/rx";
 const SignUpPageMobile = () => {
   const [selectedType, setSelectedType] = useState("Create Account as");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -49,7 +49,7 @@ const SignUpPageMobile = () => {
       }}
     >
       {/* Background Image */}
-      <BackgroundImage 
+      <BackgroundImage
         backgroundImage={MobileLandingPageFemale1}
         altText="Mobile Landing Page Female"
       />
@@ -60,7 +60,12 @@ const SignUpPageMobile = () => {
           {/* Close Button */}
           <div className="flex justify-end mb-2">
             <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer text-gray-600 text-lg">
-              ✕
+              <Link
+                to="/"
+                className="w-10 h-10 bg-pink-100 hover:bg-pink-200 rounded-full flex items-center justify-center cursor-pointer text-pink-600 hover:text-pink-800 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                <RxCrossCircled className="text-2xl" />
+              </Link>
             </div>
           </div>
 
