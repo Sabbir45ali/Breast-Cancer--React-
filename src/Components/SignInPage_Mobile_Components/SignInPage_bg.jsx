@@ -78,7 +78,7 @@ const SignInPage_bg = () => {
 
         {/* Footer */}
         <div className="min-w-full max-w-[400px] mt-auto">
-          <Link to='/Signup'>
+          <Link to='/Signup' >
             <SignInPage_Footer
               FooterText1="Don't have an account?"
               FooterText2="Sign-Up"
