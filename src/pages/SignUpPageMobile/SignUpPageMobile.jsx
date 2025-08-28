@@ -42,11 +42,7 @@ const SignUpPageMobile = () => {
 
   return (
     <div
-      className="min-h-screen relative"
-      style={{
-        background:
-          "linear-gradient(135deg, #EC4899 0%, #F8BBD9 50%, #FDF2F8 100%)",
-      }}
+      className="min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]"
     >
       {/* Background Image */}
       <BackgroundImage
@@ -62,9 +58,9 @@ const SignUpPageMobile = () => {
             <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer text-gray-600 text-lg">
               <Link
                 to="/"
-                className="w-10 h-10 bg-pink-100 hover:bg-pink-200 rounded-full flex items-center justify-center cursor-pointer text-pink-600 hover:text-pink-800 transition-all duration-200 shadow-sm hover:shadow-md"
+                className=" rounded-full flex items-center justify-center"
               >
-                <RxCrossCircled className="text-2xl" />
+                <RxCrossCircled className="text-2xl bg-pink-100 text-pink-600" />
               </Link>
             </div>
           </div>

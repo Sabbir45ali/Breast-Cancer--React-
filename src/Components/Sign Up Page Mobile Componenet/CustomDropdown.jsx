@@ -1,4 +1,5 @@
 import React from "react";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 const CustomDropdown = ({
   selectedType,
@@ -11,24 +12,13 @@ const CustomDropdown = ({
     <div className="relative mb-4">
       <div
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-        className="w-full px-4 py-3 rounded-lg border cursor-pointer flex justify-between items-center text-sm"
-        style={{
-          backgroundColor: "rgba(244, 193, 207, 0.3)",
-          borderColor: "rgba(236, 72, 153, 0.3)",
-          color: "#6B7280",
-        }}
+        className="w-full px-4 py-3  rounded-lg  bg-pink-100  focus:outline-none focus:ring-2 focus:ring-pink-300 border border-gray-300 text-gray-500 font-mediumr flex justify-between items-center text-sm"
+        
       >
         <span>{selectedType}</span>
-        <div
-          className={`text-gray-500 transition-transform text-sm ${
-            isDropdownOpen ? "rotate-180" : ""
-          }`}
-          style={{
-            transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
-          }}
-        >
-          ▼
-        </div>
+                <TiArrowSortedDown
+                  className={`w-4 h-4 transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
+                />
       </div>
 
       {isDropdownOpen && (

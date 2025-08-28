@@ -50,7 +50,7 @@ const SignInPage_bg = () => {
 
           {/* Close Button */}
           <Link to="/">
-            <RxCrossCircled className="absolute top-4 right-4 text-3xl z-40 w-6 h-6 bg-pink-100 hover:bg-pink-200 rounded-full flex items-center cursor-pointer text-pink-600 hover:text-pink-800 transition-all duration-200 shadow-sm hover:shadow-md" />
+            <RxCrossCircled className="absolute top-4 right-4 text-3xl z-40 w-6 h-6 bg-pink-100  rounded-full flex items-center  text-pink-600 " />
           </Link>
 
           {/* Inputs */}

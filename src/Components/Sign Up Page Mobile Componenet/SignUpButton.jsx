@@ -2,12 +2,11 @@ import React from "react";
 
 const SignUpButton = ({ onClick, disabled = false }) => {
   return (
-    <div className="mb-4">
+    <div className="flex justify-center items-center">
       <button
         onClick={onClick}
         disabled={disabled}
-        className="w-full py-3 rounded-full text-white font-semibold text-sm transition-colors duration-200 hover:opacity-90 disabled:opacity-50"
-        style={{ backgroundColor: "#E91E63" }}
+         className="w-36 text-white text-lg py-2 px-6 bg-[#AB1B68] shadow-lg rounded-lg hover:bg-pink-200 hover:text-pink-950 transition duration-300 position-center"
       >
         Sign-up
       </button>

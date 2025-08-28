@@ -7,11 +7,7 @@ const InputField = ({ field, formData, handleInputChange, showPassword, setShowP
       placeholder={field.placeholder}
       value={formData[field.key] || ""}
       onChange={(e) => handleInputChange(field.key, e.target.value)}
-      className="w-full px-4 py-3 bg-pink-100 rounded-lg border border-pink-200 outline-none text-gray-700 placeholder-gray-500 text-sm focus:border-pink-300"
-      style={{
-        backgroundColor: "rgba(244, 193, 207, 0.3)",
-        borderColor: "rgba(236, 72, 153, 0.3)",
-      }}
+      className="w-full  py-3 h-12  px-4 rounded-lg  bg-pink-100  focus:outline-none focus:ring-2 focus:ring-pink-300 border border-gray-300 text-gray-700 "
     />
     {field.type === "password" && (
       <button
