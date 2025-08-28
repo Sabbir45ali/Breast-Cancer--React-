@@ -11,7 +11,7 @@ const awarenessMessages = [
   "Stay informed—early detection saves lives.",
 ];
 
-const AwarenessSection = ({btnText}) => {
+const AwarenessSection = ({ btnText }) => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-12 p-8 bg-gradient-to-b from-[#FD8AAB] to-[#F44A82] min-h-screen">
       <div className="bg-white rounded-[35px] p-6 shadow-lg w-96 md:w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden border border-pink-700">

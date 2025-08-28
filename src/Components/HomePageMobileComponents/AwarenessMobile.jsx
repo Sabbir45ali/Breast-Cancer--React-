@@ -14,7 +14,7 @@ const awarenessMessages = [
   "Early diagnosis and prompt treatment lead to better outcomes.",
 ];
 
-const AwarenessSection = ({testBtn}) => {
+const AwarenessSection = ({ testBtn }) => {
   return (
     <div className="bg-gradient-to-t from-[#D28CA7] to-[#360016] min-h-64 flex flex-col items-center p-8">
       <div className="flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full">
