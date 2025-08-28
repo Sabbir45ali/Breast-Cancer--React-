@@ -34,7 +34,7 @@ const MainRightModel = () => {
         body: JSON.stringify(formValues)
       });
       if (res.status === 201) {
-        window.location.href = "/singin"; // singin page
+        window.location.href = "/signin"; // singin page
       } else {
         const data = await res.json();
         console.log(data); // <-- Add this line here for error details

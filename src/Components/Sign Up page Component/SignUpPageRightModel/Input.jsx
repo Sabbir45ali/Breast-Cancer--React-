@@ -19,8 +19,8 @@ const Input = ({ role, onChange }) => {
   ];
 
   const userFields = [
-    { name: "name", type: "text", placeholder: "Name" },
-    { name: "phone", type: "text", placeholder: "Phone No" },
+    { name: "username", type: "text", placeholder: "Name" },
+    { name: "phnumber", type: "text", placeholder: "Phone No" },
     { name: "email", type: "email", placeholder: "Email" },
     { name: "password", type: "password", placeholder: "Password" },
   ];
