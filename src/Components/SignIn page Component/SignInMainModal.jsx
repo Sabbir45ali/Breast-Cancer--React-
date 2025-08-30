@@ -8,7 +8,13 @@ const SignInMainModal = () => {
   const [selectedRole, setSelectedRole] = useState(null);
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
 
-  const openForgotPasswordModal = () => setIsForgotPasswordOpen(true);
+    const openForgotPasswordModal = () => {
+    if (!selectedRole) {
+      alert("Please select a role before resetting password.");
+      return;
+    }
+    setIsForgotPasswordOpen(true);
+   };
   const closeForgotPasswordModal = () => setIsForgotPasswordOpen(false);
 
   return (

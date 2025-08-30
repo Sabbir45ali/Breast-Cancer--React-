@@ -52,7 +52,7 @@ const SignInPage_bg = () => {
 
           {/* Close Button */}
           <Link to="/">
-            <RxCrossCircled className="absolute top-4 right-4 text-3xl z-40 w-6 h-6 bg-pink-100  rounded-full flex items-center  text-pink-600 " />
+            <RxCrossCircled className="absolute top-4 right-4 text-3xl z-40 w-6 h-6 bg-pink-100 rounded-full flex items-center text-pink-600 " />
           </Link>
 
           {/* Inputs */}
@@ -73,7 +73,13 @@ const SignInPage_bg = () => {
           <div className="text-gray-700 text-sm mb-4 mt-5">
             Forgot password?{" "}
             <button
-              onClick={() => setIsForgotPasswordOpen(true)}
+              onClick={() => {
+                if (!selectedRole) {
+                  alert("Please select a role before resetting password.");
+                  return;
+                }
+                setIsForgotPasswordOpen(true);
+              }}
               className="text-[#FF6699] underline focus:outline-none"
             >
               Click here!
