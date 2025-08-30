@@ -1,5 +1,6 @@
 import React from "react";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import {Tick} from './Tick'
+import {Cross} from './Cross'
 
 function OtpResultModal({ isOpen, onClose, success }) {
   if (!isOpen) return null;
@@ -11,9 +12,9 @@ function OtpResultModal({ isOpen, onClose, success }) {
         {/* Icon */}
         <div className="flex justify-center mb-4">
           {success ? (
-            <FaCheckCircle className="text-green-500 text-6xl" />
+             <Tick size={50} style={{ display: "inline-block" }} />
           ) : (
-            <FaTimesCircle className="text-red-500 text-6xl" />
+            <Cross size={50} style={{ display: "inline-block" }}/>
           )}
         </div>
 
