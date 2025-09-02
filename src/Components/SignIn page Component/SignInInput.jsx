@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../Sign Up page Component/SignUpPageRightModel/InputField";
 import DropdownMenu from "../Sign Up page Component/SignUpPageRightModel/Dropdown";
 
-const SignInInput = ({ onRoleSelect }) => {
+const SignInInput = ({ onRoleSelect, formValues, onChange }) => {
   const inputFields = [
-    { type: "email", placeholder: "Email" },
-    { type: "password", placeholder: "Password" },
+    { name: "email", type: "email", placeholder: "Email" },
+    { name: "password", type: "password", placeholder: "Password" },
   ];
 
   const options = ["Organisation", "User", "Admin"];
@@ -16,18 +16,20 @@ const SignInInput = ({ onRoleSelect }) => {
         heading="Sign In as"
         options={options}
         onSelect={onRoleSelect}
-        buttonClassName='bg-gray-200 text-gray-600 font-semibold'
+        buttonClassName="bg-gray-200 text-gray-600 font-semibold"
         divClassName=" bg-gray-200 "
       />
-      <form className="w-80 space-y-4">
-        {inputFields.map((field, index) => (
+      <div className="w-80 space-y-4">
+        {inputFields.map((field) => (
           <InputField
-            key={index}
+            key={field.name}
             type={field.type}
             placeholder={field.placeholder}
+            value={formValues[field.name] || ""}
+            onChange={(e) => onChange(field.name, e.target.value)}
           />
         ))}
-      </form>
+      </div>
     </div>
   );
 };
