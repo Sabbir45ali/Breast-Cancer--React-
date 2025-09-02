@@ -82,16 +82,16 @@ const SignInMainModal = () => {
     <>
       <div
         className={`flex flex-col items-center justify-center h-full w-full transition-all duration-300 ${
-          isForgotPasswordOpen ? "blur-sm" : ""
+          isForgotPasswordOpen ? 'blur-sm' : ''
         }`}
       >
-        <div className="w-1/2 flex flex-col items-center">
+        <div className='w-1/2 flex flex-col items-center'>
           <Header
-            FirstLetter="S"
-            SecondLetter="I"
-            Firstpart="ign "
-            Secondpart="n"
-            text="Use email and password"
+            FirstLetter='S'
+            SecondLetter='I'
+            Firstpart='ign '
+            Secondpart='n'
+            text='Use email and password'
           />
           <SignInInput
             onRoleSelect={setSelectedRole}
@@ -105,7 +105,7 @@ const SignInMainModal = () => {
           {loading && <p className="mt-2">Signing in...</p>}
           <div className="mt-4">
             <button
-              className="text-pink-500 underline hover:text-pink-700 focus:outline-none"
+              className='text-pink-500 underline hover:text-pink-700 focus:outline-none'
               onClick={openForgotPasswordModal}
             >
               Forgot Password?
@@ -119,7 +119,7 @@ const SignInMainModal = () => {
         onClose={closeForgotPasswordModal}
       />
     </>
-  );
-};
+  )
+}
 
-export default SignInMainModal;
+export default SignInMainModal
