@@ -52,33 +52,68 @@ function ForgotPasswordModal ({ isOpen, onClose }) {
     return `${mins}:${secs.toString().padStart(2, '0')}`
   }
 
-  const handleGenerateOtp = () => {
+  const handleGenerateOtp = async () => {
     if (!email.trim()) {
-      alert('Please enter your email before generating OTP!')
-      return
+      alert('Please enter your email before generating OTP!');
+      return;
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address!')
-      return
+    try {
+      const response = await fetch('http://127.0.0.1:8000/auth/forgot-password/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      
+      let data;
+      try {
+        if (response.headers.get("content-type")?.includes("application/json")) {
+          data = await response.json();
+        } else {
+          throw new Error("No JSON response received");
+        }
+      } catch (err) {
+        alert("Server returned no JSON data or there was a network error.");
+        return;
+      }
+  
+      if (response.ok) {
+        setCountdown(300); // 5 minutes
+        setCanResend(false);
+        setShowOtp(true);
+        setOtp(['', '', '', '', '', '']);
+        inputRefs.current[0]?.focus();
+        alert(data.message || 'OTP sent to email');
+      } else {
+        alert(data.error || 'Failed to send OTP');
+      }
+    } catch (error) {
+      alert('Network error: ' + error.message);
     }
+  };
+  
 
-    console.log('Password reset requested for:', email)
-    setCountdown(300) // 5 minutes
-    setCanResend(false)
-    setShowOtp(true)
-    setOtp(['', '', '', '', '', ''])
-    inputRefs.current[0]?.focus()
-  }
-
-  const handleResend = () => {
-    console.log('Resend OTP for:', email)
-    setCountdown(300)
-    setCanResend(false)
-    setOtp(['', '', '', '', '', ''])
-    inputRefs.current[0]?.focus()
-  }
+  const handleResend = async () => {
+    try {
+      const response = await fetch('/send_otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setCountdown(300);
+        setCanResend(false);
+        setOtp(['', '', '', '', '', '']);
+        inputRefs.current[0]?.focus();
+        alert(data.message || 'OTP resent to email');
+      } else {
+        alert(data.error || 'Failed to resend OTP');
+      }
+    } catch (error) {
+      alert('Network error: ' + error.message);
+    }
+  };
+  
 
   const handleChangeEmail = () => {
     setShowOtp(false)
@@ -106,26 +141,46 @@ function ForgotPasswordModal ({ isOpen, onClose }) {
     }
   }
 
-  const handleOtpSubmit = (e) => {
-    e.preventDefault()
-
-    const enteredOtp = otp.join('')
-
+  const handleOtpSubmit = async (e) => {
+    e.preventDefault();
+    const enteredOtp = otp.join('');
     if (enteredOtp.length < 6) {
-      alert('Please enter all 6 digits of the OTP.')
-      return
+      alert('Please enter all 6 digits of the OTP.');
+      return;
     }
-
-    if (enteredOtp === '123456') {
-      setOtpSuccess(true)
-    } else {
-      setOtpSuccess(false)
-      setCountdown(0)
-      setCanResend(true)
+    try {
+      const response = await fetch('http://127.0.0.1:8000/auth/verify-otp/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, otp: enteredOtp }),
+      });
+      let data;
+      try {
+        if (response.headers.get("content-type")?.includes("application/json")) {
+          data = await response.json();
+        } else {
+          throw new Error("No JSON response received");
+        }
+      } catch (err) {
+        alert("Server returned no JSON data or there was a network error.");
+        return;
+      }
+      if (response.ok) {
+        setOtpSuccess(true);
+        alert(data.message || 'OTP verified successfully');
+        // Trigger password reset flow here as needed
+      } else {
+        setOtpSuccess(false);
+        setCanResend(true);
+        alert(data.error || 'OTP verification failed');
+      }
+      setShowResult(true);
+    } catch (error) {
+      alert('Network error: ' + error.message);
     }
-
-    setShowResult(true)
-  }
+  };
+  
+  
 
   if (!isOpen) return null
 
