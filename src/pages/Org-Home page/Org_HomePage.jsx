@@ -6,17 +6,17 @@ import Header from "../../Components/Home Page Components/Header";
 import AwarenessSection from "../../Components/Home Page Components/AwarenessSection";
 import HomePageFooter from "../../Components/Home Page Components/HomePageFooter";
 
-const HomePage = () => {
+const Org_HomePage = () => {
   return (
     <div>
       <div className="bg-[url('/src/assets/Images/bg_pic_landing_page_dekstop.png')] bg-cover bg-center min-h-screen flex flex-col overflow-auto">
         <Navbar profileImg={profileImg} Logo={Logo} />
         <Header />
       </div>
-      <AwarenessSection btnText="Test Yourself" />
+      <AwarenessSection btnText="Test" />
       <HomePageFooter />
     </div>
   );
 };
 
-export default HomePage;
+export default Org_HomePage;
