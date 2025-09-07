@@ -6,19 +6,18 @@ const CustomDropdown = ({
   isDropdownOpen,
   setIsDropdownOpen,
   setSelectedType,
-  accountTypes
+  accountTypes,
 }) => {
   return (
     <div className="relative mb-4">
       <div
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="w-full px-4 py-3  rounded-lg  bg-pink-100  focus:outline-none focus:ring-2 focus:ring-pink-300 border border-gray-300 text-gray-500 font-mediumr flex justify-between items-center text-sm"
-        
       >
         <span>{selectedType}</span>
-                <TiArrowSortedDown
-                  className={`w-4 h-4 transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
-                />
+        <TiArrowSortedDown
+          className={`w-4 h-4 transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
+        />
       </div>
 
       {isDropdownOpen && (
