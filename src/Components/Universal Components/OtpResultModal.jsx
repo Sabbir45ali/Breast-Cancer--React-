@@ -9,7 +9,7 @@ function OtpResultModal({ isOpen, onClose, success }) {
   if (!isOpen) return null;
 
   if (showReset) {
-    return <ResetPasswordModal isOpen={true} onClose={onClose} />;
+    return <ResetPasswordModal isOpen onClose={onClose} />;
   }
 
   return (
