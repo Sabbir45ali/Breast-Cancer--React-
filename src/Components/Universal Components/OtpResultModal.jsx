@@ -3,13 +3,13 @@ import { Tick } from "./Tick";
 import { Cross } from "./Cross";
 import ResetPasswordModal from "./ResetPasswordModal";
 
-function OtpResultModal({ isOpen, onClose, success }) {
+function OtpResultModal({ isOpen, onClose, success, email }) {
   const [showReset, setShowReset] = useState(false);
 
   if (!isOpen) return null;
 
   if (showReset) {
-    return <ResetPasswordModal isOpen onClose={onClose} />;
+    return <ResetPasswordModal isOpen onClose={onClose} email={email} />;
   }
 
   return (
@@ -23,18 +23,15 @@ function OtpResultModal({ isOpen, onClose, success }) {
             <Cross size={50} style={{ display: "inline-block" }} />
           )}
         </div>
-
         {/* Message */}
         <h2 className="text-2xl font-bold mb-2">
           {success ? "Successfully Verified!" : "Verification Failed"}
         </h2>
-
         <p className="text-gray-600 mb-6">
           {success
             ? "Your OTP has been verified successfully."
             : "The OTP you entered is incorrect. Please try again."}
         </p>
-
         {/* Buttons */}
         {success ? (
           <button

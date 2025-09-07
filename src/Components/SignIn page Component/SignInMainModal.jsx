@@ -24,7 +24,7 @@ const SignInMainModal = () => {
   // API endpoints by role
   const endpoints = {
     Organisation: "http://127.0.0.1:8000/auth/login-org/",
-    User: "http://127.0.0.1:8000/auth/login/",
+    User: "http://127.0.0.1:8000/auth/login-user/",
     Admin: null, // No API given, handle accordingly or skip for now
   };
 
