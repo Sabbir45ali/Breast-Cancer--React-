@@ -6,7 +6,7 @@ import DropdownMenu from "./Dropdown";
 
 const endpoints = {
   Organisation: "http://127.0.0.1:8000/auth/signup-org/", 
-  User: "http://127.0.0.1:8000/auth/signup/",
+  User: "http://127.0.0.1:8000/auth/signup-user/",
 };
 
 const MainRightModel = () => {
