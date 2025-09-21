@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const LeftModel = (props) => {
   return (
     <div className='flex items-center justify-center h-full w-full'>
-      <div className='bg-gradient-to-r from-[#FEC6D9] to-[#E3348C] h-full w-full  rounded-xl shadow-lg text-center flex flex-col items-center justify-center'>
+      <div className='bg-gradient-to-r from-[#7D1D4D] to-[#E3348C] h-full w-full  rounded-xl shadow-lg text-center flex flex-col items-center justify-center'>
         <LeftModalHeader Header={props.Header} Text={props.Text} />
         <div className='mt-4'>
           <Link to='/signin'>

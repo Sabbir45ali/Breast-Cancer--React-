@@ -22,18 +22,23 @@ function ResetPasswordModal({ isOpen, onClose, email }) {
 
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/reset-password/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email, // Use email passed from parent
-          new_password: password,
-        }),
-      });
+      const response = await fetch(
+        "http://127.0.0.1:8000/auth/reset-password/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email, // Use email passed from parent
+            new_password: password,
+          }),
+        },
+      );
 
       let data;
       try {
-        if (response.headers.get("content-type")?.includes("application/json")) {
+        if (
+          response.headers.get("content-type")?.includes("application/json")
+        ) {
           data = await response.json();
         } else {
           throw new Error("No JSON response received");

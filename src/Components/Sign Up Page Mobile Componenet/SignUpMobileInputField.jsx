@@ -1,6 +1,12 @@
 import React from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; 
-const InputField = ({ field, formData, handleInputChange, showPassword, setShowPassword }) => (
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+const InputField = ({
+  field,
+  formData,
+  handleInputChange,
+  showPassword,
+  setShowPassword,
+}) => (
   <div className="relative mb-3">
     <input
       type={field.type === "password" && showPassword ? "text" : field.type}

@@ -13,7 +13,7 @@ const Org_HomePage = () => {
         <Navbar profileImg={profileImg} Logo={Logo} />
         <Header />
       </div>
-      <AwarenessSection btnText="Test" />
+      <AwarenessSection formLink='/form' btnText="Test" />
       <HomePageFooter />
     </div>
   );
