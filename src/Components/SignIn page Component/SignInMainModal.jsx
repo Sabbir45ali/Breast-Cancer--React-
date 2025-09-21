@@ -99,7 +99,7 @@ const SignInMainModal = () => {
             onChange={handleChange}
           />
           <div>
-            <SignInButton onClick={handleSignIn} btnColor="#AB1B68" />
+            <SignInButton onClick={handleSignIn}  />
           </div>
           {error && <p className="text-red-600 mt-2">{error}</p>}
           {loading && <p className="mt-2">Signing in...</p>}
