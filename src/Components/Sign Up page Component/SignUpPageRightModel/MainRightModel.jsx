@@ -72,7 +72,7 @@ const MainRightModel = () => {
             role={selectedRole}
             onChange={{ values: formValues, handleChange }}
           />
-          <div className="flex justify-center">
+          <div className=" flex justify-center">
             <SignUpButton loading={loading} role={selectedRole} />
           </div>
           {error && <span className="text-red-500">{error}</span>}
