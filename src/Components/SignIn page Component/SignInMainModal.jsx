@@ -24,7 +24,7 @@ const SignInMainModal = () => {
   // API endpoints by role
   const endpoints = {
     Organisation: "http://127.0.0.1:8000/auth/login-org/",
-    User: "http://127.0.0.1:8000/auth/login/",
+    User: "http://127.0.0.1:8000/auth/login-user/",
     Admin: null, // No API given, handle accordingly or skip for now
   };
 
@@ -82,16 +82,16 @@ const SignInMainModal = () => {
     <>
       <div
         className={`flex flex-col items-center justify-center h-full w-full transition-all duration-300 ${
-          isForgotPasswordOpen ? 'blur-sm' : ''
+          isForgotPasswordOpen ? "blur-sm" : ""
         }`}
       >
-        <div className='w-1/2 flex flex-col items-center'>
+        <div className="w-1/2 flex flex-col items-center">
           <Header
-            FirstLetter='S'
-            SecondLetter='I'
-            Firstpart='ign '
-            Secondpart='n'
-            text='Use email and password'
+            FirstLetter="S"
+            SecondLetter="I"
+            Firstpart="ign "
+            Secondpart="n"
+            text="Use email and password"
           />
           <SignInInput
             onRoleSelect={setSelectedRole}
@@ -103,10 +103,19 @@ const SignInMainModal = () => {
           </div>
           {error && <p className="text-red-600 mt-2">{error}</p>}
           {loading && <p className="mt-2">Signing in...</p>}
+
+          {/* Forgot Password Button */}
           <div className="mt-4">
             <button
-              className='text-pink-500 underline hover:text-pink-700 focus:outline-none'
-              onClick={openForgotPasswordModal}
+              className={`underline focus:outline-none ${
+                !selectedRole
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-pink-500 hover:text-pink-700"
+              }`}
+              onClick={() => {
+                if (selectedRole) openForgotPasswordModal();
+              }}
+              disabled={!selectedRole} // disables if no role
             >
               Forgot Password?
             </button>
@@ -119,7 +128,7 @@ const SignInMainModal = () => {
         onClose={closeForgotPasswordModal}
       />
     </>
-  )
-}
+  );
+};
 
-export default SignInMainModal
+export default SignInMainModal;

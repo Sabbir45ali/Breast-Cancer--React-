@@ -41,9 +41,7 @@ const SignUpPageMobile = () => {
   const currentFields = getCurrentFields(selectedType);
 
   return (
-    <div
-      className="min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]"
-    >
+    <div className="min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]">
       {/* Background Image */}
       <BackgroundImage
         backgroundImage={MobileLandingPageFemale1}

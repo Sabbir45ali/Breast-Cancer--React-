@@ -14,7 +14,11 @@ const Input = ({ role, onChange }) => {
     { name: "phnumber", type: "text", placeholder: "Phone No" },
     { name: "email", type: "email", placeholder: "Email" },
     { name: "org_type", type: "text", placeholder: "Type of Org" },
-    { name: "license_number", type: "text", placeholder: "Licence / Reg Number" },
+    {
+      name: "license_number",
+      type: "text",
+      placeholder: "Licence / Reg Number",
+    },
     { name: "password", type: "password", placeholder: "Password" },
   ];
 

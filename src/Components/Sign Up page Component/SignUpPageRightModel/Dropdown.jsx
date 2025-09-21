@@ -1,7 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 
-function DropdownMenu({ heading, options = [], onSelect, buttonClassName="" , divClassName=""}) {
+function DropdownMenu({
+  heading,
+  options = [],
+  onSelect,
+  buttonClassName = "",
+  divClassName = "",
+}) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
   const dropdownRef = useRef(null); // ✅ define it here
@@ -29,7 +35,7 @@ function DropdownMenu({ heading, options = [], onSelect, buttonClassName="" , di
     <div ref={dropdownRef} className="relative inline-block text-left w-80">
       <button
         onClick={() => setOpen(!open)}
-         className={`w-full h-9 rounded-lg flex justify-between items-center px-4 ${buttonClassName}`}
+        className={`w-full h-9 rounded-lg flex justify-between items-center px-4 ${buttonClassName}`}
       >
         <span>{selected || heading}</span>
         <TiArrowSortedDown
@@ -38,7 +44,9 @@ function DropdownMenu({ heading, options = [], onSelect, buttonClassName="" , di
       </button>
 
       {open && (
-        <div className={`absolute mt-2 w-full rounded-md shadow ring-1 ring-black ring-opacity-5 z-10 ${divClassName}`}>
+        <div
+          className={`absolute mt-2 w-full rounded-md shadow ring-1 ring-black ring-opacity-5 z-10 ${divClassName}`}
+        >
           <div className="py-1">
             {options.map((option) => (
               <button
