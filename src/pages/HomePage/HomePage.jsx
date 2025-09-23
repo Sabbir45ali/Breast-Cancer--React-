@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="bg-[url('/src/assets/Images/bg_pic_landing_page_dekstop.png')] bg-cover bg-center min-h-screen flex flex-col overflow-auto">
-        <Navbar profileImg={profileImg} Logo={Logo} />
+        <Navbar profileLink='/profile' profileImg={profileImg} Logo={Logo} />
         <Header />
       </div>
       <AwarenessSection formLink='/formtwo' btnText="Test Yourself" />

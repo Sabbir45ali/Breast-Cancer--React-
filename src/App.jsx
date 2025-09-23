@@ -21,6 +21,7 @@ import NoPageMobile from "./pages/NoPageMobile/NoPageMobile";
 import YesPage_Mobile from "./pages/YeaPage_Mobile/YesPage_Mobile";
 import Org_HomePage from "./pages/Org-Home page/Org_HomePage";
 import Org_HomePageMobile from "./pages/Org-HomePage_mobile/Org_HomePageMobile";
+import Org_profile from "./pages/Org-profile/Org_profile";
 
 const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
   const [isMobile, setIsMobile] = useState(
@@ -77,6 +78,15 @@ const App = () => {
           element={
             <ResponsiveComponent
               DesktopComponent={Profile}
+              MobileComponent={ProfilePageMobile}
+            />
+          }
+        />
+        <Route
+          path="/org-profile"
+          element={
+            <ResponsiveComponent
+              DesktopComponent={Org_profile}
               MobileComponent={ProfilePageMobile}
             />
           }

@@ -10,7 +10,7 @@ const FormPageBtoC = () => {
   return (
     <div className=" min-h-screen w-full formtwo">
       <div>
-        <Navbar Logo={Logo} profileImg={profileImg} />
+        <Navbar BacktoHome="/home" profileLink='/profile' Logo={Logo} profileImg={profileImg} />
       </div>
       <div className=" gap-8 flex flex-col items-center justify-center relative top-96">
         <label className="mt-4 border-2 h-16 w-96 flex items-center justify-center bg-[#851e2081] border-black text-black text-2xl px-4 py-2 rounded-xl shadow-xl font-semibold gap-3">
