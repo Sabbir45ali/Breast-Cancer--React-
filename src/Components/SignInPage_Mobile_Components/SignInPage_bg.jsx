@@ -1,47 +1,113 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MobileLandingPageFemale1 from "../../assets/Images/MobileLandingPageFemale1.png";
 import SignInPageInput from "./SignInPageInput";
 import SignInButton from "../SignIn page Component/SignInButton";
 import Header from "../Sign Up page Component/SignUpPageRightModel/Header";
 import SignInPage_Footer from "./SignInPage_Footer";
-import ForgotPasswordModal from "../Universal Components/ForgotPasswordModal"; // Import Modal
+import ForgotPasswordModal from "../Universal Components/ForgotPasswordModal";
 import { RxCrossCircled } from "react-icons/rx";
+
+const API_ENDPOINTS = {
+  User: "http://127.0.0.1:8000/auth/login-user/",
+  Organisation: "http://127.0.0.1:8000/auth/login-org/",
+};
 
 const SignInPage_bg = () => {
   const [selectedRole, setSelectedRole] = useState(null);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   const inputFields = [
     {
       type: "dropdown",
       placeholder: "Sign In as",
-      options: ["Organisation", "User", "Admin"],
+      options: ["Organisation", "User"],
       background: "#F3DCE0",
     },
-    { type: "email", placeholder: "Email", background: "#F3DCE0" },
-    { type: "password", placeholder: "Password", background: "#F3DCE0" },
+    {
+      type: "email",
+      placeholder: "Email",
+      background: "#F3DCE0",
+    },
+    {
+      type: "password",
+      placeholder: "Password",
+      background: "#F3DCE0",
+    },
   ];
+
+  // 🔐 LOGIN HANDLER
+  const handleSignIn = async () => {
+    if (!selectedRole) {
+      alert("Please select a role");
+      return;
+    }
+
+    if (!formData.email || !formData.password) {
+      alert("Email and password required");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch(API_ENDPOINTS[selectedRole], {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Login failed");
+        return;
+      }
+
+      // ✅ STORE SESSION (OPTIONAL BUT RECOMMENDED)
+      localStorage.setItem("uid", data.uid);
+      localStorage.setItem("role", selectedRole);
+
+      // ✅ REDIRECT
+      if (selectedRole === "User") navigate("/home");
+      if (selectedRole === "Organisation") navigate("/org-home");
+    } catch (err) {
+      setError("Network error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative">
-      {/* Top Image */}
+      {/* Image */}
       <div className="relative top-20 w-full flex justify-center mt-8">
         <img
           src={MobileLandingPageFemale1}
-          alt="Person on mobile landing page"
-          className="w-[200px] h-[200px] object-cover"
+          alt="Mobile Landing"
+          className="w-[200px] h-[200px]"
         />
       </div>
 
-      {/* Sign In Card */}
+      {/* Card */}
       <div
-        className={`relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl mt-[-15px] ${
+        className={`relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl ${
           isForgotPasswordOpen ? "blur-sm" : ""
         }`}
       >
-        <div className="relative w-full max-w-[400px] bg-white rounded-2xl shadow-2xl mt-[-15px] flex flex-col justify-between items-center z-10 py-5 space-y-3">
-          {/* Header */}
+        <div className="relative flex flex-col items-center py-5 space-y-3">
           <Header
             FirstLetter="S"
             Firstpart="ign"
@@ -50,37 +116,36 @@ const SignInPage_bg = () => {
             text="Use email and password"
           />
 
-          {/* Close Button */}
           <Link to="/">
-            <RxCrossCircled className="absolute top-4 right-4 text-3xl z-40 w-6 h-6 bg-pink-100 rounded-full flex items-center text-pink-600 " />
+            <RxCrossCircled className="absolute top-4 right-4 text-2xl bg-pink-100 text-pink-600 rounded-full" />
           </Link>
 
           {/* Inputs */}
-          <div className="items-center justify-center px-5 w-full">
-            <SignInPageInput
-              inputs={inputFields}
-              selectedRole={selectedRole}
-              setSelectedRole={setSelectedRole}
-            />
-          </div>
+          <SignInPageInput
+            inputs={inputFields}
+            selectedRole={selectedRole}
+            setSelectedRole={setSelectedRole}
+            formData={formData}
+            setFormData={setFormData}
+          />
 
           {/* Button */}
-          <div className="flex justify-center items-center">
-            <SignInButton role={selectedRole} />
-          </div>
+          <SignInButton onClick={handleSignIn} loading={loading} />
 
-          {/* Forgot Password */}
-          <div className="text-gray-700 text-sm mb-4 mt-5">
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+
+          {/* Forgot password */}
+          <div className="text-sm">
             Forgot password?{" "}
             <button
               onClick={() => {
                 if (!selectedRole) {
-                  alert("Please select a role before resetting password.");
+                  alert("Select role first");
                   return;
                 }
                 setIsForgotPasswordOpen(true);
               }}
-              className="text-[#FF6699] underline focus:outline-none"
+              className="text-[#FF6699] underline"
             >
               Click here!
             </button>
@@ -88,17 +153,14 @@ const SignInPage_bg = () => {
         </div>
 
         {/* Footer */}
-        <div className="min-w-full max-w-[400px] mt-auto">
-          <Link to="/Signup">
-            <SignInPage_Footer
-              FooterText1="Don't have an account?"
-              FooterText2="Sign-Up"
-            />
-          </Link>
-        </div>
+        <Link to="/signup">
+          <SignInPage_Footer
+            FooterText1="Don't have an account?"
+            FooterText2="Sign-Up"
+          />
+        </Link>
       </div>
 
-      {/* Forgot Password Modal */}
       <ForgotPasswordModal
         isOpen={isForgotPasswordOpen}
         onClose={() => setIsForgotPasswordOpen(false)}

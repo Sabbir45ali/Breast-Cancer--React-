@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import MobileLandingPageFemale1 from "../../assets/Images/MobileLandingPageFemale1.png";
-import { Link } from "react-router-dom";
-// Import all the separated Components
+import { Link, useNavigate } from "react-router-dom";
+import { RxCrossCircled } from "react-icons/rx";
+
+// Components
 import Header from "../../Components/Sign Up Page Mobile Componenet/SignUpMobileHeader";
 import CustomDropdown from "../../Components/Sign Up Page Mobile Componenet/CustomDropdown";
 import DynamicForm from "../../Components/Sign Up Page Mobile Componenet/DynamicForm";
@@ -9,11 +11,21 @@ import SignUpButton from "../../Components/Sign Up Page Mobile Componenet/SignUp
 import BottomNavigation from "../../Components/Sign Up Page Mobile Componenet/BottomNavigation";
 import BackgroundImage from "../../Components/Sign Up Page Mobile Componenet/BackgroundImage";
 import { getCurrentFields } from "../../config/SignUpMobileFormField";
-import { RxCrossCircled } from "react-icons/rx";
+
+const API_ENDPOINTS = {
+  User: "http://127.0.0.1:8000/auth/signup-user/",
+  Organisation: "http://127.0.0.1:8000/auth/signup-org/",
+};
+
 const SignUpPageMobile = () => {
+  const navigate = useNavigate(); // ✅ MUST be here
+
   const [selectedType, setSelectedType] = useState("Create Account as");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -27,43 +39,71 @@ const SignUpPageMobile = () => {
   const accountTypes = ["User", "Organisation"];
 
   const handleInputChange = (field, value) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSignUp = () => {
-    // Add your sign-up logic here
-    console.log("Sign up with data:", formData);
+  const handleSignUp = async () => {
+    setLoading(true);
+    setError(null);
+
+    const isUser = selectedType === "User";
+
+    const payload = isUser
+      ? {
+          username: formData.name,
+          phnumber: formData.phone,
+          email: formData.email,
+          password: formData.password,
+        }
+      : {
+          org_name: formData.organisationName,
+          org_type: formData.typeOfOrg,
+          license_number: formData.licenceNumber,
+          phnumber: formData.phone,
+          email: formData.email,
+          password: formData.password,
+        };
+
+    try {
+      const res = await fetch(API_ENDPOINTS[selectedType], {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Signup failed");
+        return;
+      }
+
+      // ✅ SUCCESS
+      navigate("/signin");
+    } catch (err) {
+      setError("Network error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const currentFields = getCurrentFields(selectedType);
 
   return (
     <div className="min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]">
-      {/* Background Image */}
       <BackgroundImage
         backgroundImage={MobileLandingPageFemale1}
         altText="Mobile Landing Page Female"
       />
 
-      {/* Form Container */}
       <div className="relative z-10 min-h-screen flex flex-col justify-end pb-8 px-4">
         <div className="bg-white rounded-t-3xl p-6 shadow-lg">
-          {/* Close Button */}
           <div className="flex justify-end mb-2">
-            <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center cursor-pointer text-gray-600 text-lg">
-              <Link
-                to="/"
-                className=" rounded-full flex items-center justify-center"
-              >
-                <RxCrossCircled className="text-2xl bg-pink-100 text-pink-600" />
-              </Link>
-            </div>
+            <Link to="/">
+              <RxCrossCircled className="text-2xl bg-pink-100 text-pink-600 rounded-full" />
+            </Link>
           </div>
 
-          {/* Header */}
           <Header
             FirstLetter="C"
             Firstpart="reate"
@@ -71,7 +111,6 @@ const SignUpPageMobile = () => {
             Secondpart="ccount"
           />
 
-          {/* Custom Dropdown */}
           <CustomDropdown
             selectedType={selectedType}
             isDropdownOpen={isDropdownOpen}
@@ -80,7 +119,6 @@ const SignUpPageMobile = () => {
             accountTypes={accountTypes}
           />
 
-          {/* Dynamic Form Fields */}
           <DynamicForm
             currentFields={currentFields}
             formData={formData}
@@ -89,16 +127,15 @@ const SignUpPageMobile = () => {
             setShowPassword={setShowPassword}
           />
 
-          {/* Sign-up Button */}
           {currentFields.length > 0 && (
-            <SignUpButton
-              onClick={handleSignUp}
-              disabled={currentFields.length === 0}
-            />
+            <SignUpButton onClick={handleSignUp} loading={loading} />
+          )}
+
+          {error && (
+            <p className="text-red-500 text-sm text-center mt-3">{error}</p>
           )}
         </div>
 
-        {/* Bottom Navigation */}
         <BottomNavigation />
       </div>
     </div>

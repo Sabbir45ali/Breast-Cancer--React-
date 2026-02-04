@@ -3,11 +3,9 @@ import Input from "./Input";
 import Header from "./Header";
 import SignUpButton from "./SignUpButton";
 import DropdownMenu from "./Dropdown";
-
-const endpoints = {
-  Organisation: "http://127.0.0.1:8000/auth/signup-org/", 
-  User: "http://127.0.0.1:8000/auth/signup-user/",
-};
+import { useNavigate } from "react-router-dom";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../../../firebase";
 
 const MainRightModel = () => {
   const [selectedRole, setSelectedRole] = useState(null);
@@ -16,14 +14,19 @@ const MainRightModel = () => {
   const [error, setError] = useState(null);
 
   const options = ["Organisation", "User"];
-
+  const navigate = useNavigate();
   const handleChange = (name, value) => {
     setFormValues((prev) => ({ ...prev, [name]: value }));
+  };
+  const endpoints = {
+    User: "http://127.0.0.1:8000/auth/signup-user/",
+    Organisation: "http://127.0.0.1:8000/auth/signup-org/"
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedRole) return;
+
     setLoading(true);
     setError(null);
 
@@ -33,17 +36,27 @@ const MainRightModel = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formValues),
       });
+
+      // 🚨 IMPORTANT: do NOT assume JSON
       if (res.status === 201) {
-        window.location.href = "/signin"; // singin page
-      } else {
+        // Signup successful
+        navigate("/signin");
+        return;
+      }
+
+      // Only parse JSON if backend says it's JSON
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
         const data = await res.json();
-        console.log(data); // <-- Add this line here for error details
-        setError(data.message || "Signup failed");
+        setError(data.error || "Signup failed");
+      } else {
+        setError("Server error. Please try again.");
       }
     } catch (err) {
       setError("Network error");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -55,13 +68,15 @@ const MainRightModel = () => {
         Secondpart="ccount"
         text="Use email for registration"
       />
+
       <DropdownMenu
         heading="Create Account as"
         options={options}
         onSelect={setSelectedRole}
         buttonClassName="bg-gray-200 text-gray-600 font-semibold"
-        divClassName=" bg-gray-200 "
+        divClassName="bg-gray-200"
       />
+
       {selectedRole && (
         <form
           onSubmit={handleSubmit}
@@ -72,9 +87,11 @@ const MainRightModel = () => {
             role={selectedRole}
             onChange={{ values: formValues, handleChange }}
           />
-          <div className=" flex justify-center">
+
+          <div className="flex justify-center">
             <SignUpButton loading={loading} role={selectedRole} />
           </div>
+
           {error && <span className="text-red-500">{error}</span>}
         </form>
       )}

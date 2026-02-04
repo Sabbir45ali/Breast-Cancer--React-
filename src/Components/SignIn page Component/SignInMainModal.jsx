@@ -11,41 +11,37 @@ const SignInMainModal = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
-
   const navigate = useNavigate();
+  
 
-  const openForgotPasswordModal = () => setIsForgotPasswordOpen(true);
-  const closeForgotPasswordModal = () => setIsForgotPasswordOpen(false);
+  const endpoints = {
+    Organisation: "http://127.0.0.1:8000/auth/login-org/",
+    User: "http://127.0.0.1:8000/auth/login-user/",
+  };
 
   const handleChange = (name, value) => {
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  // API endpoints by role
-  const endpoints = {
-    Organisation: "http://127.0.0.1:8000/auth/login-org/",
-    User: "http://127.0.0.1:8000/auth/login-user/",
-    Admin: null, // No API given, handle accordingly or skip for now
-  };
-
   const handleSignIn = async () => {
     if (!selectedRole) {
-      alert("Please select a role.");
+      setError("Please select a role.");
       return;
     }
+
     if (!formValues.email || !formValues.password) {
-      alert("Please fill email and password.");
+      setError("Email and password are required.");
       return;
     }
+
     if (selectedRole === "Admin") {
-      // If Admin login is handled differently or not implemented
       navigate("/admin-home");
       return;
     }
 
     const endpoint = endpoints[selectedRole];
     if (!endpoint) {
-      alert("Unknown role or backend not configured for this role.");
+      setError("Login not configured for this role.");
       return;
     }
 
@@ -56,23 +52,31 @@ const SignInMainModal = () => {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formValues.email,
-          password: formValues.password,
-        }),
+        body: JSON.stringify(formValues),
       });
 
-      const data = await res.json();
+      const contentType = res.headers.get("content-type");
+      const data =
+        contentType && contentType.includes("application/json")
+          ? await res.json()
+          : null;
 
-      if (res.status === 200) {
-        // Successful login
-        if (selectedRole === "User") navigate("/home");
-        else if (selectedRole === "Organisation") navigate("/org-home");
-      } else {
-        setError(data.error || "Login failed");
+      if (!res.ok) {
+        setError(data?.error || "Invalid credentials");
+        setLoading(false);
+        return;
       }
+
+      // ✅ SAVE SESSION (VERY IMPORTANT)
+      localStorage.setItem("uid", data.uid);
+      localStorage.setItem("email", data.email);
+      localStorage.setItem("role", selectedRole);
+
+      // ✅ REDIRECT
+      if (selectedRole === "User") navigate("/home");
+      else if (selectedRole === "Organisation") navigate("/org-home");
     } catch (err) {
-      setError("Network error");
+      setError("Network error. Try again.");
     }
 
     setLoading(false);
@@ -93,29 +97,27 @@ const SignInMainModal = () => {
             Secondpart="n"
             text="Use email and password"
           />
+
           <SignInInput
             onRoleSelect={setSelectedRole}
             formValues={formValues}
             onChange={handleChange}
           />
-          <div>
-            <SignInButton onClick={handleSignIn}  />
-          </div>
-          {error && <p className="text-red-600 mt-2">{error}</p>}
-          {loading && <p className="mt-2">Signing in...</p>}
 
-          {/* Forgot Password Button */}
+          <SignInButton onClick={handleSignIn} disabled={loading} />
+
+          {loading && <p className="mt-2 text-gray-500">Signing in...</p>}
+          {error && <p className="text-red-600 mt-2">{error}</p>}
+
           <div className="mt-4">
             <button
-              className={`underline focus:outline-none ${
+              className={`underline ${
                 !selectedRole
                   ? "text-gray-400 cursor-not-allowed"
                   : "text-pink-500 hover:text-pink-700"
               }`}
-              onClick={() => {
-                if (selectedRole) openForgotPasswordModal();
-              }}
-              disabled={!selectedRole} // disables if no role
+              onClick={() => selectedRole && setIsForgotPasswordOpen(true)}
+              disabled={!selectedRole}
             >
               Forgot Password?
             </button>
@@ -125,7 +127,7 @@ const SignInMainModal = () => {
 
       <ForgotPasswordModal
         isOpen={isForgotPasswordOpen}
-        onClose={closeForgotPasswordModal}
+        onClose={() => setIsForgotPasswordOpen(false)}
       />
     </>
   );
