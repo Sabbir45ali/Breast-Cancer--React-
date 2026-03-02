@@ -23,7 +23,7 @@ import NoPageMobile from './pages/NoPageMobile/NoPageMobile'
 import Org_HomePage from './pages/Org-Home page/Org_HomePage'
 import Org_HomePageMobile from './pages/Org-HomePage_mobile/Org_HomePageMobile'
 import Org_profile from './pages/Org-profile/Org_profile'
-
+import ForgotPassword from './Components/Universal Components/ForgotPasswordModal'
 import ProtectedRoute from './Components/Universal Components/ProtectedRoute'
 import './index.css'
 
@@ -175,7 +175,17 @@ const App = () => {
           </ProtectedRoute>
         }
       />
+    {/* <ForgotPassword /> */}
+    <Route
+        path='/forgot-password'
+        element={
+          <ResponsiveComponent
+            DesktopComponent={ForgotPassword}
+            />
+        }
+      />
     </Routes>
+    
   )
 }
 
