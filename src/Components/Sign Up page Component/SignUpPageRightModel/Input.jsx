@@ -90,5 +90,5 @@ const Input = ({ role, onChange }) => {
     </div>
   )
 }
-//for deploy
+// for deploy
 export default Input
