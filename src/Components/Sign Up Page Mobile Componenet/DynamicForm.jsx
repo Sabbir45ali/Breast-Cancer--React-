@@ -1,15 +1,15 @@
-import React from "react";
-import InputField from "./SignUpMobileInputField";
+import React from 'react'
+import InputField from './SignUpMobileInputField'
 
 const DynamicForm = ({
   currentFields,
   formData,
   handleInputChange,
   showPassword,
-  setShowPassword,
+  setShowPassword
 }) => {
   return (
-    <div className="mb-4">
+    <div className='mb-4'>
       {currentFields.map((field) => (
         <InputField
           key={field.key}
@@ -21,7 +21,7 @@ const DynamicForm = ({
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default DynamicForm;
+export default DynamicForm
