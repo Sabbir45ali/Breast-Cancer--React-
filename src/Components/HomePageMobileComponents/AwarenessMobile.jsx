@@ -15,10 +15,19 @@ const awarenessMessages = [
 ];
 
 const AwarenessSection = ({ testBtn }) => {
+  // Get the role from localStorage
+  const role = localStorage.getItem("role");
+
+  // Determine the link based on the role
+  // If 'org', go to /form. Otherwise (user), go to /formtwo.
+  const targetLink = role === "org" ? "/form" : "/formtwo";
+
   return (
     <div className="bg-gradient-to-t from-[#D28CA7] to-[#360016] min-h-64 flex flex-col items-center p-8">
-      <div className="flex overflow-x-auto  snap-x snap-mandatory space-x-6 p-4 w-full">
-        <div className="bg-white rounded-2xl  border-4 border-[#8C495F]  p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden snap-center">
+      <div className="flex overflow-x-auto snap-x snap-mandatory space-x-6 p-4 w-full">
+        
+        {/* IMAGE CARD */}
+        <div className="bg-white rounded-2xl border-4 border-[#8C495F] p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-center items-center overflow-hidden snap-center">
           <img
             src={femaleImg}
             alt="Awareness"
@@ -26,16 +35,20 @@ const AwarenessSection = ({ testBtn }) => {
           />
         </div>
 
-        <div className="bg-white  border-4 border-[#8C495F] rounded-[25px] p-10 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center snap-center">
+        {/* TEST BUTTON CARD */}
+        <div className="bg-white border-4 border-[#8C495F] rounded-[25px] p-10 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col justify-between items-center text-center snap-center">
           <img src={HomeTxt} alt="I am and I will" className="w-3/4" />
-          <Link to="/form">
+          
+          {/* Dynamic Link used here */}
+          <Link to={targetLink}>
             <button className="mt-6 bg-[#FF8ABA] text-white px-6 py-3 text-xl font-black rounded-lg shadow-md hover:bg-pink-600 w-40 transition duration-300">
               {testBtn}
             </button>
           </Link>
         </div>
 
-        <div className="bg-white  border-4 border-[#8C495F] rounded-[25px] p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col snap-center">
+        {/* MESSAGES CARD */}
+        <div className="bg-white border-4 border-[#8C495F] rounded-[25px] p-6 shadow-lg min-w-[80%] md:min-w-[450px] h-[400px] md:h-[450px] flex flex-col snap-center">
           <h3 className="text-3xl font-bold text-gray-900 text-center">
             Awareness
           </h3>

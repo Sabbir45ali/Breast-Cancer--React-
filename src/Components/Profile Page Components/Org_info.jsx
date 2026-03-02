@@ -21,11 +21,11 @@ const Org_info = (props) => {
         <div className='flex justify-center items-center gap-10 mt-4 text-gray-800 text-[15px] font-semibold'>
           <div className='flex items-center gap-2'>
             <FaPhone className='text-xl' />
-            <span>{props.OrgPhnNo}</span>
+            <span>Phone: {props.OrgPhnNo}</span>
           </div>
           <div className='flex items-center gap-2'>
             <MdEmail className='text-2xl' />
-            <span>: {props.OrgEmail}</span>
+            <span>Email: {props.OrgEmail}</span>
           </div>
           <div className='flex items-center gap-2'>
             <span className='font-semi-bold'>Org type: {props.OrgType}</span>

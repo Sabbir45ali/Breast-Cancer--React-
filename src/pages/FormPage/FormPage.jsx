@@ -23,5 +23,4 @@ const FormPage = () => {
     </div>
   )
 }
-
 export default FormPage
