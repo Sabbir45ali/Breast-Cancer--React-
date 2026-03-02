@@ -1,138 +1,138 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import MobileLandingPageFemale1 from "../../assets/Images/MobileLandingPageFemale1.png";
-import SignInPageInput from "./SignInPageInput";
-import SignInButton from "../SignIn page Component/SignInButton";
-import Header from "../Sign Up page Component/SignUpPageRightModel/Header";
-import SignInPage_Footer from "./SignInPage_Footer";
-import ForgotPasswordModal from "../Universal Components/ForgotPasswordModal";
-import { RxCrossCircled } from "react-icons/rx";
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import MobileLandingPageFemale1 from '../../assets/Images/MobileLandingPageFemale1.png'
+import SignInPageInput from './SignInPageInput'
+import SignInButton from '../SignIn page Component/SignInButton'
+import Header from '../Sign Up page Component/SignUpPageRightModel/Header'
+import SignInPage_Footer from './SignInPage_Footer'
+import ForgotPasswordModal from '../Universal Components/ForgotPasswordModal'
+import { RxCrossCircled } from 'react-icons/rx'
 
 const API_ENDPOINTS = {
-  User: "http://127.0.0.1:8000/auth/login-user/",
-  Organisation: "http://127.0.0.1:8000/auth/login-org/",
-};
+  User: 'http://127.0.0.1:8000/auth/login-user/',
+  Organisation: 'http://127.0.0.1:8000/auth/login-org/'
+}
 
 const SignInPage_bg = () => {
-  const [selectedRole, setSelectedRole] = useState(null);
+  const [selectedRole, setSelectedRole] = useState(null)
 
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: ''
+  })
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
+  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const inputFields = [
     {
-      type: "dropdown",
-      placeholder: "Sign In as",
-      options: ["Organisation", "User"],
-      background: "#F3DCE0",
+      type: 'dropdown',
+      placeholder: 'Sign In as',
+      options: ['Organisation', 'User'],
+      background: '#F3DCE0'
     },
     {
-      type: "email",
-      placeholder: "Email",
-      background: "#F3DCE0",
+      type: 'email',
+      placeholder: 'Email',
+      background: '#F3DCE0'
     },
     {
-      type: "password",
-      placeholder: "Password",
-      background: "#F3DCE0",
-    },
-  ];
+      type: 'password',
+      placeholder: 'Password',
+      background: '#F3DCE0'
+    }
+  ]
 
   // LOGIN
   const handleSignIn = async () => {
     if (!selectedRole) {
-      setError("Please select role");
-      return;
+      setError('Please select role')
+      return
     }
 
     if (!formData.email || !formData.password) {
-      setError("Email and password required");
-      return;
+      setError('Email and password required')
+      return
     }
 
-    setLoading(true);
-    setError(null);
+    setLoading(true)
+    setError(null)
 
     try {
       const res = await fetch(API_ENDPOINTS[selectedRole], {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           email: formData.email,
-          password: formData.password,
-        }),
-      });
+          password: formData.password
+        })
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || "Login failed");
-        setLoading(false);
-        return;
+        setError(data.error || 'Login failed')
+        setLoading(false)
+        return
       }
 
       // ✅ SAVE SESSION
-      localStorage.setItem("uid", data.uid);
-      localStorage.setItem("email", data.email || formData.email);
+      localStorage.setItem('uid', data.uid)
+      localStorage.setItem('email', data.email || formData.email)
 
       // Normalize role
-      const role = (data.role || selectedRole).toLowerCase();
+      const role = (data.role || selectedRole).toLowerCase()
 
-      localStorage.setItem("role", role);
+      localStorage.setItem('role', role)
 
       // If backend sends token
       if (data.token) {
-        localStorage.setItem("token", data.token);
+        localStorage.setItem('token', data.token)
       }
 
       // ✅ REDIRECT
-      if (role === "user") navigate("/home");
+      if (role === 'user') navigate('/home')
 
-      if (role === "org") navigate("/org-home");
+      if (role === 'org') navigate('/org-home')
     } catch (err) {
-      setError("Server connection error");
+      setError('Server connection error')
     }
 
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
-    <div className="bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative">
-      <div className="relative top-20 w-full flex justify-center mt-8">
+    <div className='bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative'>
+      <div className='relative top-20 w-full flex justify-center mt-8'>
         <img
           src={MobileLandingPageFemale1}
-          alt="Mobile Landing"
-          className="w-[200px] h-[200px]"
+          alt='Mobile Landing'
+          className='w-[200px] h-[200px]'
         />
       </div>
 
       <div
         className={`relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl ${
-          isForgotPasswordOpen ? "blur-sm" : ""
+          isForgotPasswordOpen ? 'blur-sm' : ''
         }`}
       >
-        <div className="relative flex flex-col items-center py-5 space-y-3">
+        <div className='relative flex flex-col items-center py-5 space-y-3'>
           <Header
-            FirstLetter="S"
-            Firstpart="ign"
-            SecondLetter="I"
-            Secondpart="n"
-            text="Use email and password"
+            FirstLetter='S'
+            Firstpart='ign'
+            SecondLetter='I'
+            Secondpart='n'
+            text='Use email and password'
           />
 
-          <Link to="/">
-            <RxCrossCircled className="absolute top-4 right-4 text-2xl bg-pink-100 text-pink-600 rounded-full" />
+          <Link to='/'>
+            <RxCrossCircled className='absolute top-4 right-4 text-2xl bg-pink-100 text-pink-600 rounded-full' />
           </Link>
 
           <SignInPageInput
@@ -145,31 +145,31 @@ const SignInPage_bg = () => {
 
           <SignInButton onClick={handleSignIn} disabled={loading} />
 
-          {loading && <p className="text-gray-500 text-sm">Signing in...</p>}
+          {loading && <p className='text-gray-500 text-sm'>Signing in...</p>}
 
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className='text-red-500 text-sm'>{error}</p>}
 
-          <div className="text-sm">
-            Forgot password?{" "}
+          <div className='text-sm'>
+            Forgot password?{' '}
             <button
               onClick={() => {
                 if (!selectedRole) {
-                  setError("Select role first");
-                  return;
+                  setError('Select role first')
+                  return
                 }
-                setIsForgotPasswordOpen(true);
+                setIsForgotPasswordOpen(true)
               }}
-              className="text-[#FF6699] underline"
+              className='text-[#FF6699] underline'
             >
               Click here!
             </button>
           </div>
         </div>
 
-        <Link to="/signup">
+        <Link to='/signup'>
           <SignInPage_Footer
             FooterText1="Don't have an account?"
-            FooterText2="Sign-Up"
+            FooterText2='Sign-Up'
           />
         </Link>
       </div>
@@ -179,7 +179,7 @@ const SignInPage_bg = () => {
         onClose={() => setIsForgotPasswordOpen(false)}
       />
     </div>
-  );
-};
+  )
+}
 
-export default SignInPage_bg;
+export default SignInPage_bg
