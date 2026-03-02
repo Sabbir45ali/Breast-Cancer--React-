@@ -13,8 +13,8 @@ import BackgroundImage from "../../Components/Sign Up Page Mobile Componenet/Bac
 import { getCurrentFields } from "../../config/SignUpMobileFormField";
 
 const API_ENDPOINTS = {
-  User: "http://127.0.0.1:8000/auth/signup-user/",
-  Organisation: "http://127.0.0.1:8000/auth/signup-org/",
+  User: "http://127.0.0.1:8000/api/user/signup/",
+  Organisation: "http://127.0.0.1:8000/api/org/signup/",
 };
 
 const SignUpPageMobile = () => {
@@ -43,31 +43,39 @@ const SignUpPageMobile = () => {
   };
 
   const handleSignUp = async () => {
+    if (selectedType !== "User" && selectedType !== "Organisation") return;
+
     setLoading(true);
     setError(null);
 
     const isUser = selectedType === "User";
 
-    const payload = isUser
-      ? {
-          username: formData.name,
-          phnumber: formData.phone,
-          email: formData.email,
-          password: formData.password,
-        }
-      : {
-          org_name: formData.organisationName,
-          org_type: formData.typeOfOrg,
-          license_number: formData.licenceNumber,
-          phnumber: formData.phone,
-          email: formData.email,
-          password: formData.password,
-        };
+    let payload;
+
+    if (isUser) {
+      payload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        password: formData.password,
+      };
+    } else {
+      payload = {
+        org_name: formData.organisationName,
+        phone: formData.phone,
+        email: formData.email,
+        type: formData.typeOfOrg,
+        license: formData.licenceNumber,
+        password: formData.password,
+      };
+    }
 
     try {
       const res = await fetch(API_ENDPOINTS[selectedType], {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(payload),
       });
 
@@ -78,10 +86,9 @@ const SignUpPageMobile = () => {
         return;
       }
 
-      // ✅ SUCCESS
       navigate("/signin");
     } catch (err) {
-      setError("Network error");
+      setError("Server connection error");
     } finally {
       setLoading(false);
     }

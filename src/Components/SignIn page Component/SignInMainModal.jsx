@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Sign Up page Component/SignUpPageRightModel/Header";
 import SignInButton from "./SignInButton";
 import SignInInput from "./SignInInput";
@@ -7,41 +7,58 @@ import { useNavigate } from "react-router-dom";
 
 const SignInMainModal = () => {
   const [selectedRole, setSelectedRole] = useState(null);
-  const [formValues, setFormValues] = useState({ email: "", password: "" });
+  const [formValues, setFormValues] = useState({
+    email: "",
+    password: "",
+  });
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
+
   const navigate = useNavigate();
-  
+
+  // ✅ AUTO LOGIN
+  useEffect(() => {
+
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
+
+  // Only run once
+  if(token){
+
+    if(role === "user"){
+      window.location.href="/home";
+    }
+
+    if(role === "org"){
+      window.location.href="/org-home";
+    }
+
+  }
+
+},[]);
 
   const endpoints = {
-    Organisation: "http://127.0.0.1:8000/auth/login-org/",
-    User: "http://127.0.0.1:8000/auth/login-user/",
+    Organisation: "http://127.0.0.1:8000/api/org/login/",
+    User: "http://127.0.0.1:8000/api/user/login/",
   };
 
   const handleChange = (name, value) => {
-    setFormValues((prev) => ({ ...prev, [name]: value }));
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSignIn = async () => {
     if (!selectedRole) {
-      setError("Please select a role.");
+      setError("Select Role");
       return;
     }
 
     if (!formValues.email || !formValues.password) {
-      setError("Email and password are required.");
-      return;
-    }
-
-    if (selectedRole === "Admin") {
-      navigate("/admin-home");
-      return;
-    }
-
-    const endpoint = endpoints[selectedRole];
-    if (!endpoint) {
-      setError("Login not configured for this role.");
+      setError("Enter Email and Password");
       return;
     }
 
@@ -49,34 +66,41 @@ const SignInMainModal = () => {
     setError(null);
 
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch(endpoints[selectedRole], {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formValues),
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          email: formValues.email,
+          password: formValues.password,
+        }),
       });
 
-      const contentType = res.headers.get("content-type");
-      const data =
-        contentType && contentType.includes("application/json")
-          ? await res.json()
-          : null;
+      const data = await res.json();
 
       if (!res.ok) {
-        setError(data?.error || "Invalid credentials");
+        setError(data.error || "Login Failed");
         setLoading(false);
         return;
       }
 
-      // ✅ SAVE SESSION (VERY IMPORTANT)
+      // ✅ SAVE TOKEN (IMPORTANT)
+
+      localStorage.setItem("token", data.token);
       localStorage.setItem("uid", data.uid);
-      localStorage.setItem("email", data.email);
-      localStorage.setItem("role", selectedRole);
+      localStorage.setItem("role", data.role);
+      localStorage.setItem("email", formValues.email);
 
       // ✅ REDIRECT
-      if (selectedRole === "User") navigate("/home");
-      else if (selectedRole === "Organisation") navigate("/org-home");
-    } catch (err) {
-      setError("Network error. Try again.");
+
+      if (data.role === "user") navigate("/home");
+
+      if (data.role === "org") navigate("/org-home");
+    } catch {
+      setError("Server Error");
     }
 
     setLoading(false);
@@ -85,9 +109,7 @@ const SignInMainModal = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center justify-center h-full w-full transition-all duration-300 ${
-          isForgotPasswordOpen ? "blur-sm" : ""
-        }`}
+        className={`flex flex-col items-center justify-center h-full w-full ${isForgotPasswordOpen ? "blur-sm" : ""}`}
       >
         <div className="w-1/2 flex flex-col items-center">
           <Header
@@ -107,6 +129,7 @@ const SignInMainModal = () => {
           <SignInButton onClick={handleSignIn} disabled={loading} />
 
           {loading && <p className="mt-2 text-gray-500">Signing in...</p>}
+
           {error && <p className="text-red-600 mt-2">{error}</p>}
 
           <div className="mt-4">
@@ -116,7 +139,10 @@ const SignInMainModal = () => {
                   ? "text-gray-400 cursor-not-allowed"
                   : "text-pink-500 hover:text-pink-700"
               }`}
-              onClick={() => selectedRole && setIsForgotPasswordOpen(true)}
+              onClick={() => {
+                if (!selectedRole) return;
+                setIsForgotPasswordOpen(true);
+              }}
               disabled={!selectedRole}
             >
               Forgot Password?
@@ -124,11 +150,6 @@ const SignInMainModal = () => {
           </div>
         </div>
       </div>
-
-      <ForgotPasswordModal
-        isOpen={isForgotPasswordOpen}
-        onClose={() => setIsForgotPasswordOpen(false)}
-      />
     </>
   );
 };

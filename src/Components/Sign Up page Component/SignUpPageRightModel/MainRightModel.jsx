@@ -4,8 +4,6 @@ import Header from "./Header";
 import SignUpButton from "./SignUpButton";
 import DropdownMenu from "./Dropdown";
 import { useNavigate } from "react-router-dom";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../../../../firebase";
 
 const MainRightModel = () => {
   const [selectedRole, setSelectedRole] = useState(null);
@@ -13,50 +11,75 @@ const MainRightModel = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const options = ["Organisation", "User"];
   const navigate = useNavigate();
-  const handleChange = (name, value) => {
-    setFormValues((prev) => ({ ...prev, [name]: value }));
-  };
+
+  const options = ["Organisation", "User"];
+
   const endpoints = {
-    User: "http://127.0.0.1:8000/auth/signup-user/",
-    Organisation: "http://127.0.0.1:8000/auth/signup-org/"
+    User: "http://127.0.0.1:8000/api/user/signup/",
+    Organisation: "http://127.0.0.1:8000/api/org/signup/",
+  };
+
+  const handleChange = (name, value) => {
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!selectedRole) return;
 
     setLoading(true);
     setError(null);
 
     try {
+      let payload = {};
+
+      if (selectedRole === "User") {
+        payload = {
+          name: formValues.name,
+          phone: formValues.phone,
+          email: formValues.email,
+          password: formValues.password,
+        };
+      }
+
+      if (selectedRole === "Organisation") {
+        payload = {
+          org_name: formValues.org_name,
+          phone: formValues.phone,
+          email: formValues.email,
+          type: formValues.type,
+          license: formValues.license,
+          password: formValues.password,
+        };
+      }
+
+      console.log("SENDING:", payload);
+
       const res = await fetch(endpoints[selectedRole], {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formValues),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
-      // 🚨 IMPORTANT: do NOT assume JSON
-      if (res.status === 201) {
-        // Signup successful
-        navigate("/signin");
-        return;
-      }
+      const data = await res.json();
 
-      // Only parse JSON if backend says it's JSON
-      const contentType = res.headers.get("content-type");
-      if (contentType && contentType.includes("application/json")) {
-        const data = await res.json();
-        setError(data.error || "Signup failed");
+      if (res.ok) {
+        navigate("/signin");
       } else {
-        setError("Server error. Please try again.");
+        setError(data.error || "Signup failed");
       }
     } catch (err) {
-      setError("Network error");
-    } finally {
-      setLoading(false);
+      setError("Server connection error");
     }
+
+    setLoading(false);
   };
 
   return (

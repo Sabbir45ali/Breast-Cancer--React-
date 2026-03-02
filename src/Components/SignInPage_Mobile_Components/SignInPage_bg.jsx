@@ -15,12 +15,15 @@ const API_ENDPOINTS = {
 
 const SignInPage_bg = () => {
   const [selectedRole, setSelectedRole] = useState(null);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -44,15 +47,15 @@ const SignInPage_bg = () => {
     },
   ];
 
-  // 🔐 LOGIN HANDLER
+  // LOGIN
   const handleSignIn = async () => {
     if (!selectedRole) {
-      alert("Please select a role");
+      setError("Please select role");
       return;
     }
 
     if (!formData.email || !formData.password) {
-      alert("Email and password required");
+      setError("Email and password required");
       return;
     }
 
@@ -62,7 +65,9 @@ const SignInPage_bg = () => {
     try {
       const res = await fetch(API_ENDPOINTS[selectedRole], {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           email: formData.email,
           password: formData.password,
@@ -73,26 +78,37 @@ const SignInPage_bg = () => {
 
       if (!res.ok) {
         setError(data.error || "Login failed");
+        setLoading(false);
         return;
       }
 
-      // ✅ STORE SESSION (OPTIONAL BUT RECOMMENDED)
+      // ✅ SAVE SESSION
       localStorage.setItem("uid", data.uid);
-      localStorage.setItem("role", selectedRole);
+      localStorage.setItem("email", data.email || formData.email);
+
+      // Normalize role
+      const role = (data.role || selectedRole).toLowerCase();
+
+      localStorage.setItem("role", role);
+
+      // If backend sends token
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
 
       // ✅ REDIRECT
-      if (selectedRole === "User") navigate("/home");
-      if (selectedRole === "Organisation") navigate("/org-home");
+      if (role === "user") navigate("/home");
+
+      if (role === "org") navigate("/org-home");
     } catch (err) {
-      setError("Network error");
-    } finally {
-      setLoading(false);
+      setError("Server connection error");
     }
+
+    setLoading(false);
   };
 
   return (
     <div className="bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative">
-      {/* Image */}
       <div className="relative top-20 w-full flex justify-center mt-8">
         <img
           src={MobileLandingPageFemale1}
@@ -101,7 +117,6 @@ const SignInPage_bg = () => {
         />
       </div>
 
-      {/* Card */}
       <div
         className={`relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-2xl shadow-2xl ${
           isForgotPasswordOpen ? "blur-sm" : ""
@@ -120,7 +135,6 @@ const SignInPage_bg = () => {
             <RxCrossCircled className="absolute top-4 right-4 text-2xl bg-pink-100 text-pink-600 rounded-full" />
           </Link>
 
-          {/* Inputs */}
           <SignInPageInput
             inputs={inputFields}
             selectedRole={selectedRole}
@@ -129,18 +143,18 @@ const SignInPage_bg = () => {
             setFormData={setFormData}
           />
 
-          {/* Button */}
-          <SignInButton onClick={handleSignIn} loading={loading} />
+          <SignInButton onClick={handleSignIn} disabled={loading} />
+
+          {loading && <p className="text-gray-500 text-sm">Signing in...</p>}
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          {/* Forgot password */}
           <div className="text-sm">
             Forgot password?{" "}
             <button
               onClick={() => {
                 if (!selectedRole) {
-                  alert("Select role first");
+                  setError("Select role first");
                   return;
                 }
                 setIsForgotPasswordOpen(true);
@@ -152,7 +166,6 @@ const SignInPage_bg = () => {
           </div>
         </div>
 
-        {/* Footer */}
         <Link to="/signup">
           <SignInPage_Footer
             FooterText1="Don't have an account?"
