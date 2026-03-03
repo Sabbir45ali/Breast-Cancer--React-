@@ -175,17 +175,12 @@ const App = () => {
           </ProtectedRoute>
         }
       />
-    {/* <ForgotPassword /> */}
-    <Route
+      {/* <ForgotPassword /> */}
+      <Route
         path='/forgot-password'
-        element={
-          <ResponsiveComponent
-            DesktopComponent={ForgotPassword}
-            />
-        }
+        element={<ResponsiveComponent DesktopComponent={ForgotPassword} />}
       />
     </Routes>
-    
   )
 }
 
