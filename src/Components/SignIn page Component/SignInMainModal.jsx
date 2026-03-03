@@ -1,118 +1,117 @@
-import React, { useState, useEffect } from "react";
-import Header from "../Sign Up page Component/SignUpPageRightModel/Header";
-import SignInButton from "./SignInButton";
-import SignInInput from "./SignInInput";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import Header from '../Sign Up page Component/SignUpPageRightModel/Header'
+import SignInButton from './SignInButton'
+import SignInInput from './SignInInput'
+import { useNavigate, Link } from 'react-router-dom'
 const SignInMainModal = () => {
-  const [selectedRole, setSelectedRole] = useState(null);
+  const [selectedRole, setSelectedRole] = useState(null)
   const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: ''
+  })
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   // ✅ AUTO LOGIN
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const role = localStorage.getItem("role");
+    const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role')
 
     // Only run once
     if (token) {
-      if (role === "user") {
-        window.location.href = "/home";
+      if (role === 'user') {
+        window.location.href = '/home'
       }
 
-      if (role === "org") {
-        window.location.href = "/org-home";
+      if (role === 'org') {
+        window.location.href = '/org-home'
       }
     }
-  }, []);
+  }, [])
 
   const endpoints = {
-    Organisation: "http://127.0.0.1:8000/api/org/login/",
-    User: "http://127.0.0.1:8000/api/user/login/",
-  };
+    Organisation: 'http://127.0.0.1:8000/api/org/login/',
+    User: 'http://127.0.0.1:8000/api/user/login/'
+  }
 
   const handleChange = (name, value) => {
     setFormValues((prev) => ({
       ...prev,
-      [name]: value,
-    }));
-  };
+      [name]: value
+    }))
+  }
 
   const handleSignIn = async () => {
     if (!selectedRole) {
-      setError("Select Role");
-      return;
+      setError('Select Role')
+      return
     }
 
     if (!formValues.email || !formValues.password) {
-      setError("Enter Email and Password");
-      return;
+      setError('Enter Email and Password')
+      return
     }
 
-    setLoading(true);
-    setError(null);
+    setLoading(true)
+    setError(null)
 
     try {
       const res = await fetch(endpoints[selectedRole], {
-        method: "POST",
+        method: 'POST',
 
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json'
         },
 
         body: JSON.stringify({
           email: formValues.email,
-          password: formValues.password,
-        }),
-      });
+          password: formValues.password
+        })
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || "Login Failed");
-        setLoading(false);
-        return;
+        setError(data.error || 'Login Failed')
+        setLoading(false)
+        return
       }
 
       // ✅ SAVE TOKEN (IMPORTANT)
 
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("uid", data.uid);
-      localStorage.setItem("role", data.role);
-      localStorage.setItem("email", formValues.email);
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('uid', data.uid)
+      localStorage.setItem('role', data.role)
+      localStorage.setItem('email', formValues.email)
 
       // ✅ REDIRECT
 
-      if (data.role === "user") navigate("/home");
+      if (data.role === 'user') navigate('/home')
 
-      if (data.role === "org") navigate("/org-home");
+      if (data.role === 'org') navigate('/org-home')
     } catch {
-      setError("Server Error");
+      setError('Server Error')
     }
 
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
     <>
       <div
-        className={`flex flex-col items-center justify-center h-full w-full ${isForgotPasswordOpen ? "blur-sm" : ""}`}
+        className={`flex flex-col items-center justify-center h-full w-full ${isForgotPasswordOpen ? 'blur-sm' : ''}`}
       >
-        <div className="w-1/2 flex flex-col items-center">
+        <div className='w-1/2 flex flex-col items-center'>
           <Header
-            FirstLetter="S"
-            SecondLetter="I"
-            Firstpart="ign "
-            Secondpart="n"
-            text="Use email and password"
+            FirstLetter='S'
+            SecondLetter='I'
+            Firstpart='ign '
+            Secondpart='n'
+            text='Use email and password'
           />
 
           <SignInInput
@@ -123,17 +122,17 @@ const SignInMainModal = () => {
 
           <SignInButton onClick={handleSignIn} disabled={loading} />
 
-          {loading && <p className="mt-2 text-gray-500">Signing in...</p>}
+          {loading && <p className='mt-2 text-gray-500'>Signing in...</p>}
 
-          {error && <p className="text-red-600 mt-2">{error}</p>}
+          {error && <p className='text-red-600 mt-2'>{error}</p>}
 
-          <div className="mt-4">
-            <Link to="/forgot-password">Forgot Password?</Link>
+          <div className='mt-4'>
+            <Link to='/forgot-password'>Forgot Password?</Link>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SignInMainModal;
+export default SignInMainModal
