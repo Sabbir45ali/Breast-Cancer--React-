@@ -25,6 +25,7 @@ import Org_HomePageMobile from './pages/Org-HomePage_mobile/Org_HomePageMobile'
 import Org_profile from './pages/Org-profile/Org_profile'
 import ForgotPassword from './Components/Universal Components/ForgotPasswordModal'
 import ProtectedRoute from './Components/Universal Components/ProtectedRoute'
+import ForgotPasswordMobile from './Components/Universal Components/ForgotPasswordMobile'
 import './index.css'
 
 // Responsive wrapper
@@ -178,7 +179,7 @@ const App = () => {
       {/* <ForgotPassword /> */}
       <Route
         path='/forgot-password'
-        element={<ResponsiveComponent DesktopComponent={ForgotPassword} />}
+        element={<ResponsiveComponent DesktopComponent={ForgotPassword} MobileComponent={ForgotPasswordMobile} />}
       />
     </Routes>
   )
