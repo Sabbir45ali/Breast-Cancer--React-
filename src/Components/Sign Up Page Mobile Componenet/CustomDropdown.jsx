@@ -6,7 +6,7 @@ const CustomDropdown = ({
   isDropdownOpen,
   setIsDropdownOpen,
   setSelectedType,
-  accountTypes,
+  accountTypes
 }) => {
   return (
     <div className='relative mb-4'>

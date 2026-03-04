@@ -1,10 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { TiArrowSortedDown } from 'react-icons/ti'
 
-function DropdownMenu({ heading, options = [], onSelect, buttonClassName="" , divClassName=""}) {
-  const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
-  const dropdownRef = useRef(null); // ✅ define it here
+function DropdownMenu ({
+  heading,
+  options = [],
+  onSelect,
+  buttonClassName = '',
+  divClassName = ''
+}) {
+  const [open, setOpen] = useState(false)
+  const [selected, setSelected] = useState(null)
+  const dropdownRef = useRef(null) // ✅ define it here
 
   useEffect(() => {
     function handleClickOutside (event) {
