@@ -32,7 +32,7 @@ export default function FormRightModel () {
     try {
       const token = localStorage.getItem('token')
 
-      const res = await fetch('http://127.0.0.1:8000/api/org/predict-data/', {
+      const res = await fetch('http://13.232.232.187:8000/api/org/predict-data/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

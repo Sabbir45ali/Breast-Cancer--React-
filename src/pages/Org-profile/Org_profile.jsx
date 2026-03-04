@@ -12,7 +12,7 @@ const Org_profile = () => {
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/org/profile/', {
+    fetch('http://13.232.232.187:8000/api/org/profile/', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -20,7 +20,7 @@ const Org_profile = () => {
       .then((res) => res.json())
       .then((data) => setOrgInfo(data))
 
-    fetch('http://127.0.0.1:8000/api/org/full-history/', {
+    fetch('http://13.232.232.187:8000/api/org/full-history/', {
       headers: {
         Authorization: `Bearer ${token}`
       }

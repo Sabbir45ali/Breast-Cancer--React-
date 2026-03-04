@@ -41,7 +41,7 @@ const EditProfileModal = ({ open, onclose }) => {
     }
 
     try {
-      await fetch('http://127.0.0.1:8000/api/user/update-profile/', {
+      await fetch('http://13.232.232.187:8000/api/user/update-profile/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
