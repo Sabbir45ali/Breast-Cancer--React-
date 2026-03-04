@@ -35,14 +35,17 @@ const FormCard = () => {
     try {
       const token = localStorage.getItem('token')
 
-      const res = await fetch('http://13.232.232.187:8000/api/org/predict-data/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
-        },
-        body: JSON.stringify(formData)
-      })
+      const res = await fetch(
+        'http://13.232.232.187:8000/api/org/predict-data/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify(formData)
+        }
+      )
 
       const data = await res.json()
 
