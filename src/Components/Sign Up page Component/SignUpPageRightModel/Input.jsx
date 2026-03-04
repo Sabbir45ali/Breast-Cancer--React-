@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import InputField from './InputField'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
-const Input = ({ role, onChange }) => {
-  const [showPassword, setShowPassword] = useState(false)
+const Input = ({ role, onChange, passwordRules }) => {
+  const [showPassword, setShowPassword] = useState(false);
 
   const orgFields = [
     {
@@ -69,12 +69,13 @@ const Input = ({ role, onChange }) => {
       {fieldsToRender.map((field) => (
         <div key={field.name} className='relative'>
           <InputField
-            type={
-              field.type === 'password' && !showPassword ? 'password' : 'text'
-            }
+            type={field.type}
             placeholder={field.placeholder}
             value={onChange.values[field.name] || ''}
             onChange={(e) => onChange.handleChange(field.name, e.target.value)}
+            passwordRules={
+              field.name === "password" ? passwordRules : undefined
+            }
           />
 
           {field.type === 'password' && (
@@ -82,7 +83,7 @@ const Input = ({ role, onChange }) => {
               className='absolute right-3 top-3 cursor-pointer'
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
+              {/* {showPassword ? <FaEyeSlash /> : <FaEye />} */}
             </div>
           )}
         </div>

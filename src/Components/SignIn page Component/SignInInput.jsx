@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import InputField from "../Sign Up page Component/SignUpPageRightModel/InputField";
 import DropdownMenu from "../Sign Up page Component/SignUpPageRightModel/Dropdown";
 
-const SignInInput = ({ onRoleSelect, formValues, onChange }) => {
-  const inputFields = [
-    { name: "email", type: "email", placeholder: "Email" },
-    { name: "password", type: "password", placeholder: "Password" },
-  ];
+const SignInInput = ({ onRoleSelect, formValues, onChange, passwordRules, showTooltip, setShowTooltip }) => {
+  const options = ["Organisation", "User"];
 
-  const options = ["Organisation", "User", "Admin"];
 
   return (
     <div className="flex flex-col items-center justify-center p-14 gap-4">
@@ -20,15 +16,22 @@ const SignInInput = ({ onRoleSelect, formValues, onChange }) => {
         divClassName=" bg-gray-200 "
       />
       <div className="w-80 space-y-4">
-        {inputFields.map((field) => (
-          <InputField
-            key={field.name}
-            type={field.type}
-            placeholder={field.placeholder}
-            value={formValues[field.name] || ""}
-            onChange={(e) => onChange(field.name, e.target.value)}
-          />
-        ))}
+        <InputField
+          type="email"
+          placeholder="Email"
+          value={formValues.email}
+          onChange={(e) => onChange("email", e.target.value)}
+        />
+
+        <InputField
+          type="password"
+          placeholder="Password"
+          value={formValues.password}
+          onChange={(e) => onChange("password", e.target.value)}
+          passwordRules={passwordRules}
+          showTooltip={showTooltip}
+          setShowTooltip={setShowTooltip}
+        />
       </div>
     </div>
   );

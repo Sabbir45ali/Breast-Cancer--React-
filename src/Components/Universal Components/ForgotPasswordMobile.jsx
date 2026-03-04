@@ -49,8 +49,8 @@ const ForgotPasswordMobile = () => {
     <div className="bg-gradient-to-r from-[#f0779f] to-[#e4d4d9] flex sm:hidden w-screen min-h-screen flex-col items-center justify-start text-center relative overflow-x-hidden">
 
       {/* Back Button */}
-      <button 
-        onClick={() => navigate('/signin')} 
+      <button
+        onClick={() => navigate('/signin')}
         className="absolute top-6 left-6 text-pink-900 bg-white/50 p-2 rounded-full shadow-md z-10"
       >
         <FaArrowLeft size={20} />
@@ -58,20 +58,20 @@ const ForgotPasswordMobile = () => {
 
       {/* Top Image Section */}
       <div className="relative top-20 w-full flex justify-center mt-8">
-        <img 
-          src={MobileLandingPageFemale1} 
-          alt="Mobile Landing" 
-          className="w-[180px] h-[180px]" 
+        <img
+          src={MobileLandingPageFemale1}
+          alt="Mobile Landing"
+          className="w-[180px] h-[180px]"
         />
       </div>
 
       {/* Form Card */}
       <div className="relative top-24 flex flex-col w-full max-w-[400px] bg-white rounded-t-[40px] shadow-2xl mx-4 flex-grow p-8 pb-12">
 
-        <Header 
-          FirstLetter="F" Firstpart="orgot" 
-          SecondLetter="P" Secondpart="assword" 
-          text="Enter your email to reset password" 
+        <Header
+          FirstLetter="F" Firstpart="orgot"
+          SecondLetter="P" Secondpart="assword"
+          text="Enter your email to reset password"
         />
 
         <form onSubmit={handleResetPassword} className="mt-10 w-full space-y-6">
