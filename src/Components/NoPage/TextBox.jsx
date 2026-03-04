@@ -1,4 +1,5 @@
 import { IoMdText } from "react-icons/io";
+import Noimg from "../../assets/Images/female_picNo_page.png"
 export default function DotBulletList() {
   return (
     <div className="flex items-center justify-center min-h-screen ">
@@ -6,7 +7,7 @@ export default function DotBulletList() {
         {/* Left Image */}
         <div className="w-96">
           <img
-            src="src\assets\Images\female_picNo_page.png"
+            src={Noimg}
             className="rounded-lg  aspect-square relative top-32"
           />
         </div>

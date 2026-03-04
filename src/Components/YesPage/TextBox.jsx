@@ -1,4 +1,5 @@
 import { IoMdText } from "react-icons/io";
+import YesImg from "../../assets/Images/memogram_detection_YES_page.png"
 export default function DotBulletList() {
   return (
     <div className="flex items-center justify-center min-h-screen ">
@@ -6,7 +7,7 @@ export default function DotBulletList() {
         {/* Left Image */}
         <div className="w-96">
           <img
-            src="src\assets\Images\memogram_detection_YES_page.png"
+            src={YesImg}
             className="rounded-lg  aspect-square relative top-28"
           />
         </div>

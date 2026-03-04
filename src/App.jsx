@@ -47,146 +47,146 @@ const ResponsiveComponent = ({ DesktopComponent, MobileComponent }) => {
 
 const App = () => {
   return (
-    <Routes>
-      {/* 🌐 Public */}
-      <Route
-        path='/'
-        element={
-          <ResponsiveComponent
-            DesktopComponent={LandingPage}
-            MobileComponent={Mobile_landingPage}
-          />
-        }
-      />
-
-      <Route
-        path='/signin'
-        element={
-          <ResponsiveComponent
-            DesktopComponent={SignIn}
-            MobileComponent={SignInPage_Mobile}
-          />
-        }
-      />
-
-      <Route
-        path='/signup'
-        element={
-          <ResponsiveComponent
-            DesktopComponent={SignUp}
-            MobileComponent={SignUpPageMobile}
-          />
-        }
-      />
-
-      {/* 👤 USER ROUTES */}
-      <Route
-        path='/home'
-        element={
-          <ProtectedRoute allowedRoles={['User']}>
+      <Routes>
+        {/* 🌐 Public */}
+        <Route
+          path='/'
+          element={
             <ResponsiveComponent
-              DesktopComponent={HomePage}
-              MobileComponent={HomePage_Mobile}
+              DesktopComponent={LandingPage}
+              MobileComponent={Mobile_landingPage}
             />
-          </ProtectedRoute>
-        }
-      />
+          }
+        />
 
-      <Route
-        path='/profile'
-        element={
-          <ProtectedRoute allowedRoles={['User']}>
+        <Route
+          path='/signin'
+          element={
             <ResponsiveComponent
-              DesktopComponent={Profile}
-              MobileComponent={ProfilePageMobile}
+              DesktopComponent={SignIn}
+              MobileComponent={SignInPage_Mobile}
             />
-          </ProtectedRoute>
-        }
-      />
+          }
+        />
 
-      <Route
-        path='/form'
-        element={
-          <ProtectedRoute allowedRoles={['User']}>
+        <Route
+          path='/signup'
+          element={
             <ResponsiveComponent
-              DesktopComponent={FormPage}
-              MobileComponent={FormPage_Mobile}
+              DesktopComponent={SignUp}
+              MobileComponent={SignUpPageMobile}
             />
-          </ProtectedRoute>
-        }
-      />
+          }
+        />
 
-      <Route
-        path='/yes'
-        element={
-          <ProtectedRoute allowedRoles={['User']}>
-            <ResponsiveComponent
-              DesktopComponent={YesPage}
-              MobileComponent={YesPage_Mobile}
-            />
-          </ProtectedRoute>
-        }
-      />
+        {/* 👤 USER ROUTES */}
+        <Route
+          path='/home'
+          element={
+            <ProtectedRoute allowedRoles={['User']}>
+              <ResponsiveComponent
+                DesktopComponent={HomePage}
+                MobileComponent={HomePage_Mobile}
+              />
+            </ProtectedRoute>
+          }
+        />
 
-      <Route
-        path='/no'
-        element={
-          <ProtectedRoute allowedRoles={['User']}>
-            <ResponsiveComponent
-              DesktopComponent={NoPage}
-              MobileComponent={NoPageMobile}
-            />
-          </ProtectedRoute>
-        }
-      />
+        <Route
+          path='/profile'
+          element={
+            <ProtectedRoute allowedRoles={['User']}>
+              <ResponsiveComponent
+                DesktopComponent={Profile}
+                MobileComponent={ProfilePageMobile}
+              />
+            </ProtectedRoute>
+          }
+        />
 
-      <Route
-        path='/formtwo'
-        element={
-          <ProtectedRoute allowedRoles={['User']}>
-            <ResponsiveComponent
-              DesktopComponent={FormPageBtoC}
-              MobileComponent={FormPageBtoC_Mobile}
-            />
-          </ProtectedRoute>
-        }
-      />
+        <Route
+          path='/form'
+          element={
+            <ProtectedRoute allowedRoles={['User']}>
+              <ResponsiveComponent
+                DesktopComponent={FormPage}
+                MobileComponent={FormPage_Mobile}
+              />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* 🏢 ORGANISATION ROUTES */}
-      <Route
-        path='/org-home'
-        element={
-          <ProtectedRoute allowedRoles={['Organisation']}>
-            <ResponsiveComponent
-              DesktopComponent={Org_HomePage}
-              MobileComponent={Org_HomePageMobile}
-            />
-          </ProtectedRoute>
-        }
-      />
+        <Route
+          path='/yes'
+          element={
+            <ProtectedRoute allowedRoles={['User']}>
+              <ResponsiveComponent
+                DesktopComponent={YesPage}
+                MobileComponent={YesPage_Mobile}
+              />
+            </ProtectedRoute>
+          }
+        />
 
-      <Route
-        path='/org-profile'
-        element={
-          <ProtectedRoute allowedRoles={['Organisation']}>
+        <Route
+          path='/no'
+          element={
+            <ProtectedRoute allowedRoles={['User']}>
+              <ResponsiveComponent
+                DesktopComponent={NoPage}
+                MobileComponent={NoPageMobile}
+              />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path='/formtwo'
+          element={
+            <ProtectedRoute allowedRoles={['User']}>
+              <ResponsiveComponent
+                DesktopComponent={FormPageBtoC}
+                MobileComponent={FormPageBtoC_Mobile}
+              />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* 🏢 ORGANISATION ROUTES */}
+        <Route
+          path='/org-home'
+          element={
+            <ProtectedRoute allowedRoles={['Organisation']}>
+              <ResponsiveComponent
+                DesktopComponent={Org_HomePage}
+                MobileComponent={Org_HomePageMobile}
+              />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path='/org-profile'
+          element={
+            <ProtectedRoute allowedRoles={['Organisation']}>
+              <ResponsiveComponent
+                DesktopComponent={Org_profile}
+                MobileComponent={ProfilePageMobile}
+              />
+            </ProtectedRoute>
+          }
+        />
+        {/* <ForgotPassword /> */}
+        <Route
+          path='/forgot-password'
+          element={
             <ResponsiveComponent
-              DesktopComponent={Org_profile}
-              MobileComponent={ProfilePageMobile}
+              DesktopComponent={ForgotPassword}
+              MobileComponent={ForgotPasswordMobile}
             />
-          </ProtectedRoute>
-        }
-      />
-      {/* <ForgotPassword /> */}
-      <Route
-        path='/forgot-password'
-        element={
-          <ResponsiveComponent
-            DesktopComponent={ForgotPassword}
-            MobileComponent={ForgotPasswordMobile}
-          />
-        }
-      />
-    </Routes>
+          }
+        />
+      </Routes>
   )
 }
 
