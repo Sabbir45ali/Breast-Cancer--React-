@@ -3,7 +3,7 @@ import InputField from './InputField'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const Input = ({ role, onChange, passwordRules }) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   const orgFields = [
     {
@@ -74,7 +74,7 @@ const Input = ({ role, onChange, passwordRules }) => {
             value={onChange.values[field.name] || ''}
             onChange={(e) => onChange.handleChange(field.name, e.target.value)}
             passwordRules={
-              field.name === "password" ? passwordRules : undefined
+              field.name === 'password' ? passwordRules : undefined
             }
           />
 

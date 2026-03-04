@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'development' ? '' : '/Breast-Cancer--React-/',
   server: {
     headers: {
-      "Cross-Origin-Opener-Policy": "same-origin-allow-popups"
+      'Cross-Origin-Opener-Policy': 'same-origin-allow-popups'
     }
   }
 }))
