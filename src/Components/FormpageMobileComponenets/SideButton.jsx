@@ -43,7 +43,7 @@ const SideButton = () => {
       const formData = new FormData()
       formData.append('image', image)
 
-      const res = await fetch('http://13.232.232.187:8000/api/predict-image/', {
+      const res = await fetch('https://13-232-232-187.nip.io/api/predict-image/', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`

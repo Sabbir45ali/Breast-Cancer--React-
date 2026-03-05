@@ -36,7 +36,7 @@ const FormCard = () => {
       const token = localStorage.getItem('token')
 
       const res = await fetch(
-        'http://13.232.232.187:8000/api/org/predict-data/',
+        'https://13-232-232-187.nip.io/api/org/predict-data/',
         {
           method: 'POST',
           headers: {

@@ -22,8 +22,8 @@ const PersonalInfoMobile = () => {
         // Dynamic endpoint based on role
         const endpoint =
           role === 'org'
-            ? 'http://13.232.232.187:8000/api/org/profile/'
-            : 'http://13.232.232.187:8000/api/user/profile/'
+            ? 'https://13-232-232-187.nip.io/api/org/profile/'
+            : 'https://13-232-232-187.nip.io/api/user/profile/'
 
         const res = await fetch(endpoint, {
           method: 'GET',

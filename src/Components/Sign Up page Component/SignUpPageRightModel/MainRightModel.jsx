@@ -32,8 +32,8 @@ const MainRightModel = () => {
   const options = ['Organisation', 'User']
 
   const endpoints = {
-    User: 'http://13.232.232.187:8000/api/user/signup/',
-    Organisation: 'http://13.232.232.187:8000/api/org/signup/'
+    User: 'https://13-232-232-187.nip.io/api/user/signup/',
+    Organisation: 'https://13-232-232-187.nip.io/api/org/signup/'
   }
 
   // Handle input changes
