@@ -12,7 +12,7 @@ const Profile = () => {
   const role = localStorage.getItem('role')
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/user/profile/', {
+    fetch('https://13-232-232-187.nip.io/api/user/profile/', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -28,7 +28,7 @@ const Profile = () => {
         })
       })
 
-    fetch('http://127.0.0.1:8000/api/image-history/', {
+    fetch('https://13-232-232-187.nip.io/api/image-history/', {
       headers: {
         Authorization: `Bearer ${token}`
       }

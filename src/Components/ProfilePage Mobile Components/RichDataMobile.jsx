@@ -35,7 +35,7 @@ const RichDataMobile = ({ open, onclose }) => {
       const token = localStorage.getItem('token')
 
       const res = await fetch(
-        'http://127.0.0.1:8000/api/user/update-profile/',
+        'https://13-232-232-187.nip.io/api/user/update-profile/',
         {
           method: 'POST',
           headers: {

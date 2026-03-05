@@ -179,7 +179,12 @@ const App = () => {
       {/* <ForgotPassword /> */}
       <Route
         path='/forgot-password'
-        element={<ResponsiveComponent DesktopComponent={ForgotPassword} MobileComponent={ForgotPasswordMobile} />}
+        element={
+          <ResponsiveComponent
+            DesktopComponent={ForgotPassword}
+            MobileComponent={ForgotPasswordMobile}
+          />
+        }
       />
     </Routes>
   )
