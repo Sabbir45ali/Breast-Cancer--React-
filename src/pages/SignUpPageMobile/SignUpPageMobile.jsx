@@ -21,8 +21,8 @@ import {
 import { auth } from '../../firebase'
 
 const API_ENDPOINTS = {
-  User: 'https://13-232-232-187.nip.io/api/user/signup/',
-  Organisation: 'https://13-232-232-187.nip.io/api/org/signup/'
+  User: 'http://127.0.0.1:8000/api/user/signup/',
+  Organisation: 'http://127.0.0.1:8000/api/org/signup/'
 }
 
 const SignUpPageMobile = () => {

@@ -29,7 +29,7 @@ const MainModalProfile = ({
 
     try {
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/user/profile/',
+        'http://127.0.0.1:8000/api/user/profile/',
         {
           headers: {
             Authorization: 'Bearer ' + token

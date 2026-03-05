@@ -55,7 +55,7 @@ export default function MammogramUploadPage () {
       formData.append('image', file)
 
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/predict-image/',
+        'http://127.0.0.1:8000/api/predict-image/',
         {
           method: 'POST',
           headers: {
