@@ -28,11 +28,14 @@ const MainModalProfile = ({
     if (!token) return
 
     try {
-      const res = await fetch('https://13-232-232-187.nip.io/api/user/profile/', {
-        headers: {
-          Authorization: 'Bearer ' + token
+      const res = await fetch(
+        'https://13-232-232-187.nip.io/api/user/profile/',
+        {
+          headers: {
+            Authorization: 'Bearer ' + token
+          }
         }
-      })
+      )
 
       const data = await res.json()
 
