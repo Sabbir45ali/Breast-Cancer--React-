@@ -21,16 +21,22 @@ const Org_profile = () => {
         setLoading(true) // 🟢 Start loader
 
         // Fetch org profile
-        const profileRes = await fetch('http://127.0.0.1:8000/api/org/profile/', {
-          headers: { Authorization: `Bearer ${token}` }
-        })
+        const profileRes = await fetch(
+          'http://127.0.0.1:8000/api/org/profile/',
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        )
         const profileData = await profileRes.json()
         setOrgInfo(profileData)
 
         // Fetch org full history
-        const historyRes = await fetch('http://127.0.0.1:8000/api/org/full-history/', {
-          headers: { Authorization: `Bearer ${token}` }
-        })
+        const historyRes = await fetch(
+          'http://127.0.0.1:8000/api/org/full-history/',
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        )
         const historyData = await historyRes.json()
         setHistory(historyData)
       } catch (err) {
@@ -65,8 +71,8 @@ const Org_profile = () => {
           isMalignant
             ? 'text-red-600 bg-red-50'
             : isBenign
-            ? 'text-green-600 bg-green-50'
-            : 'text-gray-600'
+              ? 'text-green-600 bg-green-50'
+              : 'text-gray-600'
         }`}
       >
         {resText}
@@ -119,8 +125,6 @@ const Org_profile = () => {
     'CONCAVITY MEAN',
     'RESULT'
   ]
-
-  
 
   return loading ? (
     <Loader />

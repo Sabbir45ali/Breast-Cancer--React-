@@ -187,7 +187,7 @@ const App = () => {
           />
         }
       />
-       {/* <Route
+      {/* <Route
         path='/Loader'
         element={
           <ResponsiveComponent

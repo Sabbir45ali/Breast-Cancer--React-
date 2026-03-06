@@ -196,58 +196,60 @@ const MainRightModel = () => {
     setLoading(false)
   }
 
-  return loading ? (
-    <Loader/>
-  ) : (
-    <div className='flex flex-col items-center justify-center h-full w-full space-y-3 px-4'>
-      <Header
-        FirstLetter='C'
-        SecondLetter='A'
-        Firstpart='reate '
-        Secondpart='ccount'
-        text='Use email for registration'
-      />
+  return loading
+    ? (
+      <Loader />
+      )
+    : (
+      <div className='flex flex-col items-center justify-center h-full w-full space-y-3 px-4'>
+        <Header
+          FirstLetter='C'
+          SecondLetter='A'
+          Firstpart='reate '
+          Secondpart='ccount'
+          text='Use email for registration'
+        />
 
-      <DropdownMenu
-        heading='Create Account as'
-        options={options}
-        onSelect={setSelectedRole}
-        buttonClassName='bg-gray-200 text-gray-600 font-semibold'
-        divClassName='bg-gray-200'
-      />
+        <DropdownMenu
+          heading='Create Account as'
+          options={options}
+          onSelect={setSelectedRole}
+          buttonClassName='bg-gray-200 text-gray-600 font-semibold'
+          divClassName='bg-gray-200'
+        />
 
-      {selectedRole && (
-        <form
-          onSubmit={handleEmailSignup}
-          className='space-y-3 w-80'
-          autoComplete='off'
-        >
-          <Input
-            role={selectedRole}
-            passwordRules={passwordRules}
-            onChange={{ values: formValues, handleChange }}
-          />
-
-          {error && <p className='text-red-500 text-sm text-center'>{error}</p>}
-
-          <div className='flex justify-center'>
-            <SignUpButton loading={loading} role={selectedRole} />
-          </div>
-
-          <button
-            type='button'
-            onClick={handleGoogleSignup}
-            className='w-full mt-3 flex items-center justify-center gap-3 border border-gray-300 bg-white py-2.5 rounded-lg shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200'
+        {selectedRole && (
+          <form
+            onSubmit={handleEmailSignup}
+            className='space-y-3 w-80'
+            autoComplete='off'
           >
-            <FcGoogle size={22} />
-            <span className='font-medium text-gray-700'>
-              Continue with Google
-            </span>
-          </button>
-        </form>
-      )}
-    </div>
-  )
+            <Input
+              role={selectedRole}
+              passwordRules={passwordRules}
+              onChange={{ values: formValues, handleChange }}
+            />
+
+            {error && <p className='text-red-500 text-sm text-center'>{error}</p>}
+
+            <div className='flex justify-center'>
+              <SignUpButton loading={loading} role={selectedRole} />
+            </div>
+
+            <button
+              type='button'
+              onClick={handleGoogleSignup}
+              className='w-full mt-3 flex items-center justify-center gap-3 border border-gray-300 bg-white py-2.5 rounded-lg shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200'
+            >
+              <FcGoogle size={22} />
+              <span className='font-medium text-gray-700'>
+                Continue with Google
+              </span>
+            </button>
+          </form>
+        )}
+      </div>
+      )
 }
 
 export default MainRightModel

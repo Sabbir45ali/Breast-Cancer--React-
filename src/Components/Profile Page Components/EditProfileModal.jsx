@@ -14,7 +14,6 @@ const EditProfileModal = ({ open, onclose }) => {
     symptoms: ''
   })
 
-
   const [loading, setLoading] = useState(false)
 
   if (!open) return null
@@ -66,7 +65,6 @@ const EditProfileModal = ({ open, onclose }) => {
   }
 
   // 🟢 Show loader while loading
-  
 
   return loading ? (
     <Loader />

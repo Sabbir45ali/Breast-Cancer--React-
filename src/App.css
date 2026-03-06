@@ -76,25 +76,23 @@
   color: white;
   -webkit-text-stroke: 1px rgba(255, 0, 0, 0.815);
   /* text-stroke: 1px rgba(255, 0, 0, 0.815); /* For non-WebKit browsers (optional) */
-} */
-
-body{
-  margin:0;
+}
+*/ body {
+  margin: 0;
 }
 
 /* === Loader Container === */
 .loader-container {
-  height: 100vh;               
-  width: 100vw;                
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #eea9c0;   
-  padding: 0 20px;             
+  background-color: #eea9c0;
+  padding: 0 20px;
   box-sizing: border-box;
 }
-
 
 .loading-text {
   color: rgb(12, 12, 12);
@@ -103,7 +101,6 @@ body{
   margin-bottom: 25px;
   text-align: center;
 }
-
 
 .progress-bar {
   width: 450px;
@@ -114,14 +111,12 @@ body{
   background-color: white;
 }
 
-
 .progress-fill {
   height: 100%;
   width: 0%;
   background: rgb(247, 133, 186);
   transition: width 0.3s ease;
 }
-
 
 @media (max-width: 768px) {
   .loading-text {

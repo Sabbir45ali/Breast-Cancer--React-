@@ -52,8 +52,6 @@ const PersonalInfoMobile = () => {
     fetchProfile()
   }, [role]) // Refetch if role changes
 
-  
-
   return loading ? (
     <Loader />
   ) : (

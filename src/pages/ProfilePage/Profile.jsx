@@ -1,49 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import profileBg from '../../assets/Images/ProfilePage.png';
-import MainModalProfile from '../../Components/Profile Page Components/MainModalProfile';
-import ProfileNav from '../../Components/Profile Page Components/ProfileNav';
-import Logo from '../../assets/Images/Logo.png';
-import Loader from '../../Components/Universal Components/Loader'; // 🟢 Added
+import React, { useEffect, useState } from 'react'
+import profileBg from '../../assets/Images/ProfilePage.png'
+import MainModalProfile from '../../Components/Profile Page Components/MainModalProfile'
+import ProfileNav from '../../Components/Profile Page Components/ProfileNav'
+import Logo from '../../assets/Images/Logo.png'
+import Loader from '../../Components/Universal Components/Loader' // 🟢 Added
 
 const Profile = () => {
-  const [profileData, setProfileData] = useState([]);
-  const [userInfo, setUserInfo] = useState(null);
-  const [loading, setLoading] = useState(true); // 🟢 Added
+  const [profileData, setProfileData] = useState([])
+  const [userInfo, setUserInfo] = useState(null)
+  const [loading, setLoading] = useState(true) // 🟢 Added
 
-  const token = localStorage.getItem('token');
-  const role = localStorage.getItem('role');
+  const token = localStorage.getItem('token')
+  const role = localStorage.getItem('role')
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true); // 🟢 Added
+        setLoading(true) // 🟢 Added
 
-        const profileRes = await fetch('http://127.0.0.1:8000/api/user/profile/', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const profileData = await profileRes.json();
+        const profileRes = await fetch(
+          'http://127.0.0.1:8000/api/user/profile/',
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        )
+        const profileData = await profileRes.json()
 
         setUserInfo({
           name: profileData.name,
           email: profileData.email,
           age: profileData.age || '-',
           phnNo: profileData.phone || '-',
-          bloodGroup: profileData.blood_group || '-',
-        });
+          bloodGroup: profileData.blood_group || '-'
+        })
 
-        const historyRes = await fetch('http://127.0.0.1:8000/api/image-history/', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const historyData = await historyRes.json();
+        const historyRes = await fetch(
+          'http://127.0.0.1:8000/api/image-history/',
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        )
+        const historyData = await historyRes.json()
 
         const rows = historyData.map((item) => {
-          const rawDate = item.date || item.created_at || item.timestamp;
+          const rawDate = item.date || item.created_at || item.timestamp
           const formattedDate = rawDate
             ? new Date(rawDate).toLocaleDateString('en-GB')
-            : '-';
+            : '-'
 
-          const imageUrl = item.image_url || item.image || item.url || '#';
-          const imageName = item.image_name || 'View Image';
+          const imageUrl = item.image_url || item.image || item.url || '#'
+          const imageName = item.image_name || 'View Image'
 
           const imageLink = (
             <a
@@ -54,11 +60,11 @@ const Profile = () => {
             >
               {imageName}
             </a>
-          );
+          )
 
-          const resultValue = item.result || '-';
-          const isMalignant = resultValue.toLowerCase() === 'malignant';
-          const isBenign = resultValue.toLowerCase() === 'benign';
+          const resultValue = item.result || '-'
+          const isMalignant = resultValue.toLowerCase() === 'malignant'
+          const isBenign = resultValue.toLowerCase() === 'benign'
 
           const styledResult = (
             <span
@@ -66,31 +72,31 @@ const Profile = () => {
                 isMalignant
                   ? 'text-red-600 bg-red-50'
                   : isBenign
-                  ? 'text-green-600 bg-green-50'
-                  : 'text-gray-600'
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-600'
               }`}
             >
               {resultValue}
             </span>
-          );
+          )
 
-          return [formattedDate, imageLink, styledResult];
-        });
+          return [formattedDate, imageLink, styledResult]
+        })
 
-        setProfileData(rows);
+        setProfileData(rows)
       } catch (err) {
-        console.error('Error fetching profile data:', err);
+        console.error('Error fetching profile data:', err)
       } finally {
-        setLoading(false); // 🟢 Added
+        setLoading(false) // 🟢 Added
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
-  const profileHeaders = ['Date', 'Image Link', 'Result'];
+  const profileHeaders = ['Date', 'Image Link', 'Result']
 
-  if (loading) return <Loader />; // 🟢 Changed
+  if (loading) return <Loader /> // 🟢 Changed
 
   return (
     <div
@@ -107,7 +113,7 @@ const Profile = () => {
         checkAgain='/formtwo'
       />
     </div>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile

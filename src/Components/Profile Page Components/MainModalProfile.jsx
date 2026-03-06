@@ -15,7 +15,6 @@ const MainModalProfile = ({
   info = {},
   checkAgain
 }) => {
-
   const [open, setOpen] = useState(false)
   const [profileInfo, setProfileInfo] = useState(info)
   const [loading, setLoading] = useState(false)
@@ -25,12 +24,10 @@ const MainModalProfile = ({
   /// //////////////////////////
 
   const fetchProfile = async () => {
-
     const token = localStorage.getItem('token')
     if (!token) return
 
     try {
-
       setLoading(true)
 
       const res = await fetch('http://127.0.0.1:8000/api/user/profile/', {
@@ -48,7 +45,6 @@ const MainModalProfile = ({
         phnNo: data.phone,
         bloodGroup: data.blood_group
       })
-
     } catch (err) {
       console.log('Profile refresh failed')
     } finally {
@@ -69,9 +65,7 @@ const MainModalProfile = ({
     <Loader />
   ) : (
     <div className='h-full w-full flex flex-col items-center justify-center p-4'>
-
       <div className='bg-pink-100 w-full max-w-5xl rounded-3xl shadow-xl relative top-6 flex flex-col items-center p-8'>
-
         {/* EDIT BUTTON */}
 
         <div
@@ -83,20 +77,21 @@ const MainModalProfile = ({
           <span className='absolute bottom-0 right-0 mb-[-2rem] bg-gray-700 text-pink-300 text-xs font-semibold px-3 py-1 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap'>
             Edit Profile
           </span>
-
         </div>
 
         {/* MODAL */}
 
         {profileType === 'user'
-          ? <Modal open={open} onclose={handleCloseModal} />
-          : <Org_EditProfile open={open} onclose={() => setOpen(false)} />
-        }
+          ? (
+            <Modal open={open} onclose={handleCloseModal} />
+            )
+          : (
+            <Org_EditProfile open={open} onclose={() => setOpen(false)} />
+            )}
 
         {/* PROFILE INFO */}
 
         <div className='mb-6 w-full flex justify-center'>
-
           {profileType === 'user'
             ? (
               <PersonalInfo
@@ -116,17 +111,13 @@ const MainModalProfile = ({
                 OrgPhnNo={profileInfo.phnNo}
               />
               )}
-
         </div>
 
         {/* TABLE */}
 
         <div className='w-full overflow-x-auto border border-gray-400 rounded-lg shadow'>
-
           <table className='min-w-[700px] w-full text-center text-sm text-black border-collapse'>
-
             <thead className='bg-pink-200'>
-
               <tr>
                 {tableHeaders.map((header, index) => (
                   <th
@@ -137,27 +128,27 @@ const MainModalProfile = ({
                   </th>
                 ))}
               </tr>
-
             </thead>
 
             <tbody>
-
               {rowData.length > 0
-                ? rowData.map((row, rowIndex) => (
-                  <tr
-                    key={rowIndex}
-                    className='bg-pink-100 hover:bg-pink-200 transition'
-                  >
-                    {row.map((cell, i) => (
-                      <td
-                        key={i}
-                        className='py-2 px-4 border-b border-gray-200'
+                ? (
+                    rowData.map((row, rowIndex) => (
+                      <tr
+                        key={rowIndex}
+                        className='bg-pink-100 hover:bg-pink-200 transition'
                       >
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))
+                        {row.map((cell, i) => (
+                          <td
+                            key={i}
+                            className='py-2 px-4 border-b border-gray-200'
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))
+                  )
                 : (
                   <tr>
                     <td
@@ -167,30 +158,21 @@ const MainModalProfile = ({
                       No data available
                     </td>
                   </tr>
-                )}
-
+                  )}
             </tbody>
-
           </table>
-
         </div>
 
         {/* BUTTON */}
 
         <div className='mt-8 w-full flex justify-center'>
-
           <Link to={checkAgain}>
-
             <button className='bg-pink-800 text-white px-8 py-3 rounded-xl font-semibold shadow hover:opacity-90 transition'>
               CHECK AGAIN
             </button>
-
           </Link>
-
         </div>
-
       </div>
-
     </div>
   )
 }
