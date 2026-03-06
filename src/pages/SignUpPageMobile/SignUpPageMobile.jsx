@@ -10,7 +10,7 @@ import SignUpButton from '../../Components/Sign Up Page Mobile Componenet/SignUp
 import BottomNavigation from '../../Components/Sign Up Page Mobile Componenet/BottomNavigation'
 import BackgroundImage from '../../Components/Sign Up Page Mobile Componenet/BackgroundImage'
 import { getCurrentFields } from '../../config/SignUpMobileFormField'
-
+import Loader from '../../Components/Universal Components/Loader'
 import { getPasswordValidation } from '../../utils/passwordValidator'
 import {
   createUserWithEmailAndPassword,
@@ -204,7 +204,9 @@ const SignUpPageMobile = () => {
 
   const currentFields = getCurrentFields(selectedType)
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className='min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]'>
       <BackgroundImage
         backgroundImage={MobileLandingPageFemale1}

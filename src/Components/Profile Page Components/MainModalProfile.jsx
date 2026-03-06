@@ -6,6 +6,7 @@ import PersonalInfo from './PersonalInfo'
 import Org_info from './Org_info'
 import Modal from './EditProfileModal'
 import Org_EditProfile from './Org_EditProfile'
+import Loader from '../../Components/Universal Components/Loader'
 
 const MainModalProfile = ({
   tableHeaders = [],
@@ -15,8 +16,8 @@ const MainModalProfile = ({
   checkAgain
 }) => {
   const [open, setOpen] = useState(false)
-
   const [profileInfo, setProfileInfo] = useState(info)
+  const [loading, setLoading] = useState(false) 
 
   /// //////////////////////////
   // FETCH PROFILE AGAIN
@@ -28,14 +29,13 @@ const MainModalProfile = ({
     if (!token) return
 
     try {
-      const res = await fetch(
-        'http://127.0.0.1:8000/api/user/profile/',
-        {
-          headers: {
-            Authorization: 'Bearer ' + token
-          }
+      setLoading(true) 
+
+      const res = await fetch('http://127.0.0.1:8000/api/user/profile/', {
+        headers: {
+          Authorization: 'Bearer ' + token
         }
-      )
+      })
 
       const data = await res.json()
 
@@ -48,6 +48,8 @@ const MainModalProfile = ({
       })
     } catch (err) {
       console.log('Profile refresh failed')
+    } finally {
+      setLoading(false) 
     }
   }
 
@@ -57,15 +59,17 @@ const MainModalProfile = ({
 
   const handleCloseModal = () => {
     setOpen(false)
-
     fetchProfile()
   }
 
-  return (
+ 
+
+  return loading ? (
+    <Loader />
+  ) : (
     <div className='h-full w-full flex flex-col items-center justify-center p-4'>
       <div className='bg-pink-100 w-full max-w-5xl rounded-3xl shadow-xl relative top-6 flex flex-col items-center p-8'>
         {/* EDIT BUTTON */}
-
         <div
           onClick={() => setOpen(true)}
           className='bg-white z-30 absolute right-6 top-5 group p-1 rounded-full shadow'
@@ -78,41 +82,34 @@ const MainModalProfile = ({
         </div>
 
         {/* MODAL */}
-
-        {profileType === 'user'
-          ? (
-            <Modal open={open} onclose={handleCloseModal} />
-            )
-          : (
-            <Org_EditProfile open={open} onclose={() => setOpen(false)} />
-            )}
+        {profileType === 'user' ? (
+          <Modal open={open} onclose={handleCloseModal} />
+        ) : (
+          <Org_EditProfile open={open} onclose={() => setOpen(false)} />
+        )}
 
         {/* PROFILE INFO */}
-
         <div className='mb-6 w-full flex justify-center'>
-          {profileType === 'user'
-            ? (
-              <PersonalInfo
-                name={profileInfo.name}
-                email={profileInfo.email}
-                age={profileInfo.age}
-                phnNo={profileInfo.phnNo}
-                bloodGroup={profileInfo.bloodGroup}
-              />
-              )
-            : (
-              <Org_info
-                OrgName={profileInfo.orgName}
-                OrgType={profileInfo.orgType}
-                OrgEmail={profileInfo.email}
-                Lisc={profileInfo.licenseNo}
-                OrgPhnNo={profileInfo.phnNo}
-              />
-              )}
+          {profileType === 'user' ? (
+            <PersonalInfo
+              name={profileInfo.name}
+              email={profileInfo.email}
+              age={profileInfo.age}
+              phnNo={profileInfo.phnNo}
+              bloodGroup={profileInfo.bloodGroup}
+            />
+          ) : (
+            <Org_info
+              OrgName={profileInfo.orgName}
+              OrgType={profileInfo.orgType}
+              OrgEmail={profileInfo.email}
+              Lisc={profileInfo.licenseNo}
+              OrgPhnNo={profileInfo.phnNo}
+            />
+          )}
         </div>
 
         {/* TABLE */}
-
         <div className='w-full overflow-x-auto border border-gray-400 rounded-lg shadow'>
           <table className='min-w-[700px] w-full text-center text-sm text-black border-collapse'>
             <thead className='bg-pink-200'>
@@ -129,40 +126,37 @@ const MainModalProfile = ({
             </thead>
 
             <tbody>
-              {rowData.length > 0
-                ? (
-                    rowData.map((row, rowIndex) => (
-                      <tr
-                        key={rowIndex}
-                        className='bg-pink-100 hover:bg-pink-200 transition'
+              {rowData.length > 0 ? (
+                rowData.map((row, rowIndex) => (
+                  <tr
+                    key={rowIndex}
+                    className='bg-pink-100 hover:bg-pink-200 transition'
+                  >
+                    {row.map((cell, i) => (
+                      <td
+                        key={i}
+                        className='py-2 px-4 border-b border-gray-200'
                       >
-                        {row.map((cell, i) => (
-                          <td
-                            key={i}
-                            className='py-2 px-4 border-b border-gray-200'
-                          >
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))
-                  )
-                : (
-                  <tr>
-                    <td
-                      colSpan={tableHeaders.length}
-                      className='py-4 text-gray-500 italic'
-                    >
-                      No data available
-                    </td>
+                        {cell}
+                      </td>
+                    ))}
                   </tr>
-                  )}
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan={tableHeaders.length}
+                    className='py-4 text-gray-500 italic'
+                  >
+                    No data available
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
 
         {/* BUTTON */}
-
         <div className='mt-8 w-full flex justify-center'>
           <Link to={checkAgain}>
             <button className='bg-pink-800 text-white px-8 py-3 rounded-xl font-semibold shadow hover:opacity-90 transition'>

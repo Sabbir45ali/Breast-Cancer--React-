@@ -4,29 +4,43 @@ import MainModalProfile from '../../Components/Profile Page Components/MainModal
 import ProfileNav from '../../Components/Profile Page Components/ProfileNav'
 import Logo from '../../assets/Images/Logo.png'
 
+// 🟢 Import the Loader
+import Loader from '../../Components/Universal Components/Loader'
+
 const Org_profile = () => {
   const [orgInfo, setOrgInfo] = useState({})
   const [history, setHistory] = useState([])
   const [historyType, setHistoryType] = useState('data')
+  const [loading, setLoading] = useState(true) // 🟢 Added loading state
 
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/org/profile/', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then((res) => res.json())
-      .then((data) => setOrgInfo(data))
+    const fetchOrgData = async () => {
+      try {
+        setLoading(true) // 🟢 Start loader
 
-    fetch('http://127.0.0.1:8000/api/org/full-history/', {
-      headers: {
-        Authorization: `Bearer ${token}`
+        // Fetch org profile
+        const profileRes = await fetch('http://127.0.0.1:8000/api/org/profile/', {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        const profileData = await profileRes.json()
+        setOrgInfo(profileData)
+
+        // Fetch org full history
+        const historyRes = await fetch('http://127.0.0.1:8000/api/org/full-history/', {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        const historyData = await historyRes.json()
+        setHistory(historyData)
+      } catch (err) {
+        console.error('Error fetching org data:', err)
+      } finally {
+        setLoading(false) // 🟢 Stop loader
       }
-    })
-      .then((res) => res.json())
-      .then((data) => setHistory(data))
+    }
+
+    fetchOrgData()
   }, [])
 
   // DATE FORMAT
@@ -51,8 +65,8 @@ const Org_profile = () => {
           isMalignant
             ? 'text-red-600 bg-red-50'
             : isBenign
-              ? 'text-green-600 bg-green-50'
-              : 'text-gray-600'
+            ? 'text-green-600 bg-green-50'
+            : 'text-gray-600'
         }`}
       >
         {resText}
@@ -74,7 +88,7 @@ const Org_profile = () => {
       >
         {item.image_name || 'scan.png'}
       </a>,
-      renderStyledResult(item.result) // Applied styling here
+      renderStyledResult(item.result)
     ])
 
   // DATA HISTORY TABLE
@@ -89,7 +103,7 @@ const Org_profile = () => {
       item.inputs?.smoothness_mean ?? '-',
       item.inputs?.compactness_mean ?? '-',
       item.inputs?.concavity_mean ?? '-',
-      renderStyledResult(item.result) // Applied styling here
+      renderStyledResult(item.result)
     ])
 
   const tableHeadersImage = ['SL NO', 'DATE', 'IMAGE NAME', 'RESULT']
@@ -106,7 +120,11 @@ const Org_profile = () => {
     'RESULT'
   ]
 
-  return (
+  
+
+  return loading ? (
+    <Loader />
+  ) : (
     <div
       style={{ backgroundImage: `url(${profileBg})` }}
       className='bg-cover bg-center h-screen flex justify-center items-center'

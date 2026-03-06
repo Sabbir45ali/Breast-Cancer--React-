@@ -13,6 +13,7 @@ import {
 } from 'firebase/auth'
 import { auth } from '../../../firebase'
 import { FcGoogle } from 'react-icons/fc'
+import Loader from '../../Universal Components/Loader'
 
 const MainRightModel = () => {
   const navigate = useNavigate()
@@ -195,7 +196,9 @@ const MainRightModel = () => {
     setLoading(false)
   }
 
-  return (
+  return loading ? (
+    <Loader/>
+  ) : (
     <div className='flex flex-col items-center justify-center h-full w-full space-y-3 px-4'>
       <Header
         FirstLetter='C'
