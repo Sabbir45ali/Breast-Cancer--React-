@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RiEdit2Fill } from 'react-icons/ri'
 
@@ -15,27 +15,28 @@ const MainModalProfile = ({
   info = {},
   checkAgain
 }) => {
+
   const [open, setOpen] = useState(false)
   const [profileInfo, setProfileInfo] = useState(info)
-  const [loading, setLoading] = useState(false) 
+  const [loading, setLoading] = useState(false)
 
   /// //////////////////////////
   // FETCH PROFILE AGAIN
   /// //////////////////////////
 
   const fetchProfile = async () => {
-    const token = localStorage.getItem('token')
 
+    const token = localStorage.getItem('token')
     if (!token) return
 
     try {
-      setLoading(true) 
+
+      setLoading(true)
 
       const res = await fetch('http://127.0.0.1:8000/api/user/profile/', {
         headers: {
           Authorization: 'Bearer ' + token
         }
-      })
       })
 
       const data = await res.json()
@@ -47,10 +48,11 @@ const MainModalProfile = ({
         phnNo: data.phone,
         bloodGroup: data.blood_group
       })
+
     } catch (err) {
       console.log('Profile refresh failed')
     } finally {
-      setLoading(false) 
+      setLoading(false)
     }
   }
 
@@ -63,14 +65,15 @@ const MainModalProfile = ({
     fetchProfile()
   }
 
- 
-
   return loading ? (
     <Loader />
   ) : (
     <div className='h-full w-full flex flex-col items-center justify-center p-4'>
+
       <div className='bg-pink-100 w-full max-w-5xl rounded-3xl shadow-xl relative top-6 flex flex-col items-center p-8'>
+
         {/* EDIT BUTTON */}
+
         <div
           onClick={() => setOpen(true)}
           className='bg-white z-30 absolute right-6 top-5 group p-1 rounded-full shadow'
@@ -80,40 +83,50 @@ const MainModalProfile = ({
           <span className='absolute bottom-0 right-0 mb-[-2rem] bg-gray-700 text-pink-300 text-xs font-semibold px-3 py-1 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap'>
             Edit Profile
           </span>
+
         </div>
 
         {/* MODAL */}
-        {profileType === 'user' ? (
-          <Modal open={open} onclose={handleCloseModal} />
-        ) : (
-          <Org_EditProfile open={open} onclose={() => setOpen(false)} />
-        )}
+
+        {profileType === 'user'
+          ? <Modal open={open} onclose={handleCloseModal} />
+          : <Org_EditProfile open={open} onclose={() => setOpen(false)} />
+        }
 
         {/* PROFILE INFO */}
+
         <div className='mb-6 w-full flex justify-center'>
-          {profileType === 'user' ? (
-            <PersonalInfo
-              name={profileInfo.name}
-              email={profileInfo.email}
-              age={profileInfo.age}
-              phnNo={profileInfo.phnNo}
-              bloodGroup={profileInfo.bloodGroup}
-            />
-          ) : (
-            <Org_info
-              OrgName={profileInfo.orgName}
-              OrgType={profileInfo.orgType}
-              OrgEmail={profileInfo.email}
-              Lisc={profileInfo.licenseNo}
-              OrgPhnNo={profileInfo.phnNo}
-            />
-          )}
+
+          {profileType === 'user'
+            ? (
+              <PersonalInfo
+                name={profileInfo.name}
+                email={profileInfo.email}
+                age={profileInfo.age}
+                phnNo={profileInfo.phnNo}
+                bloodGroup={profileInfo.bloodGroup}
+              />
+              )
+            : (
+              <Org_info
+                OrgName={profileInfo.orgName}
+                OrgType={profileInfo.orgType}
+                OrgEmail={profileInfo.email}
+                Lisc={profileInfo.licenseNo}
+                OrgPhnNo={profileInfo.phnNo}
+              />
+              )}
+
         </div>
 
         {/* TABLE */}
+
         <div className='w-full overflow-x-auto border border-gray-400 rounded-lg shadow'>
+
           <table className='min-w-[700px] w-full text-center text-sm text-black border-collapse'>
+
             <thead className='bg-pink-200'>
+
               <tr>
                 {tableHeaders.map((header, index) => (
                   <th
@@ -124,11 +137,13 @@ const MainModalProfile = ({
                   </th>
                 ))}
               </tr>
+
             </thead>
 
             <tbody>
-              {rowData.length > 0 ? (
-                rowData.map((row, rowIndex) => (
+
+              {rowData.length > 0
+                ? rowData.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
                     className='bg-pink-100 hover:bg-pink-200 transition'
@@ -143,29 +158,39 @@ const MainModalProfile = ({
                     ))}
                   </tr>
                 ))
-              ) : (
-                <tr>
-                  <td
-                    colSpan={tableHeaders.length}
-                    className='py-4 text-gray-500 italic'
-                  >
-                    No data available
-                  </td>
-                </tr>
-              )}
+                : (
+                  <tr>
+                    <td
+                      colSpan={tableHeaders.length}
+                      className='py-4 text-gray-500 italic'
+                    >
+                      No data available
+                    </td>
+                  </tr>
+                )}
+
             </tbody>
+
           </table>
+
         </div>
 
         {/* BUTTON */}
+
         <div className='mt-8 w-full flex justify-center'>
+
           <Link to={checkAgain}>
+
             <button className='bg-pink-800 text-white px-8 py-3 rounded-xl font-semibold shadow hover:opacity-90 transition'>
               CHECK AGAIN
             </button>
+
           </Link>
+
         </div>
+
       </div>
+
     </div>
   )
 }
