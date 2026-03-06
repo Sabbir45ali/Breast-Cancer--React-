@@ -36,6 +36,7 @@ const MainModalProfile = ({
           Authorization: 'Bearer ' + token
         }
       })
+      })
 
       const data = await res.json()
 

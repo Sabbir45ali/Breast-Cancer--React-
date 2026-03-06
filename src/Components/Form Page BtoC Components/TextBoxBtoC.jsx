@@ -54,16 +54,13 @@ export default function MammogramUploadPage () {
 
       formData.append('image', file)
 
-      const res = await fetch(
-        'http://127.0.0.1:8000/api/predict-image/',
-        {
-          method: 'POST',
-          headers: {
-            Authorization: 'Bearer ' + token
-          },
-          body: formData
-        }
-      )
+      const res = await fetch('http://127.0.0.1:8000/api/predict-image/', {
+        method: 'POST',
+        headers: {
+          Authorization: 'Bearer ' + token
+        },
+        body: formData
+      })
 
       const data = await res.json()
 
