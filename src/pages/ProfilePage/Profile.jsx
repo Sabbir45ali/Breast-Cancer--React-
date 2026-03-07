@@ -3,50 +3,54 @@ import profileBg from '../../assets/Images/ProfilePage.png'
 import MainModalProfile from '../../Components/Profile Page Components/MainModalProfile'
 import ProfileNav from '../../Components/Profile Page Components/ProfileNav'
 import Logo from '../../assets/Images/Logo.png'
+import Loader from '../../Components/Universal Components/Loader' // 🟢 Added
 
 const Profile = () => {
   const [profileData, setProfileData] = useState([])
   const [userInfo, setUserInfo] = useState(null)
+  const [loading, setLoading] = useState(true) // 🟢 Added
 
   const token = localStorage.getItem('token')
   const role = localStorage.getItem('role')
 
   useEffect(() => {
-    fetch('https://13-232-232-187.nip.io/api/user/profile/', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setUserInfo({
-          name: data.name,
-          email: data.email,
-          age: data.age || '-',
-          phnNo: data.phone || '-',
-          bloodGroup: data.blood_group || '-'
-        })
-      })
+    const fetchData = async () => {
+      try {
+        setLoading(true) // 🟢 Added
 
-    fetch('https://13-232-232-187.nip.io/api/image-history/', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const rows = data.map((item) => {
-          // 1. Format date
+        const profileRes = await fetch(
+          'http://127.0.0.1:8000/api/user/profile/',
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        )
+        const profileData = await profileRes.json()
+
+        setUserInfo({
+          name: profileData.name,
+          email: profileData.email,
+          age: profileData.age || '-',
+          phnNo: profileData.phone || '-',
+          bloodGroup: profileData.blood_group || '-'
+        })
+
+        const historyRes = await fetch(
+          'http://127.0.0.1:8000/api/image-history/',
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        )
+        const historyData = await historyRes.json()
+
+        const rows = historyData.map((item) => {
           const rawDate = item.date || item.created_at || item.timestamp
           const formattedDate = rawDate
             ? new Date(rawDate).toLocaleDateString('en-GB')
             : '-'
 
-          // 2. Extract URL and Name
           const imageUrl = item.image_url || item.image || item.url || '#'
           const imageName = item.image_name || 'View Image'
 
-          // 3. Create the clickable link component
           const imageLink = (
             <a
               href={imageUrl}
@@ -58,7 +62,6 @@ const Profile = () => {
             </a>
           )
 
-          // 4. Conditional Result Styling
           const resultValue = item.result || '-'
           const isMalignant = resultValue.toLowerCase() === 'malignant'
           const isBenign = resultValue.toLowerCase() === 'benign'
@@ -81,12 +84,19 @@ const Profile = () => {
         })
 
         setProfileData(rows)
-      })
+      } catch (err) {
+        console.error('Error fetching profile data:', err)
+      } finally {
+        setLoading(false) // 🟢 Added
+      }
+    }
+
+    fetchData()
   }, [])
 
   const profileHeaders = ['Date', 'Image Link', 'Result']
 
-  if (!userInfo) return <div>Loading...</div>
+  if (loading) return <Loader /> // 🟢 Changed
 
   return (
     <div

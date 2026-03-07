@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { ImCross } from 'react-icons/im'
 import '../../App.css'
 import medicalIcon from '../../assets/Images/inside_pic_rich_data.png'
+import Loader from '../../Components/Universal Components/Loader'
 
 const RichDataMobile = ({ open, onclose }) => {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ const RichDataMobile = ({ open, onclose }) => {
       const token = localStorage.getItem('token')
 
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/user/update-profile/',
+        'http://127.0.0.1:8000/api/user/update-profile/',
         {
           method: 'POST',
           headers: {
@@ -65,7 +66,9 @@ const RichDataMobile = ({ open, onclose }) => {
     setLoading(false)
   }
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div
       className='fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50'
       onClick={onclose}

@@ -8,8 +8,12 @@ import {
   FaIdCard
 } from 'react-icons/fa'
 
+// 🟢 Import the Loader
+import Loader from '../../Components/Universal Components/Loader'
+
 const PersonalInfoMobile = () => {
   const [profile, setProfile] = useState(null)
+  const [loading, setLoading] = useState(true) // 🟢 Added loading state
 
   // Get role from localStorage
   const role = localStorage.getItem('role')
@@ -17,13 +21,14 @@ const PersonalInfoMobile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
+        setLoading(true) // 🟢 Start loader
         const token = localStorage.getItem('token')
 
         // Dynamic endpoint based on role
         const endpoint =
           role === 'org'
-            ? 'https://13-232-232-187.nip.io/api/org/profile/'
-            : 'https://13-232-232-187.nip.io/api/user/profile/'
+            ? 'http://127.0.0.1:8000/api/org/profile/'
+            : 'http://127.0.0.1:8000/api/user/profile/'
 
         const res = await fetch(endpoint, {
           method: 'GET',
@@ -39,17 +44,17 @@ const PersonalInfoMobile = () => {
         setProfile(data)
       } catch (err) {
         console.log('Profile error:', err)
+      } finally {
+        setLoading(false) // 🟢 Stop loader
       }
     }
 
     fetchProfile()
   }, [role]) // Refetch if role changes
 
-  if (!profile) {
-    return <div className='pt-12 text-center text-gray-500'>Loading...</div>
-  }
-
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className='pt-12 pb-6 px-6 text-center absolute top-[330px] left-1/2 transform -translate-x-1/2 w-full max-w-sm flex flex-col items-center justify-center '>
       {/* Name: Org Name or User Name */}
       <h2 className='text-lg font-semibold text-gray-800 text-[23px] flex items-center gap-2'>

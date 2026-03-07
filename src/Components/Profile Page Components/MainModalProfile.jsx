@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RiEdit2Fill } from 'react-icons/ri'
 
@@ -6,6 +6,7 @@ import PersonalInfo from './PersonalInfo'
 import Org_info from './Org_info'
 import Modal from './EditProfileModal'
 import Org_EditProfile from './Org_EditProfile'
+import Loader from '../../Components/Universal Components/Loader'
 
 const MainModalProfile = ({
   tableHeaders = [],
@@ -15,8 +16,8 @@ const MainModalProfile = ({
   checkAgain
 }) => {
   const [open, setOpen] = useState(false)
-
   const [profileInfo, setProfileInfo] = useState(info)
+  const [loading, setLoading] = useState(false)
 
   /// //////////////////////////
   // FETCH PROFILE AGAIN
@@ -24,18 +25,16 @@ const MainModalProfile = ({
 
   const fetchProfile = async () => {
     const token = localStorage.getItem('token')
-
     if (!token) return
 
     try {
-      const res = await fetch(
-        'https://13-232-232-187.nip.io/api/user/profile/',
-        {
-          headers: {
-            Authorization: 'Bearer ' + token
-          }
+      setLoading(true)
+
+      const res = await fetch('http://127.0.0.1:8000/api/user/profile/', {
+        headers: {
+          Authorization: 'Bearer ' + token
         }
-      )
+      })
 
       const data = await res.json()
 
@@ -48,6 +47,8 @@ const MainModalProfile = ({
       })
     } catch (err) {
       console.log('Profile refresh failed')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -57,11 +58,12 @@ const MainModalProfile = ({
 
   const handleCloseModal = () => {
     setOpen(false)
-
     fetchProfile()
   }
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className='h-full w-full flex flex-col items-center justify-center p-4'>
       <div className='bg-pink-100 w-full max-w-5xl rounded-3xl shadow-xl relative top-6 flex flex-col items-center p-8'>
         {/* EDIT BUTTON */}

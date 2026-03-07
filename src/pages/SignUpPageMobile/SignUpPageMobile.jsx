@@ -10,7 +10,7 @@ import SignUpButton from '../../Components/Sign Up Page Mobile Componenet/SignUp
 import BottomNavigation from '../../Components/Sign Up Page Mobile Componenet/BottomNavigation'
 import BackgroundImage from '../../Components/Sign Up Page Mobile Componenet/BackgroundImage'
 import { getCurrentFields } from '../../config/SignUpMobileFormField'
-
+import Loader from '../../Components/Universal Components/Loader'
 import { getPasswordValidation } from '../../utils/passwordValidator'
 import {
   createUserWithEmailAndPassword,
@@ -21,8 +21,8 @@ import {
 import { auth } from '../../firebase'
 
 const API_ENDPOINTS = {
-  User: 'https://13-232-232-187.nip.io/api/user/signup/',
-  Organisation: 'https://13-232-232-187.nip.io/api/org/signup/'
+  User: 'http://127.0.0.1:8000/api/user/signup/',
+  Organisation: 'http://127.0.0.1:8000/api/org/signup/'
 }
 
 const SignUpPageMobile = () => {
@@ -204,59 +204,63 @@ const SignUpPageMobile = () => {
 
   const currentFields = getCurrentFields(selectedType)
 
-  return (
-    <div className='min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]'>
-      <BackgroundImage
-        backgroundImage={MobileLandingPageFemale1}
-        altText='Mobile Landing Page Female'
-      />
+  return loading
+    ? (
+      <Loader />
+      )
+    : (
+      <div className='min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]'>
+        <BackgroundImage
+          backgroundImage={MobileLandingPageFemale1}
+          altText='Mobile Landing Page Female'
+        />
 
-      <div className='relative z-10 min-h-screen flex flex-col justify-end pb-8 px-4'>
-        <div className='bg-white rounded-t-3xl p-6 shadow-lg'>
-          <div className='flex justify-end mb-2'>
-            <Link to='/'>
-              <RxCrossCircled className='text-2xl bg-pink-100 text-pink-600 rounded-full' />
-            </Link>
+        <div className='relative z-10 min-h-screen flex flex-col justify-end pb-8 px-4'>
+          <div className='bg-white rounded-t-3xl p-6 shadow-lg'>
+            <div className='flex justify-end mb-2'>
+              <Link to='/'>
+                <RxCrossCircled className='text-2xl bg-pink-100 text-pink-600 rounded-full' />
+              </Link>
+            </div>
+
+            <Header
+              FirstLetter='C'
+              Firstpart='reate'
+              SecondLetter='A'
+              Secondpart='ccount'
+            />
+
+            <CustomDropdown
+              selectedType={selectedType}
+              isDropdownOpen={isDropdownOpen}
+              setIsDropdownOpen={setIsDropdownOpen}
+              setSelectedType={setSelectedType}
+              accountTypes={accountTypes}
+            />
+
+            {currentFields.length > 0 && (
+              <>
+                <SignUpButton onClick={handleSignUp} loading={loading} />
+
+                <button
+                  type='button'
+                  onClick={handleGoogleSignup}
+                  className='w-full mt-3 border border-gray-300 bg-white py-2 rounded-lg hover:bg-gray-50 transition'
+                >
+                  Continue with Google
+                </button>
+              </>
+            )}
+
+            {error && (
+              <p className='text-red-500 text-sm text-center mt-3'>{error}</p>
+            )}
           </div>
 
-          <Header
-            FirstLetter='C'
-            Firstpart='reate'
-            SecondLetter='A'
-            Secondpart='ccount'
-          />
-
-          <CustomDropdown
-            selectedType={selectedType}
-            isDropdownOpen={isDropdownOpen}
-            setIsDropdownOpen={setIsDropdownOpen}
-            setSelectedType={setSelectedType}
-            accountTypes={accountTypes}
-          />
-
-          {currentFields.length > 0 && (
-            <>
-              <SignUpButton onClick={handleSignUp} loading={loading} />
-
-              <button
-                type='button'
-                onClick={handleGoogleSignup}
-                className='w-full mt-3 border border-gray-300 bg-white py-2 rounded-lg hover:bg-gray-50 transition'
-              >
-                Continue with Google
-              </button>
-            </>
-          )}
-
-          {error && (
-            <p className='text-red-500 text-sm text-center mt-3'>{error}</p>
-          )}
+          <BottomNavigation />
         </div>
-
-        <BottomNavigation />
       </div>
-    </div>
-  )
+      )
 }
 
 export default SignUpPageMobile
