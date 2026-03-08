@@ -33,8 +33,8 @@ const MainRightModel = () => {
   const options = ['Organisation', 'User']
 
   const endpoints = {
-    User: 'http://127.0.0.1:8000/api/user/signup/',
-    Organisation: 'http://127.0.0.1:8000/api/org/signup/'
+    User: 'https://breast-cancer-detection-backend.onrender.com/api/user/signup/',
+    Organisation: 'https://breast-cancer-detection-backend.onrender.com/api/org/signup/'
   }
 
   // Handle input changes

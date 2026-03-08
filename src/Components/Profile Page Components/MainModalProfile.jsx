@@ -30,7 +30,7 @@ const MainModalProfile = ({
     try {
       setLoading(true)
 
-      const res = await fetch('http://127.0.0.1:8000/api/user/profile/', {
+      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/user/profile/', {
         headers: {
           Authorization: 'Bearer ' + token
         }
@@ -84,10 +84,10 @@ const MainModalProfile = ({
         {profileType === 'user'
           ? (
             <Modal open={open} onclose={handleCloseModal} />
-            )
+          )
           : (
             <Org_EditProfile open={open} onclose={() => setOpen(false)} />
-            )}
+          )}
 
         {/* PROFILE INFO */}
 
@@ -95,22 +95,22 @@ const MainModalProfile = ({
           {profileType === 'user'
             ? (
               <PersonalInfo
-                name={profileInfo.name}
-                email={profileInfo.email}
-                age={profileInfo.age}
-                phnNo={profileInfo.phnNo}
-                bloodGroup={profileInfo.bloodGroup}
+                name={profileInfo?.name}
+                email={profileInfo?.email}
+                age={profileInfo?.age}
+                phnNo={profileInfo?.phnNo}
+                bloodGroup={profileInfo?.bloodGroup}
               />
-              )
+            )
             : (
               <Org_info
-                OrgName={profileInfo.orgName}
-                OrgType={profileInfo.orgType}
-                OrgEmail={profileInfo.email}
-                Lisc={profileInfo.licenseNo}
-                OrgPhnNo={profileInfo.phnNo}
+                OrgName={profileInfo?.orgName}
+                OrgType={profileInfo?.orgType}
+                OrgEmail={profileInfo?.email}
+                Lisc={profileInfo?.licenseNo}
+                OrgPhnNo={profileInfo?.phnNo}
               />
-              )}
+            )}
         </div>
 
         {/* TABLE */}
@@ -133,22 +133,22 @@ const MainModalProfile = ({
             <tbody>
               {rowData.length > 0
                 ? (
-                    rowData.map((row, rowIndex) => (
-                      <tr
-                        key={rowIndex}
-                        className='bg-pink-100 hover:bg-pink-200 transition'
-                      >
-                        {row.map((cell, i) => (
-                          <td
-                            key={i}
-                            className='py-2 px-4 border-b border-gray-200'
-                          >
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))
-                  )
+                  rowData.map((row, rowIndex) => (
+                    <tr
+                      key={rowIndex}
+                      className='bg-pink-100 hover:bg-pink-200 transition'
+                    >
+                      {row.map((cell, i) => (
+                        <td
+                          key={i}
+                          className='py-2 px-4 border-b border-gray-200'
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))
+                )
                 : (
                   <tr>
                     <td
@@ -158,7 +158,7 @@ const MainModalProfile = ({
                       No data available
                     </td>
                   </tr>
-                  )}
+                )}
             </tbody>
           </table>
         </div>

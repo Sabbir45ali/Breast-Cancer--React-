@@ -22,7 +22,7 @@ const Org_profile = () => {
 
         // Fetch org profile
         const profileRes = await fetch(
-          'http://127.0.0.1:8000/api/org/profile/',
+          'https://breast-cancer-detection-backend.onrender.com/api/org/profile/',
           {
             headers: { Authorization: `Bearer ${token}` }
           }
@@ -32,7 +32,7 @@ const Org_profile = () => {
 
         // Fetch org full history
         const historyRes = await fetch(
-          'http://127.0.0.1:8000/api/org/full-history/',
+          'https://breast-cancer-detection-backend.onrender.com/api/org/full-history/',
           {
             headers: { Authorization: `Bearer ${token}` }
           }

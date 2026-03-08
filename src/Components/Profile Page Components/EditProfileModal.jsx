@@ -40,7 +40,7 @@ const EditProfileModal = ({ open, onclose }) => {
     try {
       setLoading(true) // 🟢 Show loader when starting
 
-      await fetch('http://127.0.0.1:8000/api/user/update-profile/', {
+      await fetch('https://breast-cancer-detection-backend.onrender.com/api/user/update-profile/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

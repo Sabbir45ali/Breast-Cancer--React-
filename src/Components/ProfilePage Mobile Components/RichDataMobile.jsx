@@ -36,7 +36,7 @@ const RichDataMobile = ({ open, onclose }) => {
       const token = localStorage.getItem('token')
 
       const res = await fetch(
-        'http://127.0.0.1:8000/api/user/update-profile/',
+        'https://breast-cancer-detection-backend.onrender.com/api/user/update-profile/',
         {
           method: 'POST',
           headers: {

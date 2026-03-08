@@ -19,7 +19,7 @@ const Profile = () => {
         setLoading(true) // 🟢 Added
 
         const profileRes = await fetch(
-          'http://127.0.0.1:8000/api/user/profile/',
+          'https://breast-cancer-detection-backend.onrender.com/api/user/profile/',
           {
             headers: { Authorization: `Bearer ${token}` }
           }
@@ -35,7 +35,7 @@ const Profile = () => {
         })
 
         const historyRes = await fetch(
-          'http://127.0.0.1:8000/api/image-history/',
+          'https://breast-cancer-detection-backend.onrender.com/api/image-history/',
           {
             headers: { Authorization: `Bearer ${token}` }
           }
