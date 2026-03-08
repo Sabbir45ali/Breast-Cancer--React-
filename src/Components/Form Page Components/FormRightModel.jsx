@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function FormRightModel() {
+export default function FormRightModel () {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
@@ -32,14 +32,17 @@ export default function FormRightModel() {
     try {
       const token = localStorage.getItem('token')
 
-      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_data/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
-        },
-        body: JSON.stringify(formData)
-      })
+      const res = await fetch(
+        'https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_data/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify(formData)
+        }
+      )
 
       const data = await res.json()
 

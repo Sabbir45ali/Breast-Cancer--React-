@@ -22,7 +22,8 @@ import { auth } from '../../firebase'
 
 const API_ENDPOINTS = {
   User: 'https://breast-cancer-detection-backend.onrender.com/api/user/signup/',
-  Organisation: 'https://breast-cancer-detection-backend.onrender.com/api/org/signup/'
+  Organisation:
+    'https://breast-cancer-detection-backend.onrender.com/api/org/signup/'
 }
 
 const SignUpPageMobile = () => {

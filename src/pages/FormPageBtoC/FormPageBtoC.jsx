@@ -58,13 +58,16 @@ const FormPageBtoC = () => {
       const formData = new FormData()
       formData.append('image', image)
 
-      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_image/', {
-        method: 'POST',
-        headers: {
-          Authorization: 'Bearer ' + token
-        },
-        body: formData
-      })
+      const res = await fetch(
+        'https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_image/',
+        {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer ' + token
+          },
+          body: formData
+        }
+      )
 
       const data = await res.json()
 
