@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../App.css'
 
-function Loader() {
+function Loader () {
   const [progress, setProgress] = useState(0)
   const [message, setMessage] = useState('We are almost there...')
 

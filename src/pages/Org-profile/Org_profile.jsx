@@ -67,12 +67,13 @@ const Org_profile = () => {
 
     return (
       <span
-        className={`font-bold px-3 py-1 rounded-full text-sm ${isMalignant
+        className={`font-bold px-3 py-1 rounded-full text-sm ${
+          isMalignant
             ? 'text-red-600 bg-red-50'
             : isBenign
               ? 'text-green-600 bg-green-50'
               : 'text-gray-600'
-          }`}
+        }`}
       >
         {resText}
       </span>

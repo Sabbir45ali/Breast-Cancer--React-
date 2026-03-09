@@ -6,8 +6,10 @@ import TextBox from '../../Components/NoPage/TextBox'
 
 const NoPage = () => {
   const role = localStorage.getItem('role')
-  const homeLink = (role === 'org' || role === 'organisation') ? '/org-home' : '/home'
-  const profileLink = (role === 'org' || role === 'organisation') ? '/org-profile' : '/profile'
+  const homeLink =
+    role === 'org' || role === 'organisation' ? '/org-home' : '/home'
+  const profileLink =
+    role === 'org' || role === 'organisation' ? '/org-profile' : '/profile'
 
   return (
     <div className='NoPageBG bg-cover bg-center min-h-screen flex flex-col overflow-auto'>

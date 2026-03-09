@@ -32,14 +32,17 @@ export default function FormRightModel () {
     try {
       const token = localStorage.getItem('token')
 
-      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/org/predict-data/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
-        },
-        body: JSON.stringify(formData)
-      })
+      const res = await fetch(
+        'https://breast-cancer-detection-backend.onrender.com/api/org/predict-data/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify(formData)
+        }
+      )
 
       const data = await res.json()
 

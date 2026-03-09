@@ -109,7 +109,15 @@ const Profile = () => {
         tableHeaders={profileHeaders}
         rowData={profileData}
         profileType='user'
-        info={userInfo || { name: 'Unknown User', email: '', age: '-', phnNo: '-', bloodGroup: '-' }}
+        info={
+          userInfo || {
+            name: 'Unknown User',
+            email: '',
+            age: '-',
+            phnNo: '-',
+            bloodGroup: '-'
+          }
+        }
         checkAgain='/formtwo'
       />
     </div>
