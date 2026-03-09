@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function MammogramUploadPage () {
+export default function MammogramUploadPage() {
   const [error, setError] = useState('')
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -55,7 +55,7 @@ export default function MammogramUploadPage () {
       formData.append('image', file)
 
       const res = await fetch(
-        'https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_image/',
+        'https://breast-cancer-detection-backend.onrender.com/api/predict-image/',
         {
           method: 'POST',
           headers: {

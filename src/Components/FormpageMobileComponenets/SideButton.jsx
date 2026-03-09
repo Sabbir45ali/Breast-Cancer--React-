@@ -44,7 +44,7 @@ const SideButton = () => {
       formData.append('image', image)
 
       const res = await fetch(
-        'https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_image/',
+        'https://breast-cancer-detection-backend.onrender.com/api/predict-image/',
         {
           method: 'POST',
           headers: {
@@ -100,11 +100,10 @@ const SideButton = () => {
         type='button'
         onClick={handleImageTest}
         disabled={loading}
-        className={`ml-2 bg-[#EEB6B7] text-black text-[14px] font-bold py-1 px-3 rounded-lg border-2 border-[#561a1a] shadow-md transition-all ${
-          loading
+        className={`ml-2 bg-[#EEB6B7] text-black text-[14px] font-bold py-1 px-3 rounded-lg border-2 border-[#561a1a] shadow-md transition-all ${loading
             ? 'opacity-50'
             : 'hover:bg-[#851e20] hover:text-white active:scale-95'
-        }`}
+          }`}
       >
         {loading ? 'Testing...' : 'Test Image'}
       </button>
