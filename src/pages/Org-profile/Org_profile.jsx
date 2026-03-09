@@ -67,13 +67,12 @@ const Org_profile = () => {
 
     return (
       <span
-        className={`font-bold px-3 py-1 rounded-full text-sm ${
-          isMalignant
+        className={`font-bold px-3 py-1 rounded-full text-sm ${isMalignant
             ? 'text-red-600 bg-red-50'
             : isBenign
               ? 'text-green-600 bg-green-50'
               : 'text-gray-600'
-        }`}
+          }`}
       >
         {resText}
       </span>
@@ -154,11 +153,11 @@ const Org_profile = () => {
         rowData={historyType === 'data' ? dataRows : imageRows}
         profileType='org'
         info={{
-          orgName: orgInfo.org_name,
-          orgType: orgInfo.type,
-          email: orgInfo.email,
-          licenseNo: orgInfo.license_no,
-          phnNo: orgInfo.phone
+          orgName: orgInfo?.org_name || 'Organization',
+          orgType: orgInfo?.type || '-',
+          email: orgInfo?.email || '-',
+          licenseNo: orgInfo?.license_no || '-',
+          phnNo: orgInfo?.phone || '-'
         }}
         checkAgain='/form'
       />

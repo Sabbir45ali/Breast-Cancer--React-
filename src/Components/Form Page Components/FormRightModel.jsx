@@ -32,7 +32,7 @@ export default function FormRightModel() {
     try {
       const token = localStorage.getItem('token')
 
-      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_data/', {
+      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/org/predict-data/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,12 +44,12 @@ export default function FormRightModel() {
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || 'Prediction failed')
+        setError(data.error || 'Prediction failed. Please log in again.')
         setLoading(false)
         return
       }
 
-      const result = data.result.toLowerCase()
+      const result = data.result?.toLowerCase()
 
       // ✅ YES / NO PAGE
 
