@@ -209,7 +209,7 @@ const SignUpPageMobile = () => {
   return loading
     ? (
       <Loader />
-    )
+      )
     : (
       <div className='min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]'>
         <BackgroundImage
@@ -263,7 +263,7 @@ const SignUpPageMobile = () => {
                   <FcGoogle size={22} />
                   <span className='font-medium text-gray-700'>
                     Continue with Google
-                  </span>
+                </span>
                 </button>
               </>
             )}
@@ -276,7 +276,7 @@ const SignUpPageMobile = () => {
           <BottomNavigation />
         </div>
       </div>
-    )
+      )
 }
 
 export default SignUpPageMobile
