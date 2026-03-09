@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import MobileLandingPageFemale1 from '../../assets/Images/MobileLandingPageFemale1.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { RxCrossCircled } from 'react-icons/rx'
+import { FcGoogle } from 'react-icons/fc'
 
 import Header from '../../Components/Sign Up Page Mobile Componenet/SignUpMobileHeader'
 import CustomDropdown from '../../Components/Sign Up Page Mobile Componenet/CustomDropdown'
@@ -208,7 +209,7 @@ const SignUpPageMobile = () => {
   return loading
     ? (
       <Loader />
-      )
+    )
     : (
       <div className='min-h-screen relative bg-gradient-to-r from-[#f0779f] bg-[#e4d4d9]'>
         <BackgroundImage
@@ -241,14 +242,28 @@ const SignUpPageMobile = () => {
 
             {currentFields.length > 0 && (
               <>
+                <DynamicForm
+                  currentFields={currentFields}
+                  formData={formData}
+                  handleInputChange={handleInputChange}
+                  showPassword={showPassword}
+                  setShowPassword={setShowPassword}
+                  passwordRules={passwordRules}
+                  showTooltip={showTooltip}
+                  setShowTooltip={setShowTooltip}
+                />
+
                 <SignUpButton onClick={handleSignUp} loading={loading} />
 
                 <button
                   type='button'
                   onClick={handleGoogleSignup}
-                  className='w-full mt-3 border border-gray-300 bg-white py-2 rounded-lg hover:bg-gray-50 transition'
+                  className='w-full mt-3 flex items-center justify-center gap-3 border border-gray-300 bg-white py-2.5 rounded-lg shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200'
                 >
-                  Continue with Google
+                  <FcGoogle size={22} />
+                  <span className='font-medium text-gray-700'>
+                    Continue with Google
+                  </span>
                 </button>
               </>
             )}
@@ -261,7 +276,7 @@ const SignUpPageMobile = () => {
           <BottomNavigation />
         </div>
       </div>
-      )
+    )
 }
 
 export default SignUpPageMobile
