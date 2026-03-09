@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function MammogramUploadPage() {
+export default function MammogramUploadPage () {
   const [error, setError] = useState('')
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false)
