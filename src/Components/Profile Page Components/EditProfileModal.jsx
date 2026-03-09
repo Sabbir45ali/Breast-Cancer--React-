@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { ImCross } from 'react-icons/im'
 import { TiTickOutline } from 'react-icons/ti'
 import '../../App.css'
+import Loader from '../../Components/Universal Components/Loader'
 
 const EditProfileModal = ({ open, onclose }) => {
   const [formData, setFormData] = useState({
@@ -13,12 +14,11 @@ const EditProfileModal = ({ open, onclose }) => {
     symptoms: ''
   })
 
+  const [loading, setLoading] = useState(false)
+
   if (!open) return null
 
-  /// //////////////////////////
   // HANDLE CHANGE
-  /// //////////////////////////
-
   const handleChange = (name, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -26,10 +26,7 @@ const EditProfileModal = ({ open, onclose }) => {
     }))
   }
 
-  /// //////////////////////////
   // SAVE PROFILE
-  /// //////////////////////////
-
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -41,29 +38,40 @@ const EditProfileModal = ({ open, onclose }) => {
     }
 
     try {
-      await fetch('https://13-232-232-187.nip.io/api/user/update-profile/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
-        },
-        body: JSON.stringify({
-          age: formData.age,
-          blood_group: formData.blood_group,
-          height: formData.height,
-          weight: formData.weight,
-          medical_history: formData.medical_history,
-          symptoms: formData.symptoms
-        })
-      })
+      setLoading(true) // 🟢 Show loader when starting
+
+      await fetch(
+        'https://breast-cancer-detection-backend.onrender.com/api/user/update-profile/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify({
+            age: formData.age,
+            blood_group: formData.blood_group,
+            height: formData.height,
+            weight: formData.weight,
+            medical_history: formData.medical_history,
+            symptoms: formData.symptoms
+          })
+        }
+      )
 
       onclose()
     } catch (err) {
       alert('Update failed')
+    } finally {
+      setLoading(false) // 🟢 Hide loader when done
     }
   }
 
-  return (
+  // 🟢 Show loader while loading
+
+  return loading ? (
+    <Loader />
+  ) : (
     <div
       id='authentication-modal'
       className='fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-screen bg-black/30 backdrop-blur-sm'
@@ -73,7 +81,6 @@ const EditProfileModal = ({ open, onclose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* HEADER */}
-
         <div className='relative bottom-7 flex items-center justify-center p-4 border-b'>
           <h3 className='text-xl font-bold text-gray-900 absolute left-32'>
             Fill the Details
@@ -88,11 +95,9 @@ const EditProfileModal = ({ open, onclose }) => {
         </div>
 
         {/* BODY */}
-
         <div className='p-4 relative bottom-9'>
           <form onSubmit={handleSubmit} className='space-y-4'>
             {/* AGE */}
-
             <div className='flex items-center gap-2'>
               <label className='w-1/3 text-sm font-medium'>Your Age?</label>
 
@@ -105,7 +110,6 @@ const EditProfileModal = ({ open, onclose }) => {
             </div>
 
             {/* BLOOD */}
-
             <div className='flex items-center gap-2'>
               <label className='w-1/3 text-sm font-medium'>
                 Your Bloodgroup?
@@ -120,7 +124,6 @@ const EditProfileModal = ({ open, onclose }) => {
             </div>
 
             {/* HEIGHT */}
-
             <div className='flex items-center gap-2'>
               <label className='w-1/3 text-sm font-medium'>Your Height?</label>
 
@@ -133,7 +136,6 @@ const EditProfileModal = ({ open, onclose }) => {
             </div>
 
             {/* WEIGHT */}
-
             <div className='flex items-center gap-2'>
               <label className='w-1/3 text-sm font-medium'>Your Weight?</label>
 
@@ -146,7 +148,6 @@ const EditProfileModal = ({ open, onclose }) => {
             </div>
 
             {/* HISTORY */}
-
             <div>
               <input
                 type='text'
@@ -158,7 +159,6 @@ const EditProfileModal = ({ open, onclose }) => {
             </div>
 
             {/* SYMPTOMS */}
-
             <div>
               <input
                 type='text'
@@ -169,7 +169,6 @@ const EditProfileModal = ({ open, onclose }) => {
             </div>
 
             {/* SAVE */}
-
             <button
               type='submit'
               className='group w-full relative top-16 flex justify-end'

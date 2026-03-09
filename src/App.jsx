@@ -26,6 +26,7 @@ import Org_profile from './pages/Org-profile/Org_profile'
 import ForgotPassword from './Components/Universal Components/ForgotPasswordModal'
 import ProtectedRoute from './Components/Universal Components/ProtectedRoute'
 import ForgotPasswordMobile from './Components/Universal Components/ForgotPasswordMobile'
+// import Loader from './Components/Universal Components/Loader'
 import './index.css'
 
 // Responsive wrapper
@@ -186,6 +187,15 @@ const App = () => {
           />
         }
       />
+      {/* <Route
+        path='/Loader'
+        element={
+          <ResponsiveComponent
+            DesktopComponent={Loader}
+            MobileComponent={Loader}
+          />
+        }
+      /> */}
     </Routes>
   )
 }

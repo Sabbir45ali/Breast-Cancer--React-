@@ -55,7 +55,7 @@ export default function MammogramUploadPage () {
       formData.append('image', file)
 
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/predict-image/',
+        'https://breast-cancer-detection-backend.onrender.com/api/predict-image/',
         {
           method: 'POST',
           headers: {
@@ -89,12 +89,6 @@ export default function MammogramUploadPage () {
 
   return (
     <div className='min-h-screen flex flex-col items-center justify-center relative overflow-hidden'>
-      <img
-        src='/background-flower.png'
-        alt='Background Flower'
-        className='absolute inset-0 w-full h-full object-cover opacity-60 -z-10'
-      />
-
       <div className='text-center px-6 '>
         <h1 className='text-4xl md:text-5xl font-semibold text-black/80 leading-relaxed mb-10 gap-y-10'>
           Early <br /> Detection <br /> Saves <br /> Lives

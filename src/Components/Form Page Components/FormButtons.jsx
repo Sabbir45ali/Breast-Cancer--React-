@@ -48,7 +48,7 @@ const FormButtons = () => {
     formData.append('image', file)
 
     const res = await fetch(
-      'https://13-232-232-187.nip.io/api/predict-image/',
+      'https://breast-cancer-detection-backend.onrender.com/api/predict-image/',
       {
         method: 'POST',
         headers: {
@@ -60,9 +60,14 @@ const FormButtons = () => {
 
     const data = await res.json()
 
-    const result = data.result.toLowerCase()
+    if (!res.ok) {
+      setError(data.error || 'Prediction failed. Please log in again.')
+      return
+    }
 
-    if (result === 'Benign') {
+    const result = data.result?.toLowerCase()
+
+    if (result === 'benign') {
       navigate('/no')
     } else {
       navigate('/yes')

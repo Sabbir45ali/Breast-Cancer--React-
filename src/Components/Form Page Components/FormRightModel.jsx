@@ -33,7 +33,7 @@ export default function FormRightModel () {
       const token = localStorage.getItem('token')
 
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/org/predict-data/',
+        'https://breast-cancer-detection-backend.onrender.com/api/org/predict-data/',
         {
           method: 'POST',
           headers: {
@@ -47,12 +47,12 @@ export default function FormRightModel () {
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || 'Prediction failed')
+        setError(data.error || 'Prediction failed. Please log in again.')
         setLoading(false)
         return
       }
 
-      const result = data.result.toLowerCase()
+      const result = data.result?.toLowerCase()
 
       // ✅ YES / NO PAGE
 

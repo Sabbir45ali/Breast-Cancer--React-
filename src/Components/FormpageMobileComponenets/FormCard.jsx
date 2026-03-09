@@ -36,7 +36,7 @@ const FormCard = () => {
       const token = localStorage.getItem('token')
 
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/org/predict-data/',
+        'https://breast-cancer-detection-backend.onrender.com/api/org/predict-data/',
         {
           method: 'POST',
           headers: {

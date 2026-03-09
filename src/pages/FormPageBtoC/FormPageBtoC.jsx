@@ -59,7 +59,7 @@ const FormPageBtoC = () => {
       formData.append('image', image)
 
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/predict-image/',
+        'https://breast-cancer-detection-backend.onrender.com/api/predict-image/',
         {
           method: 'POST',
           headers: {

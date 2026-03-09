@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RiEdit2Fill } from 'react-icons/ri'
 
@@ -6,6 +6,7 @@ import PersonalInfo from './PersonalInfo'
 import Org_info from './Org_info'
 import Modal from './EditProfileModal'
 import Org_EditProfile from './Org_EditProfile'
+import Loader from '../../Components/Universal Components/Loader'
 
 const MainModalProfile = ({
   tableHeaders = [],
@@ -15,8 +16,8 @@ const MainModalProfile = ({
   checkAgain
 }) => {
   const [open, setOpen] = useState(false)
-
   const [profileInfo, setProfileInfo] = useState(info)
+  const [loading, setLoading] = useState(false)
 
   /// //////////////////////////
   // FETCH PROFILE AGAIN
@@ -24,12 +25,13 @@ const MainModalProfile = ({
 
   const fetchProfile = async () => {
     const token = localStorage.getItem('token')
-
     if (!token) return
 
     try {
+      setLoading(true)
+
       const res = await fetch(
-        'https://13-232-232-187.nip.io/api/user/profile/',
+        'https://breast-cancer-detection-backend.onrender.com/api/user/profile/',
         {
           headers: {
             Authorization: 'Bearer ' + token
@@ -48,6 +50,8 @@ const MainModalProfile = ({
       })
     } catch (err) {
       console.log('Profile refresh failed')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -57,11 +61,12 @@ const MainModalProfile = ({
 
   const handleCloseModal = () => {
     setOpen(false)
-
     fetchProfile()
   }
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className='h-full w-full flex flex-col items-center justify-center p-4'>
       <div className='bg-pink-100 w-full max-w-5xl rounded-3xl shadow-xl relative top-6 flex flex-col items-center p-8'>
         {/* EDIT BUTTON */}
@@ -93,20 +98,20 @@ const MainModalProfile = ({
           {profileType === 'user'
             ? (
               <PersonalInfo
-                name={profileInfo.name}
-                email={profileInfo.email}
-                age={profileInfo.age}
-                phnNo={profileInfo.phnNo}
-                bloodGroup={profileInfo.bloodGroup}
+                name={profileInfo?.name}
+                email={profileInfo?.email}
+                age={profileInfo?.age}
+                phnNo={profileInfo?.phnNo}
+                bloodGroup={profileInfo?.bloodGroup}
               />
               )
             : (
               <Org_info
-                OrgName={profileInfo.orgName}
-                OrgType={profileInfo.orgType}
-                OrgEmail={profileInfo.email}
-                Lisc={profileInfo.licenseNo}
-                OrgPhnNo={profileInfo.phnNo}
+                OrgName={profileInfo?.orgName}
+                OrgType={profileInfo?.orgType}
+                OrgEmail={profileInfo?.email}
+                Lisc={profileInfo?.licenseNo}
+                OrgPhnNo={profileInfo?.phnNo}
               />
               )}
         </div>
