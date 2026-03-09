@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function FormRightModel() {
+export default function FormRightModel () {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({

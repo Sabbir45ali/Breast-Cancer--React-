@@ -35,14 +35,17 @@ const FormCard = () => {
     try {
       const token = localStorage.getItem('token')
 
-      const res = await fetch('https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_data/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
-        },
-        body: JSON.stringify(formData)
-      })
+      const res = await fetch(
+        'https://breast-cancer-detection-backend.onrender.com/api/prediction/org_predict_data/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify(formData)
+        }
+      )
 
       const data = await res.json()
 
@@ -108,10 +111,11 @@ const FormCard = () => {
         <button
           type='submit'
           disabled={loading}
-          className={`absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 w-36 bg-white/80 px-6 py-2 rounded-full shadow-md border-2 border-pink-900 text-pink-900 font-bold transition-all ${loading
+          className={`absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 w-36 bg-white/80 px-6 py-2 rounded-full shadow-md border-2 border-pink-900 text-pink-900 font-bold transition-all ${
+            loading
               ? 'opacity-70 cursor-not-allowed'
               : 'hover:bg-white active:scale-95'
-            }`}
+          }`}
         >
           {loading ? 'Checking...' : 'Check'}
         </button>

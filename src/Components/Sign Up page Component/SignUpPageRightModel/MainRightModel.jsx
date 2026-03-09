@@ -34,7 +34,8 @@ const MainRightModel = () => {
 
   const endpoints = {
     User: 'https://breast-cancer-detection-backend.onrender.com/api/user/signup/',
-    Organisation: 'https://breast-cancer-detection-backend.onrender.com/api/org/signup/'
+    Organisation:
+      'https://breast-cancer-detection-backend.onrender.com/api/org/signup/'
   }
 
   // Handle input changes

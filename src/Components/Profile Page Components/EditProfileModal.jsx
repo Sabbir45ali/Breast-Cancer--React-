@@ -40,21 +40,24 @@ const EditProfileModal = ({ open, onclose }) => {
     try {
       setLoading(true) // 🟢 Show loader when starting
 
-      await fetch('https://breast-cancer-detection-backend.onrender.com/api/user/update-profile/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
-        },
-        body: JSON.stringify({
-          age: formData.age,
-          blood_group: formData.blood_group,
-          height: formData.height,
-          weight: formData.weight,
-          medical_history: formData.medical_history,
-          symptoms: formData.symptoms
-        })
-      })
+      await fetch(
+        'https://breast-cancer-detection-backend.onrender.com/api/user/update-profile/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify({
+            age: formData.age,
+            blood_group: formData.blood_group,
+            height: formData.height,
+            weight: formData.weight,
+            medical_history: formData.medical_history,
+            symptoms: formData.symptoms
+          })
+        }
+      )
 
       onclose()
     } catch (err) {
